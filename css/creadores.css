@@ -1,0 +1,23 @@
+.creadores{
+    padding: 80px 40px;
+}
+
+.titulo{
+    font-size: 24px;
+
+}
+
+.contenido{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card{
+    background-color: #586169;
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    border: 1px solid black;
+}
+
