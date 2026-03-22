@@ -257,6 +257,7 @@ footer a:hover {
   background: linear-gradient(90deg, #ffda44, #f4c107);
   transform: translateY(-4px);
   box-shadow: 0 14px 35px rgba(244, 193, 7, 0.45);
+  color: white;
 }
 
 .btn-secondary {
@@ -267,7 +268,7 @@ footer a:hover {
 
 .btn-secondary:hover {
   background: rgba(244, 193, 7, 0.1);
-  color: #ffda44;
+  color: white;
   border-color: #ffda44;
 }
 
