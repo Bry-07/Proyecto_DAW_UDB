@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.udb-header {
+  background: #0a1f3c;
+  color: #ffffff;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.container-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+}
+
+/* Menú principal (computadora) */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+
+/* Items principales */
+.nav-menu > li > a {
+  color: #e9f0ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 20px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a:focus {
+  background: #163a6b;
+  color: #ffffff;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .toggle-label {
+  color: #e9f0ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 20px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown .toggle-label:hover {
+  background: #163a6b;
+  color: #ffffff;
+}
+
+/* Ocultar checkboxes */
+input[type="checkbox"][hidden] {
+  display: none;
+}
+
+/* Submenú */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #12294d;
+  border-radius: 10px;
+  min-width: 220px;
+  padding: 12px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  display: none;
+  margin-top: 8px;
+}
+
+.dropdown-menu li a {
+  color: #e9f0ff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #1e3c66;
+}
+
+/* Mostrar submenú cuando checked (móvil y click) */
+.dropdown input[type="checkbox"]:checked ~ .dropdown-menu {
+  display: block;
+}
+
+/* Submenú nivel 2 (items que tienen dropdown de nivel 3) */
+.dropdown-submenu {
+  position: relative;
+}
+
+.toggle-label-submenu {
+  color: #e9f0ff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.toggle-label-submenu:hover {
+  background: #1e3c66;
+}
+
+.toggle-label-submenu i {
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+/* Submenú nivel 3 */
+.dropdown-menu-level3 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #0f1f3c;
+  border-radius: 8px;
+  min-width: 200px;
+  padding: 12px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  display: none;
+  margin-left: 10px;
+  list-style: none;
+}
+
+.dropdown-menu-level3 li a {
+  color: #e9f0ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.2s;
+}
+
+.dropdown-menu-level3 li a:hover {
+  background: #1b3050;
+  padding-left: 25px;
+}
+
+/* Mostrar submenú nivel 3 cuando checked */
+.dropdown-submenu input[type="checkbox"]:checked ~ .dropdown-menu-level3 {
+  display: block;
+}
+
+/* Rotar icono cuando el submenu está abierto */
+.dropdown-submenu input[type="checkbox"]:checked ~ .toggle-label-submenu i {
+  transform: rotate(90deg);
+}
+
+/* Botón Explorar Campus */
+.btn-explorar {
+  background: #f4c107;
+  color: #0a1f3c;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(244, 193, 7, 0.25);
+}
+
+.btn-explorar:hover {
+  background: #ffda44;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(244, 193, 7, 0.4);
+  color: white;
+}
+
+/* Hamburguesa / Toggle principal (solo móvil) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+#drop-main:checked ~ .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+#drop-main:checked ~ .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+#drop-main:checked ~ .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 992px) {
+  .container-header {
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0a1f3c;
+    flex-direction: column;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+
+  /* Mostrar menú cuando checked */
+  #drop-main:checked ~ .main-nav {
+    display: flex;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-menu > li {
+    width: 100%;
+  }
+
+  .nav-menu > li > a,
+  .dropdown .toggle-label {
+    padding: 16px 30px;
+    border-radius: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    background: #12294d;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Submenú nivel 3 en móvil */
+  .dropdown-menu-level3 {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    background: #0f1f3c;
+    border-radius: 0;
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
+  }
+
+  .dropdown-menu-level3 li a {
+    padding: 10px 20px;
+  }
+
+  .dropdown-menu-level3 li a:hover {
+    padding-left: 20px;
+  }
+
+  .toggle-label-submenu {
+    padding: 12px 30px;
+    border-radius: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-explorar {
+    margin: 20px 30px;
+    text-align: center;
+    width: calc(100% - 60px);
+  }
+}
