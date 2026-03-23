@@ -1,15 +1,18 @@
+/* ============================================
+   CONTENEDOR DEL MAPA
+   ============================================ */
 .mapa-container {
-    position: relative;
+    position: relative;       /* Necesario para que el cuadro de info se posicione dentro */
     width: 100%;
-    max-width: 1200px; 
+    max-width: 1200px;
     aspect-ratio: 1965 / 1163;
-    background-image: url('../img_mapa/394A0D05-3D15-4A07-B70E-04ADA01EF8CC\ 1.svg'); 
+    background-image: url('../img_mapa/394A0D05-3D15-4A07-B70E-04ADA01EF8CC 1.svg');
     background-size: cover;
     margin: 0 auto;
     border: 3px solid rgba(10, 31, 60, 0.75);
-    
 }
 
+/* El SVG ocupa todo el espacio del contenedor */
 .mapa-svg {
     position: absolute;
     top: 0;
@@ -18,37 +21,140 @@
     height: 100%;
 }
 
+/* ============================================
+   ESTILOS DE LOS EDIFICIOS (paths del SVG)
+   ============================================ */
 path {
-     fill: rgba(255, 165, 0, 0.1); /* Color naranja muy suave al inicio */
-    transition: all 0.3s ease; /* Transición suave  */
-    cursor: pointer;
+    fill: rgba(255, 165, 0, 0.1);  /* Naranja muy suave por defecto */
+    transition: all 0.3s ease;     /* Transición suave al cambiar estilos */
+    cursor: pointer;                /* Cursor de manita al pasar encima */
 }
 
+/* Cuando el ratón está encima de un edificio */
+path:hover {
+    fill: rgba(255, 140, 0, 0.4);
+}
 
-
-
-/* CLASE NUEVA: Cuando el edificio está seleccionado (clic) */
+/* Cuando un edificio está seleccionado (se le dio clic) */
 .seleccionado {
-    fill: rgba(255, 140, 0, 0.8) !important; /* Naranja más sólido */
-    transform: translateY(-8px); /* Se levanta más que el hover */
-    filter: drop-shadow(0 12px 8px rgba(0,0,0,0.6));
+    fill: rgba(255, 140, 0, 0.8) !important;
+    filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.6));
     stroke: white;
     stroke-width: 2px;
 }
 
-
-.info-container {
-    position: absolute;
+/* ============================================
+   CUADRO DE INFORMACIÓN
+   ============================================ */
+#info-container {
+    position: absolute;            /* Se posiciona dentro del .mapa-container */
     background-color: white;
     border: 2px solid rgba(10, 31, 60, 0.75);
-    border-radius: 8px;
-    padding: 10px;
-    display: none; /* Oculto por defecto */
-    max-width: 200px; /* Ancho máximo */
-    z-index: 10; /* Para que esté por encima del SVG */
+    border-radius: 10px;
+    padding: 12px;
+    display: none;                 /* Oculto por defecto */
+    width: 220px;                  /* Ancho fijo del cuadro */
+    z-index: 10;                   /* Que esté por encima del SVG */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-.info-container img {
-    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
-    border-radius: 5px; /* Bordes redondeados */
+/* Botón de cerrar (X) en la esquina */
+#btn-cerrar {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #555;
 }
+#btn-cerrar:hover { color: #000; }
+
+/* Nombre del edificio */
+#info-nombre {
+    font-size: 13px;
+    font-weight: bold;
+    color: #0a1f3c;
+    margin: 0 0 8px 0;
+    padding-right: 18px;
+}
+
+/* ============================================
+   CARRUSEL DE IMÁGENES
+   ============================================ */
+#carrusel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#info-imagen {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Botones de flecha */
+#btn-anterior,
+#btn-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 26px;
+    height: 36px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    z-index: 2;
+}
+#btn-anterior { left: 4px; }
+#btn-siguiente { right: 4px; }
+#btn-anterior:hover,
+#btn-siguiente:hover { background-color: rgba(0, 0, 0, 0.7); }
+
+/* Puntos indicadores */
+#indicadores {
+    text-align: center;
+    margin-top: 5px;
+}
+.punto {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.punto.activo { background-color: #0a1f3c; }
+
+/* ============================================
+   DESCRIPCIÓN Y BOTÓN
+   ============================================ */
+#info-descripcion {
+    font-size: 11px;
+    color: #333;
+    margin: 6px 0 10px 0;
+    line-height: 1.4;
+}
+
+#btn-ver-mas {
+    display: block;
+    text-align: center;
+    background-color: #0a1f3c;
+    color: white;
+    text-decoration: none;
+    padding: 7px 0;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+#btn-ver-mas:hover { background-color: #1a3a6c; }

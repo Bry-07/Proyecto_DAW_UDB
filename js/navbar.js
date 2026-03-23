@@ -2,6 +2,26 @@
 const dropMainCheckbox = document.getElementById("drop-main");
 const header = document.querySelector(".udb-header");
 
+// Detectar la página actual y asignar clase active solo a items del menú principal
+function setActiveMenuItemOnLoad() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Solo aplicar active a los items del menú principal (nav-menu > li)
+    document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Comparar href con página actual
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.parentElement.classList.add('active');
+        } else {
+            link.parentElement.classList.remove('active');
+        }
+    });
+}
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', setActiveMenuItemOnLoad);
+
 // Cerrar el menú principal cuando se hace clic en un enlace
 document.querySelectorAll(".main-nav a").forEach(link => {
     link.addEventListener("click", function() {
@@ -28,7 +48,7 @@ dropdownToggles.forEach(toggle => {
     });
 });
 
-// Manejo de los dropdowns nivel 3
+// Manejo de los dropdowns nivel 3 (Oriente y Occidente)
 const submenuToggles = document.querySelectorAll(".toggle-label-submenu");
 
 submenuToggles.forEach(toggle => {
