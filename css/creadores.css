@@ -1,9 +1,10 @@
 .creadores{
-    padding: 80px 40px;
+    padding: 70px 40px;
+    margin-top: 5px;
 }
 
 .titulo{
-    font-size: 24px;
+    font-size: 50px;
 
 }
 
@@ -14,15 +15,80 @@
 }
 
 .card{
-    background-color: #586169;
+     background: rgba(18, 41, 77, 0.88);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    transition: all 0.3s ease;
 }
 
-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 5px 10px rgb(0, 0, 0.4);
+.linea{
+    height: 5px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+
+.linea-amarilla{
+    background-color: yellow;
+}
+
+.linea-rosa{
+    background-color: pink;
+}
+
+.linea-celeste{
+    background-color: cadetblue;
+}
+
+.linea-morado{
+    background-color: blueviolet;
+}
+
+.linea-verde{
+    background-color: yellowgreen;
+}
+
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(255, 253, 108, 0.829);
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.rol{
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #ffff;
+    display: block;
+    margin: auto;
+}
+
+.card h3{
+    margin: auto;
+    font-size: 25px;
+    color: #ffff;
+}
+
+.card p{
+    font-size: 15px;
+    color: #ffff;
+    margin: auto;
+    text-align: justify;
+}
+
+
 

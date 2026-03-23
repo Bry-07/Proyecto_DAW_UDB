@@ -1,0 +1,137 @@
+.historia{
+    background-color: #061726;
+    color: #fff;
+    padding-bottom: 60px;
+}
+
+/* hero section */
+
+.hero{
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.hero-text{
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+}
+
+.hero-text h1{
+    font-size: 36px;
+}
+
+.hero-text p{
+    color: #fff;
+}
+
+/* contenido */
+
+.contenido-historia{
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+    display: grid;
+    gap: 30px;
+}
+
+.block{
+    background-color: #0b2239;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+
+}
+
+/* titulos */
+
+.block h2{
+    margin-bottom: 15px;
+}
+
+/*texto */
+
+.block p{
+    color: #fff;
+    text-align: justify;
+    margin: auto;
+}
+
+/* galeria */
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.galeria img{
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.galeria img:hover{
+    transform: scale(1.05);
+}
+
+/* tabla */
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: left;
+    color: #fff;
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+    color: #fff;
+}
+
+tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+}
+
+/* listas */
+
+.historia ul{
+    list-style: none;
+    padding: 0;
+}
+
+.historia ul li{
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.historia ul li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #facc15;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1{
+        font-size: 24px;
+    }
+
+    .contenido-historia{
+        padding: 20px;
+    }
+    
+}
