@@ -4,29 +4,69 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
-    // DATOS DE CADA EDIFICIO
-    // Aquí defines: imágenes, descripción y enlace
+    // ARREGLO PRINCIPAL DE EDIFICIOS
+    // Cada edificio es un objeto con:
+    //   - nombre: nombre visible en el cuadro de info
+    //   - imagenes: arreglo con las rutas de las fotos del carrusel
+    //   - descripcion: texto corto que describe el edificio
+    //   - enlace: ruta a la página de detalle del edificio
+    // La clave de cada objeto coincide con el id del <path> en el SVG
     // =============================================
     const datosEdificios = {
+
+        // --------------------------------------------------
+        // EDIFICIO A — Imágenes reales disponibles
+        // --------------------------------------------------
         "Edif_A": {
             nombre: "Edificio A",
             imagenes: [
                 "../img_mapa/IMG_4406 1.svg",
                 "../img_mapa/IMG_4411 1.svg",
-                "../img_mapa/IMG_4414 1.svg",
+                "../img_mapa/IMG_4414 1.svg"
             ],
-            descripcion: "El Edificio A alberga aulas de clases y oficinas administrativas.",
-            enlace: "paginas/edif-a.html"  // link 
+            descripcion: "El Edificio A alberga aulas de clases y oficinas administrativas de la UDB.",
+            enlace: "../oriente/edif-a.html"
         },
-        "Vivienda_Salesiana": {
-            nombre: "Vivienda Salesiana",
+
+        // --------------------------------------------------
+        // EDIFICIO B
+        // --------------------------------------------------
+        "Edif_B": {
+            nombre: "Edificio B",
             imagenes: [
-                "../img_mapa/salesiana_1.jpg",
-                "../img_mapa/salesiana_2.jpg"
+                "../img_mapa/edif_b_1.jpg"
             ],
-            descripcion: "Residencia de los padres salesianos dentro del campus.",
-            enlace: "paginas/vivienda-salesiana.html"
+            descripcion: "Edificio B con laboratorios y aulas especializadas.",
+            enlace: "../oriente/edif-b.html"
         },
+
+        // --------------------------------------------------
+        // EDIFICIO C
+        // --------------------------------------------------
+        "Edif_C": {
+            nombre: "Edificio C",
+            imagenes: [
+                "../img_mapa/edif_c_1.jpg"
+            ],
+            descripcion: "Edificio C con instalaciones modernas para clases.",
+            enlace: "../oriente/edif-c.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO CDIU — Centro de Desarrollo e Innovación
+        // --------------------------------------------------
+        "Edif_CDIU": {
+            nombre: "Centro de Desarrollo e Innovación UDB",
+            imagenes: [
+                "../img_mapa/cdiu_1.jpg"
+            ],
+            descripcion: "Centro de investigación e innovación tecnológica de la UDB.",
+            enlace: "../oriente/edif-cdiu.html"
+        },
+
+        // --------------------------------------------------
+        // BIBLIOTECA
+        // --------------------------------------------------
         "Biblioteca": {
             nombre: "Biblioteca",
             imagenes: [
@@ -34,130 +74,384 @@ document.addEventListener("DOMContentLoaded", () => {
                 "../img_mapa/biblioteca_2.jpg"
             ],
             descripcion: "La biblioteca universitaria con miles de libros y recursos digitales.",
-            enlace: "paginas/biblioteca.html"
+            enlace: "../oriente/edif-biblio.html"
         },
+
+        // --------------------------------------------------
+        // VIVIENDA SALESIANA
+        // --------------------------------------------------
+        "Vivienda_Salesiana": {
+            nombre: "Vivienda Salesiana",
+            imagenes: [
+                "../img_mapa/salesiana_1.jpg",
+                "../img_mapa/salesiana_2.jpg"
+            ],
+            descripcion: "Residencia de los padres salesianos dentro del campus.",
+            enlace: "../oriente/edif-viviendaS.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO RAFAEL MEZA AYAU
+        // --------------------------------------------------
         "Edif_Rafael_Meza_Ayau": {
             nombre: "Edificio Rafael Meza Ayau",
             imagenes: [
                 "../img_mapa/rma_1.jpg"
             ],
             descripcion: "Edificio dedicado a actividades académicas y culturales.",
-            enlace: "paginas/edif-rma.html"
+            enlace: "../oriente/edif-pinacoteca.html"
         },
-        "Edif_B": {
-            nombre: "Edificio B",
+
+        // --------------------------------------------------
+        // IGLESIA / CAPILLA
+        // --------------------------------------------------
+        "Igle": {
+            nombre: "Capilla UDB",
             imagenes: [
-                "../img_mapa/edif_b_1.jpg"
+                "../img_mapa/capilla_1.jpg"
             ],
-            descripcion: "Edificio B con laboratorios y aulas especializadas.",
-            enlace: "paginas/edif-b.html"
+            descripcion: "Espacio de reflexión y espiritualidad de la comunidad salesiana.",
+            enlace: "../oriente/capilla.html"
         },
-        "Edif_C": {
-            nombre: "Edificio C",
+
+        // --------------------------------------------------
+        // EDIFICIO R
+        // --------------------------------------------------
+        "Edif_R": {
+            nombre: "Edificio R",
             imagenes: [
-                "../img_mapa/edif_c_1.jpg"
+                "../img_mapa/edif_r_1.jpg"
             ],
-            descripcion: "Edificio C con instalaciones modernas para clases.",
-            enlace: "paginas/edif-c.html"
+            descripcion: "Edificio R con aulas y espacios académicos.",
+            enlace: "../oriente/edif-r.html"
         },
-        "Edif_CDIU": {
-            nombre: "Centro de Desarrollo e Innovación UDB",
+
+        // --------------------------------------------------
+        // CENTRO DE PASTORAL
+        // --------------------------------------------------
+        "Centro_de_Pastoral": {
+            nombre: "Centro de Pastoral",
             imagenes: [
-                "../img_mapa/cdiu_1.jpg"
+                "../img_mapa/pastoral_1.jpg"
             ],
-            descripcion: "Centro de investigación e innovación tecnológica.",
-            enlace: "paginas/cdiu.html"
+            descripcion: "Centro dedicado a la formación humana y espiritual del campus.",
+            enlace: "../oriente/edif-CPastoral.html"
         },
+
+        // --------------------------------------------------
+        // MAGNA A
+        // --------------------------------------------------
+        "Magna_A": {
+            nombre: "Magna A",
+            imagenes: [
+                "../img_mapa/magna_a_1.jpg"
+            ],
+            descripcion: "Auditorio Magna A para eventos académicos y culturales.",
+            enlace: "../oriente/edif-magnaA.html"
+        },
+
+        // --------------------------------------------------
+        // MAGNA B
+        // --------------------------------------------------
+        "Magna_B": {
+            nombre: "Magna B",
+            imagenes: [
+                "../img_mapa/magna_b_1.jpg"
+            ],
+            descripcion: "Auditorio Magna B para conferencias y actividades universitarias.",
+            enlace: "../oriente/edif-magnaB.html"
+        },
+
+        // --------------------------------------------------
+        // MAGNA C
+        // --------------------------------------------------
+        "Magna_C": {
+            nombre: "Magna C",
+            imagenes: [
+                "../img_mapa/magna_c_1.jpg"
+            ],
+            descripcion: "Auditorio Magna C, espacio para grandes eventos del campus.",
+            enlace: "../occidente/edif-magnaC.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO DE PROFESORES
+        // --------------------------------------------------
+        "Edif_Profesores": {
+            nombre: "Edificio de Profesores",
+            imagenes: [
+                "../img_mapa/profesores_1.jpg"
+            ],
+            descripcion: "Edificio con cubículos y oficinas para el cuerpo docente.",
+            enlace: "../oriente/edif-profesores.html"
+        },
+
+        // --------------------------------------------------
+        // CENTRO DE REPRODUCCIÓN
+        // --------------------------------------------------
+        "Centro_de_Repro": {
+            nombre: "Centro de Reproducción",
+            imagenes: [
+                "../img_mapa/repro_1.jpg"
+            ],
+            descripcion: "Centro de reproducción de materiales académicos.",
+            enlace: "../oriente/centroR.html"
+        },
+
+        // --------------------------------------------------
+        // COMEDOR DE PROFESORES
+        // --------------------------------------------------
+        "Comedor_Profe": {
+            nombre: "Comedor de Profesores",
+            imagenes: [
+                "../img_mapa/comedor_profe_1.jpg"
+            ],
+            descripcion: "Área de alimentación exclusiva para el personal docente.",
+            enlace: "../oriente/comedor1.html"
+        },
+
+        // --------------------------------------------------
+        // MULTIGIMNASIO UDB
+        // --------------------------------------------------
         "Multigim_UDB": {
             nombre: "Multigimnasio UDB",
             imagenes: [
                 "../img_mapa/multigim_1.jpg"
             ],
             descripcion: "Instalaciones deportivas para toda la comunidad universitaria.",
-            enlace: "paginas/multigim.html"
+            enlace: "../oriente/edif-gym.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 8
+        // --------------------------------------------------
+        "Edif_Ocho": {
+            nombre: "Edificio 8",
+            imagenes: [
+                "../img_mapa/edif_8_1.jpg"
+            ],
+            descripcion: "Edificio 8 con aulas y laboratorios especializados.",
+            enlace: "../occidente/edif-8.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO FACULTAD
+        // --------------------------------------------------
+        "Edif_Facul": {
+            nombre: "Edificio de Facultades",
+            imagenes: [
+                "../img_mapa/facul_1.jpg"
+            ],
+            descripcion: "Edificio principal de las facultades de la UDB.",
+            enlace: "../occidente/edif-ciencias.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 2
+        // --------------------------------------------------
+        "Edif_Dos": {
+            nombre: "Edificio 2",
+            imagenes: [
+                "../img_mapa/edif_2_1.jpg"
+            ],
+            descripcion: "Edificio 2 con aulas y servicios académicos.",
+            enlace: "../occidente/edif-2.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 3
+        // --------------------------------------------------
+        "Edif_Tres": {
+            nombre: "Edificio 3",
+            imagenes: [
+                "../img_mapa/edif_3_1.jpg"
+            ],
+            descripcion: "Edificio 3 con laboratorios y aulas de la UDB.",
+            enlace: "../occidente/edif-3.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 4
+        // --------------------------------------------------
+        "Edif_Cuatro": {
+            nombre: "Edificio 4",
+            imagenes: [
+                "../img_mapa/edif_4_1.jpg"
+            ],
+            descripcion: "Edificio 4 con instalaciones académicas modernas.",
+            enlace: "../occidente/edif-4.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 5
+        // --------------------------------------------------
+        "Edif_Cinco": {
+            nombre: "Edificio 5",
+            imagenes: [
+                "../img_mapa/edif_5_1.jpg"
+            ],
+            descripcion: "Edificio 5 con aulas especializadas.",
+            enlace: "../occidente/edif-5.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 6
+        // --------------------------------------------------
+        "Edif_Seis": {
+            nombre: "Edificio 6",
+            imagenes: [
+                "../img_mapa/edif_6_1.jpg"
+            ],
+            descripcion: "Edificio 6 con laboratorios y aulas de clases.",
+            enlace: "../occidente/edif-6.html"
+        },
+
+        // --------------------------------------------------
+        // EDIFICIO 7
+        // --------------------------------------------------
+        "Edif_Siete": {
+            nombre: "Edificio 7",
+            imagenes: [
+                "../img_mapa/edif_7_1.jpg"
+            ],
+            descripcion: "Edificio 7 con instalaciones para actividades académicas.",
+            enlace: "../occidente/edif-7.html"
+        },
+
+        // --------------------------------------------------
+        // OWCC
+        // --------------------------------------------------
+        "OWCC": {
+            nombre: "OWCC",
+            imagenes: [
+                "../img_mapa/owcc_1.jpg"
+            ],
+            descripcion: "Centro de actividades y servicios estudiantiles.",
+            enlace: "../occidente/OWCC.html"
+        },
+
+        // --------------------------------------------------
+        // OMM
+        // --------------------------------------------------
+        "OMM": {
+            nombre: "OMM",
+            imagenes: [
+                "../img_mapa/omm_1.jpg"
+            ],
+            descripcion: "Edificio OMM de la Universidad Don Bosco.",
+            enlace: "../occidente/observatorio.html"
+        },
+
+        // --------------------------------------------------
+        // ALMACÉN GENERAL
+        // --------------------------------------------------
+        "Almacen_General": {
+            nombre: "Almacén General",
+            imagenes: [
+                "../img_mapa/almacen_1.jpg"
+            ],
+            descripcion: "Almacén general de materiales y recursos del campus.",
+            enlace: "../occidente/almacén.html"
+        },
+
+        // --------------------------------------------------
+        // AVIÓN / HANGAR
+        // --------------------------------------------------
+        "Avion": {
+            nombre: "Hangar - Facultad de Aeronáutica",
+            imagenes: [
+                "../img_mapa/avion_1.jpg"
+            ],
+            descripcion: "Instalaciones de la Facultad de Ingeniería Aeronáutica.",
+            enlace: "../occidente/hangar.html"
+        },
+
+        // --------------------------------------------------
+        // COMEDOR EDIFICIO 6
+        // --------------------------------------------------
+        "Comedor_Edif_Seis": {
+            nombre: "Cafetería Zona Occidente",
+            imagenes: [
+                "../img_mapa/cafeteria_occ_1.jpg"
+            ],
+            descripcion: "Cafetería principal de la zona occidente del campus.",
+            enlace: "../occidente/comedor2.html"
+        },
+
+        // --------------------------------------------------
+        // PLAZA BANDERAS
+        // --------------------------------------------------
+        "Plaza_Bande": {
+            nombre: "Plaza de las Banderas",
+            imagenes: [
+                "../img_mapa/plaza_banderas_1.jpg"
+            ],
+            descripcion: "Plaza central con las banderas de El Salvador y la UDB.",
+            enlace: "../occidente/banderas.html"
         }
-       
-    };
+
+    }; // Fin del objeto datosEdificios
 
     // =============================================
     // VARIABLES PARA CONTROLAR EL CARRUSEL DE IMÁGENES
-    // indiceImagenActual: Indica cuál imagen del carrusel se está mostrando actualmente (empieza en 0)
-    // imagenesActuales: Array que contiene las rutas de las imágenes del edificio seleccionado
+    // indiceImagenActual: índice de la imagen visible (empieza en 0)
+    // imagenesActuales: arreglo de rutas del edificio seleccionado
+    // intervaloCarrusel: guarda el temporizador para poder detenerlo cuando se cierra el cuadro
     // =============================================
-    let indiceImagenActual = 0; // Qué imagen estamos viendo (0 = primera)
-    let imagenesActuales = [];  // Las imágenes del edificio seleccionado
+    let indiceImagenActual = 0;
+    let imagenesActuales   = [];
+    let intervaloCarrusel  = null; // Temporizador del carrusel automático
 
     // =============================================
-    // OBTENEMOS LOS ELEMENTOS DEL HTML QUE NECESITAMOS MANIPULAR
-    // infoContainer: El contenedor principal del cuadro de información
-    // mapaContainer: El contenedor del mapa SVG
-    // edificios: Todos los elementos <path> del SVG que representan los edificios
+    // REFERENCIAS A ELEMENTOS DEL DOM
     // =============================================
     const infoContainer = document.getElementById('info-container');
     const mapaContainer = document.querySelector('.mapa-container');
-    const edificios = document.querySelectorAll('path');
+    const edificios     = document.querySelectorAll('path');
 
     // =============================================
-    // CONSTRUIMOS EL CONTENIDO DEL CUADRO DE INFORMACIÓN DINÁMICAMENTE
-    // Usamos innerHTML para crear la estructura HTML del popup con todos sus elementos:
-    // - Botón de cerrar
-    // - Título del edificio
-    // - Carrusel con botones de navegación, imagen y indicadores
-    // - Descripción
-    // - Enlace "Ver más"
+    // CONSTRUCCIÓN DINÁMICA DEL CUADRO DE INFORMACIÓN
+    // Se crea una sola vez y se rellena con JS cada vez que el usuario hace clic
     // =============================================
     infoContainer.innerHTML = `
-        <!-- Botón para cerrar el cuadro -->
         <button id="btn-cerrar">✕</button>
-
-        <!-- Nombre del edificio -->
         <h3 id="info-nombre">Nombre del edificio</h3>
 
-        <!-- CARRUSEL DE IMÁGENES -->
         <div id="carrusel">
-            <!-- Botón para ir a la imagen anterior -->
             <button id="btn-anterior">&#8249;</button>
-
-            <!-- La imagen que se muestra -->
             <img id="info-imagen" src="" alt="Imagen del edificio" />
-
-            <!-- Botón para ir a la siguiente imagen -->
             <button id="btn-siguiente">&#8250;</button>
-
-            <!-- Puntos indicadores (uno por imagen) -->
             <div id="indicadores"></div>
         </div>
 
-        <!-- Descripción del edificio -->
         <p id="info-descripcion">Descripción del edificio.</p>
-
-        <!-- Botón para ir al sitio del edificio -->
         <a id="btn-ver-mas" href="#">Ver más información</a>
     `;
 
-    // =============================================
-    // OBTENEMOS REFERENCIAS A LOS ELEMENTOS RECIÉN CREADOS DENTRO DEL CUADRO
-    // Estos elementos se usarán para actualizar el contenido dinámicamente
-    // =============================================
-    const btnCerrar     = document.getElementById('btn-cerrar');
-    const infoNombre    = document.getElementById('info-nombre');
-    const infoImagen    = document.getElementById('info-imagen');
-    const infoDesc      = document.getElementById('info-descripcion');
-    const btnVerMas     = document.getElementById('btn-ver-mas');
-    const btnAnterior   = document.getElementById('btn-anterior');
-    const btnSiguiente  = document.getElementById('btn-siguiente');
-    const indicadores   = document.getElementById('indicadores');
+    // Referencias a los elementos del cuadro recién creado
+    const btnCerrar   = document.getElementById('btn-cerrar');
+    const infoNombre  = document.getElementById('info-nombre');
+    const infoImagen  = document.getElementById('info-imagen');
+    const infoDesc    = document.getElementById('info-descripcion');
+    const btnVerMas   = document.getElementById('btn-ver-mas');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const btnSiguiente= document.getElementById('btn-siguiente');
+    const indicadores = document.getElementById('indicadores');
 
     // =============================================
     // FUNCIÓN: mostrarImagen
-    // Actualiza la imagen visible en el carrusel y resalta el indicador correspondiente
-    // Parámetro: indice - el número de la imagen a mostrar (basado en 0)
+    // Muestra la imagen con efecto fade suave y actualiza los puntos indicadores
+    // @param {number} indice - posición de la imagen en el arreglo imagenesActuales
     // =============================================
     function mostrarImagen(indice) {
-        // Cambia la fuente de la imagen al archivo correspondiente
-        infoImagen.src = imagenesActuales[indice];
+        // Efecto fade: desvanece la imagen, cambia la fuente, vuelve a mostrar
+        infoImagen.style.opacity = '0';
+        setTimeout(() => {
+            infoImagen.src = imagenesActuales[indice];
+            infoImagen.style.opacity = '1';
+        }, 200);
 
-        // Actualiza los puntos indicadores: quita la clase 'activo' de todos y la pone solo en el actual
+        // Actualiza cuál punto está activo
         const puntos = indicadores.querySelectorAll('.punto');
         puntos.forEach((punto, i) => {
             punto.classList.toggle('activo', i === indice);
@@ -166,169 +460,206 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // FUNCIÓN: crearIndicadores
-    // Crea los puntos indicadores del carrusel (uno por cada imagen)
-    // Cada punto es clickeable para saltar directamente a esa imagen
-    // Parámetro: totalImagenes - número total de imágenes en el carrusel
+    // Genera un punto por cada imagen del carrusel
+    // Al hacer clic en un punto, salta a esa imagen
+    // @param {number} totalImagenes - cantidad de imágenes del edificio
     // =============================================
     function crearIndicadores(totalImagenes) {
-        // Limpiamos cualquier indicador anterior
-        indicadores.innerHTML = '';
+        indicadores.innerHTML = ''; // Limpia indicadores anteriores
 
-        // Creamos un punto por cada imagen
         for (let i = 0; i < totalImagenes; i++) {
             const punto = document.createElement('span');
             punto.classList.add('punto');
 
-            // Al hacer clic en un punto, cambiamos a esa imagen
+            // Clic en el punto → ir a esa imagen
             punto.addEventListener('click', () => {
                 indiceImagenActual = i;
                 mostrarImagen(indiceImagenActual);
             });
 
-            // Agregamos el punto al contenedor de indicadores
             indicadores.appendChild(punto);
         }
     }
 
     // =============================================
-    // EVENT LISTENERS PARA LOS BOTONES DEL CARRUSEL
-    // Controlan la navegación entre imágenes: anterior y siguiente
+    // FUNCIÓN: iniciarAutoCarrusel
+    // Inicia el paso automático de imágenes cada 3 segundos
+    // Detiene cualquier intervalo anterior antes de iniciar uno nuevo
     // =============================================
+    function iniciarAutoCarrusel() {
+        // Detiene el intervalo anterior si existe
+        if (intervaloCarrusel) clearInterval(intervaloCarrusel);
 
-    // Botón flecha izquierda (imagen anterior)
-    // Si estamos en la primera imagen, va a la última (ciclo infinito)
-    btnAnterior.addEventListener('click', () => {
-        if (indiceImagenActual === 0) {
-            indiceImagenActual = imagenesActuales.length - 1; // Va a la última
-        } else {
-            indiceImagenActual--; // Va a la anterior
+        // Solo inicia el auto-avance si hay más de una imagen
+        if (imagenesActuales.length > 1) {
+            intervaloCarrusel = setInterval(() => {
+                // Avanza a la siguiente imagen de forma cíclica
+                indiceImagenActual = (indiceImagenActual === imagenesActuales.length - 1)
+                    ? 0
+                    : indiceImagenActual + 1;
+                mostrarImagen(indiceImagenActual);
+            }, 3000); // Cambia cada 3 segundos
         }
-        mostrarImagen(indiceImagenActual); // Actualiza la vista
-    });
+    }
 
-    // Botón flecha derecha (imagen siguiente)
-    // Si estamos en la última imagen, vuelve a la primera
-    btnSiguiente.addEventListener('click', () => {
-        if (indiceImagenActual === imagenesActuales.length - 1) {
-            indiceImagenActual = 0; // Vuelve a la primera
-        } else {
-            indiceImagenActual++; // Va a la siguiente
+    // =============================================
+    // FUNCIÓN: detenerAutoCarrusel
+    // Detiene el carrusel automático (al cerrar el cuadro o al navegar manualmente)
+    // =============================================
+    function detenerAutoCarrusel() {
+        if (intervaloCarrusel) {
+            clearInterval(intervaloCarrusel);
+            intervaloCarrusel = null;
         }
-        mostrarImagen(indiceImagenActual); // Actualiza la vista
-    });
+    }
 
     // =============================================
-    // EVENT LISTENER PARA EL BOTÓN DE CERRAR
-    // Oculta el cuadro de información y quita el resaltado de los edificios
+    // FUNCIÓN: navegarCarrusel
+    // Avanza o retrocede en el carrusel de forma cíclica
+    // Al navegar manualmente se reinicia el temporizador automático
+    // @param {string} direccion - 'anterior' o 'siguiente'
     // =============================================
-    btnCerrar.addEventListener('click', () => {
-        infoContainer.style.display = 'none'; // Esconde el cuadro
-        edificios.forEach(e => e.classList.remove('seleccionado')); // Quita resaltado
-    });
+    function navegarCarrusel(direccion) {
+        if (direccion === 'anterior') {
+            // Si estamos en la primera, va a la última
+            indiceImagenActual = (indiceImagenActual === 0)
+                ? imagenesActuales.length - 1
+                : indiceImagenActual - 1;
+        } else {
+            // Si estamos en la última, vuelve a la primera
+            indiceImagenActual = (indiceImagenActual === imagenesActuales.length - 1)
+                ? 0
+                : indiceImagenActual + 1;
+        }
+        mostrarImagen(indiceImagenActual);
+
+        // Reinicia el temporizador para que cuente desde cero tras la acción manual
+        iniciarAutoCarrusel();
+    }
 
     // =============================================
-    // FUNCIÓN PRINCIPAL: MANEJADOR DE CLIC EN EDIFICIOS
-    // Se ejecuta cuando el usuario hace clic en cualquier edificio del mapa
-    // Muestra el cuadro de información correspondiente
+    // FUNCIÓN: posicionarCuadro
+    // Calcula y aplica la posición del cuadro de info cerca del edificio clicado,
+    // asegurándose de que no se salga de los bordes del mapa
+    // @param {DOMRect} rectEdificio - posición del edificio en pantalla
+    // =============================================
+    function posicionarCuadro(rectEdificio) {
+        const rectMapa = mapaContainer.getBoundingClientRect();
+
+        // Intenta colocar el cuadro encima del edificio
+        let posTop  = rectEdificio.top  - rectMapa.top  - infoContainer.offsetHeight - 10;
+        let posLeft = rectEdificio.left - rectMapa.left
+                    + (rectEdificio.width  / 2)
+                    - (infoContainer.offsetWidth / 2);
+
+        // Si se sale por arriba → lo pone debajo
+        if (posTop < 0) {
+            posTop = rectEdificio.bottom - rectMapa.top + 10;
+        }
+
+        // Si se sale por la izquierda → ajusta al borde
+        if (posLeft < 0) posLeft = 5;
+
+        // Si se sale por la derecha → ajusta al borde
+        const anchoCuadro = infoContainer.offsetWidth;
+        const anchoMapa   = mapaContainer.offsetWidth;
+        if (posLeft + anchoCuadro > anchoMapa) {
+            posLeft = anchoMapa - anchoCuadro - 5;
+        }
+
+        infoContainer.style.top  = posTop  + 'px';
+        infoContainer.style.left = posLeft + 'px';
+    }
+
+    // =============================================
+    // FUNCIÓN: mostrarInfoEdificio
+    // Rellena y muestra el cuadro de información de un edificio
+    // @param {object} datos - objeto del edificio desde datosEdificios
+    // @param {DOMRect} rectEdificio - posición del edificio clicado
+    // =============================================
+    function mostrarInfoEdificio(datos, rectEdificio) {
+        // Rellena el cuadro con los datos del edificio
+        infoNombre.textContent = datos.nombre;
+        infoDesc.textContent   = datos.descripcion;
+        btnVerMas.href         = datos.enlace;
+
+        // Carga las imágenes del carrusel
+        imagenesActuales   = datos.imagenes;
+        indiceImagenActual = 0;
+
+        crearIndicadores(imagenesActuales.length);
+        mostrarImagen(0);
+
+        // Muestra u oculta las flechas según la cantidad de imágenes
+        const hayVariasImagenes = imagenesActuales.length > 1;
+        btnAnterior.style.display  = hayVariasImagenes ? 'block' : 'none';
+        btnSiguiente.style.display = hayVariasImagenes ? 'block' : 'none';
+
+        // Muestra el cuadro invisible para poder medir su tamaño
+        infoContainer.style.display    = 'block';
+        infoContainer.style.visibility = 'hidden';
+
+        // Posiciona y muestra el cuadro
+        posicionarCuadro(rectEdificio);
+        infoContainer.style.visibility = 'visible';
+
+        // Inicia el paso automático de imágenes
+        iniciarAutoCarrusel();
+    }
+
+    // =============================================
+    // FUNCIÓN: cerrarCuadro
+    // Oculta el cuadro de información, quita el resaltado y detiene el carrusel
+    // =============================================
+    function cerrarCuadro() {
+        infoContainer.style.display = 'none';
+        edificios.forEach(e => e.classList.remove('seleccionado'));
+        detenerAutoCarrusel(); // Detiene el temporizador al cerrar
+    }
+
+    // =============================================
+    // EVENT LISTENERS DEL CARRUSEL
+    // =============================================
+    btnAnterior.addEventListener('click',  () => navegarCarrusel('anterior'));
+    btnSiguiente.addEventListener('click', () => navegarCarrusel('siguiente'));
+
+    // =============================================
+    // EVENT LISTENER: Cerrar al hacer clic en la X
+    // =============================================
+    btnCerrar.addEventListener('click', cerrarCuadro);
+
+    // =============================================
+    // EVENT LISTENER: Clic en cada edificio del SVG
+    // Al hacer clic se resalta el edificio y se muestra su información
     // =============================================
     edificios.forEach(edificio => {
         edificio.addEventListener('click', (evento) => {
+            evento.stopPropagation(); // Evita que se propague y cierre el cuadro
 
-            // Detenemos que el clic se "propague" al documento (evita cerrar el cuadro inmediatamente)
-            evento.stopPropagation();
-
-            // Quitamos el resaltado visual de todos los edificios
+            // Quita resaltado de todos y agrega al clicado
             edificios.forEach(e => e.classList.remove('seleccionado'));
-
-            // Agregamos resaltado al edificio clickeado
             edificio.classList.add('seleccionado');
 
-            // Buscamos los datos del edificio usando su ID como clave
+            // Busca los datos del edificio por su id
             const datos = datosEdificios[edificio.id];
+            if (!datos) return; // Si no hay datos, no hace nada
 
-            // Si no hay datos definidos para este edificio, salimos de la función
-            if (!datos) return;
-
-            // ---- LLENAMOS EL CUADRO CON LA INFORMACIÓN DEL EDIFICIO ----
-            infoNombre.textContent = datos.nombre; // Nombre del edificio
-            infoDesc.textContent = datos.descripcion; // Descripción
-            btnVerMas.href = datos.enlace; // Enlace al sitio
-
-            // Guardamos las imágenes del edificio y reiniciamos el índice del carrusel
-            imagenesActuales = datos.imagenes;
-            indiceImagenActual = 0;
-
-            // Creamos los puntos indicadores basados en el número de imágenes
-            crearIndicadores(imagenesActuales.length);
-
-            // Mostramos la primera imagen del carrusel
-            mostrarImagen(0);
-
-            // Ocultamos las flechas de navegación si solo hay una imagen
-            if (imagenesActuales.length <= 1) {
-                btnAnterior.style.display = 'none';
-                btnSiguiente.style.display = 'none';
-            } else {
-                btnAnterior.style.display = 'block'; // Mostramos flechas si hay múltiples imágenes
-                btnSiguiente.style.display = 'block';
-            }
-
-            // ---- POSICIONAMOS EL CUADRO CERCA DEL EDIFICIO CLICKEADO ----
-
-            // Primero mostramos el cuadro temporalmente invisible para medir su tamaño
-            infoContainer.style.display = 'block';
-            infoContainer.style.visibility = 'hidden';
-
-            // Obtenemos las posiciones del edificio y del mapa en la pantalla
-            const rectEdificio = edificio.getBoundingClientRect();
-            const rectMapa = mapaContainer.getBoundingClientRect();
-
-            // Calculamos la posición relativa al mapa
-            // Intentamos colocar el cuadro ENCIMA del edificio
-            let posTop  = rectEdificio.top  - rectMapa.top  - infoContainer.offsetHeight - 10;
-            let posLeft = rectEdificio.left - rectMapa.left + (rectEdificio.width / 2) - (infoContainer.offsetWidth / 2);
-
-            // Si el cuadro se saldría por ARRIBA de la pantalla, lo ponemos DEBAJO
-            if (posTop < 0) {
-                posTop = rectEdificio.bottom - rectMapa.top + 10;
-            }
-
-            // Si se sale por la IZQUIERDA, lo ajustamos al borde izquierdo
-            if (posLeft < 0) {
-                posLeft = 5;
-            }
-
-            // Si se sale por la DERECHA, lo ajustamos al borde derecho
-            const anchoCuadro = infoContainer.offsetWidth;
-            const anchoMapa = mapaContainer.offsetWidth;
-            if (posLeft + anchoCuadro > anchoMapa) {
-                posLeft = anchoMapa - anchoCuadro - 5;
-            }
-
-            // Aplicamos las posiciones calculadas
-            infoContainer.style.top  = posTop  + 'px';
-            infoContainer.style.left = posLeft + 'px';
-
-            // Finalmente, hacemos el cuadro visible
-            infoContainer.style.visibility = 'visible';
+            // Muestra el cuadro con la info y el carrusel
+            mostrarInfoEdificio(datos, edificio.getBoundingClientRect());
         });
     });
 
     // =============================================
-    // EVENT LISTENER PARA CERRAR EL CUADRO AL HACER CLIC FUERA DE ÉL
-    // Si el usuario hace clic en cualquier parte del documento (excepto el cuadro), se cierra
+    // EVENT LISTENER: Clic fuera del cuadro → cerrar
     // =============================================
-    document.addEventListener('click', () => {
-        infoContainer.style.display = 'none'; // Oculta el cuadro
-        edificios.forEach(e => e.classList.remove('seleccionado')); // Quita resaltado
-    });
+    document.addEventListener('click', cerrarCuadro);
 
     // =============================================
-    // EVENT LISTENER PARA EVITAR QUE EL CLIC DENTRO DEL CUADRO LO CIERRE
-    // Previene que el clic en el cuadro se propague al documento y lo cierre accidentalmente
+    // EVENT LISTENER: Clic dentro del cuadro → NO cerrar
+    // Evita que el clic en el popup se propague al document
     // =============================================
     infoContainer.addEventListener('click', (evento) => {
-        evento.stopPropagation(); // Detiene la propagación del evento
+        evento.stopPropagation();
     });
 
-}); // Fin del event listener de DOMContentLoaded
+}); // Fin DOMContentLoaded

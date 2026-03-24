@@ -27,7 +27,7 @@ body::before {
 
 /* Contenedor del formulario */
 .form-wrapper {
-  background: rgba(18, 41, 77, 0.88);   /* #12294d con opacidad */
+  background: rgba(18, 41, 77, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 16px;
@@ -136,4 +136,46 @@ textarea.form-control {
   .form-title {
     font-size: 2rem;
   }
+}
+
+/* =============================================
+   ESTILOS DE VALIDACIÓN
+   ============================================= */
+
+/* Input con error → borde rojo */
+.input-error {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+}
+
+/* Input válido → borde verde */
+.input-valido {
+  border-color: #27ae60 !important;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2) !important;
+}
+
+/* Mensaje de error debajo del campo */
+.error-msg {
+  display: none;
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Mensaje de éxito al enviar */
+.exito-msg {
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: rgba(39, 174, 96, 0.15);
+  border: 1px solid #27ae60;
+  border-radius: 10px;
+  color: #27ae60;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.exito-msg i {
+  margin-right: 8px;
 }
