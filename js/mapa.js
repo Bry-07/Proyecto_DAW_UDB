@@ -1,17 +1,58 @@
-// =============================================
-// INICIO DEL SCRIPT: Espera a que el DOM esté cargado
-// =============================================
+/* =============================================
+   ARCHIVO: mapa.js
+   
+   DESCRIPCIÓN GENERAL:
+   Maneja un mapa SVG interactivo de la UDB.
+   Cuando haces clic (o hover en desktop) en un edificio,
+   aparece un cuadro con información, fotos y detalles.
+   
+   FUNCIONALIDADES:
+   1. Detecta clics/hover en cada edificio del mapa SVG
+   2. Muestra un cuadro con nombre, fotos y descripción
+   3. Carrusel automático de imágenes (cambia cada 3 segundos)
+   4. Navegación manual de fotos (flechas y puntos)
+   5. Responsive: diferente comportamiento en móvil vs desktop
+   6. Posicionamiento inteligente del cuadro (no sale de pantalla)
+   ============================================= */
+
+/* =============================================
+   EVENT: DOMContentLoaded
+   
+   QUÉ HACE:
+   Espera a que TODO el HTML esté cargado
+   ANTES de ejecutar el código JavaScript.
+   
+   POR QUÉ:
+   Si el JS corre antes de cargar el HTML,
+   no encontrará los elementos del mapa
+   (SVG, botones, etc.) y dará error.
+   ============================================= */
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =============================================
-    // ARREGLO PRINCIPAL DE EDIFICIOS
-    // Cada edificio es un objeto con:
-    //   - nombre: nombre visible en el cuadro de info
-    //   - imagenes: arreglo con las rutas de las fotos del carrusel
-    //   - descripcion: texto corto que describe el edificio
-    //   - enlace: ruta a la página de detalle del edificio
-    // La clave de cada objeto coincide con el id del <path> en el SVG
-    // =============================================
+    /* =============================================
+       OBJETO: datosEdificios
+       
+       QUÉ CONTIENE:
+       Un objeto grande con 28 edificios diferentes.
+       
+       ESTRUCTURA DE CADA EDIFICIO:
+       "Edif_A": {         ← La clave es el ID del <path> en el SVG
+           nombre: "...",           ← Nombre que se muestra
+           imagenes: [...],         ← Array de rutas de fotos
+           descripcion: "...",      ← Texto descriptivo
+           enlace: "..."            ← URL de la página de detalles
+       }
+       
+       IMPORTANTE:
+       La clave ("Edif_A", "Edif_B", etc.) DEBE coincidir
+       EXACTAMENTE con el id del <path> en el archivo SVG.
+       
+       EJEMPLO:
+       En el HTML/SVG hay: <path id="Edif_A" ...>
+       En este JS hay:     "Edif_A": { nombre: "Edificio A", ... }
+       
+       Si NO coinciden, el cuadro no se mostrará.
+       ============================================= */
     const datosEdificios = {
 
         // --------------------------------------------------
@@ -419,52 +460,141 @@ document.addEventListener("DOMContentLoaded", () => {
             enlace: "../occidente/banderas.html"
         }
 
-    }; // Fin del objeto datosEdificios
+    }; // ← CIERRE del objeto datosEdificios
 
-    // =============================================
-    // VARIABLES PARA CONTROLAR EL CARRUSEL DE IMÁGENES
-    // indiceImagenActual: índice de la imagen visible (empieza en 0)
-    // imagenesActuales: arreglo de rutas del edificio seleccionado
-    // intervaloCarrusel: guarda el temporizador para poder detenerlo cuando se cierra el cuadro
-    // =============================================
-    let indiceImagenActual = 0;
-    let imagenesActuales   = [];
+    /* =============================================
+       VARIABLES: Control del carrusel
+       
+       QUÉ SON Y PARA QUÉ SIRVEN:
+       
+       1. indiceImagenActual = 0
+          - Guarda cuál imagen se está mostrando
+          - Comienza en 0 (primera imagen)
+          - Cuando haces clic en "Siguiente", aumenta
+          - Cuando haces clic en "Anterior", disminuye
+          EJEMPLO:
+          - Si hay 3 fotos: índices son 0, 1, 2
+          - Si estés en 1, es la segunda foto
+       
+       2. imagenesActuales = []
+          - Array vacío al inicio
+          - Se LLENA cuando haces clic en un edificio
+          - Contiene las rutas de las fotos de ESE edificio
+          EJEMPLO:
+          - Haces clic en Edif_A
+          - imagenesActuales ahora es:
+            ["../img_mapa/IMG_4406.svg", "../img_mapa/IMG_4414.svg"]
+       
+       3. intervaloCarrusel = null
+          - Guarda el "temporizador" del carrusel automático
+          - null = no hay carrusel activo
+          - Cuando se crea el carrusel, guarda aquí su ID
+          - Cuando cierras el cuadro, cancela este temporizador
+          VENTAJA:
+          Si cambias de edificio, detiene el antiguo
+          temporizador ANTES de crear uno nuevo
+       ============================================= */
+    let indiceImagenActual = 0;    // Qué foto se está mostrando (0 = primera)
+    let imagenesActuales   = [];   // Array con las fotos del edificio actual
     let intervaloCarrusel  = null; // Temporizador del carrusel automático
 
-    // =============================================
-    // REFERENCIAS A ELEMENTOS DEL DOM
-    // =============================================
-    const infoContainer = document.getElementById('info-container');
-    const mapaContainer = document.querySelector('.mapa-container');
+    /* =============================================
+       REFERENCIAS AL DOM
+       
+       QUÉ HACE:
+       Busca elementos en el HTML y los guarda
+       en variables para usarlos várias veces.
+       
+       POR QUÉ:
+       - Más rápido: busca UNA sola vez
+       - Menos código: no repites getElementById()
+       
+       ELEMENTOS:
+       - infoContainer: el <div> que contiene TODO el cuadro de información
+       - mapaContainer: el contenedor del SVG (div con clase "mapa-container")
+       ============================================= */
+    const infoContainer = document.getElementById('info-container');   // El cuadro info
+    const mapaContainer = document.querySelector('.mapa-container');  // El SVG del mapa
 
-    // =============================================
-    // CONSTRUCCIÓN DINÁMICA DEL CUADRO DE INFORMACIÓN
-    // Se crea una sola vez y se rellena con JS cada vez que el usuario interactúa
-    // =============================================
+    /* =============================================
+       CONSTRUCCIÓN DINÁMICA: Cuadro de información
+       
+       QUÉ SUCEDE AQUÍ:
+       Se CONSTRUYE todo el HTML del cuadro usando codigo JS.
+       NO está escrito en el HTML, se hace aquí con template string.
+       
+       VENTAJA:
+       - No necesitas HTML repetido
+       - Todo el cuadro está aquí en un lugar
+       - Fácil de modificar
+       
+       ESTRUCTURA DEL CUADRO:
+       
+       ✕  ← botón cerrar
+       ===================
+       Nombre del edificio
+       ===================
+       [< ] [IMAGEN] [> ]  ← carrusel
+        ●   ●   ●         ← indicadores (puntos)
+       ===================
+       Descripción...
+       [Ver más información]
+       
+       IMPORTANTE:
+       El cuadro está VACÍO al inicio.
+       Se LLENA cuando haces clic en un edificio.
+       ============================================= */
     infoContainer.innerHTML = `
+        <!-- BOTÓN CERRAR (X) -->
         <button id="btn-cerrar">✕</button>
+        
+        <!-- TÍTULO: Nombre del edificio -->
         <h3 id="info-nombre">Nombre del edificio</h3>
 
+        <!-- CARRUSEL DE IMÁGENES -->
         <div id="carrusel">
+            <!-- FLECHA IZQUIERDA: ir a la foto anterior -->
             <button id="btn-anterior">&#8249;</button>
+            
+            <!-- IMAGEN: la foto del edificio -->
             <img id="info-imagen" src="" alt="Imagen del edificio" />
+            
+            <!-- FLECHA DERECHA: ir a la siguiente foto -->
             <button id="btn-siguiente">&#8250;</button>
+            
+            <!-- INDICADORES: puntos para saltar a una imagen específica -->
             <div id="indicadores"></div>
         </div>
 
+        <!-- DESCRIPCIÓN: Texto sobre el edificio -->
         <p id="info-descripcion">Descripción del edificio.</p>
+        
+        <!-- ENLACE: Botón para ir a la página de detalles -->
         <a id="btn-ver-mas" href="#">Ver más información</a>
     `;
 
-    // Referencias a los elementos del cuadro recién creado
-    const btnCerrar    = document.getElementById('btn-cerrar');
-    const infoNombre   = document.getElementById('info-nombre');
-    const infoImagen   = document.getElementById('info-imagen');
-    const infoDesc     = document.getElementById('info-descripcion');
-    const btnVerMas    = document.getElementById('btn-ver-mas');
-    const btnAnterior  = document.getElementById('btn-anterior');
-    const btnSiguiente = document.getElementById('btn-siguiente');
-    const indicadores  = document.getElementById('indicadores');
+    /* =============================================
+       REFERENCIAS A ELEMENTOS CREADOS
+       
+       QUÉ HACE:
+       Busca los elementos que ACABAMOS de crear
+       con innerHTML y los guarda en variables
+       para poder manipularlos después.
+       
+       NOTA:
+       Estos elementos EXISTEN porque los creamos
+       arriba con innerHTML. Ahora los guardamos
+       en variables para no escribir getElementById()
+       cada vez que los usemos.
+       ============================================= */
+    const btnCerrar    = document.getElementById('btn-cerrar');     // botón X
+    const infoNombre   = document.getElementById('info-nombre');    // titulo
+    const infoImagen   = document.getElementById('info-imagen');    // la foto
+    const infoDesc     = document.getElementById('info-descripcion'); // texto
+    const btnVerMas    = document.getElementById('btn-ver-mas');    // enlace
+    const btnAnterior  = document.getElementById('btn-anterior');   // flecha <
+    const btnSiguiente = document.getElementById('btn-siguiente');  // flecha >
+    const indicadores  = document.getElementById('indicadores');    // contenedor de puntos
 
     // =============================================
     // FUNCIÓN: mostrarImagen

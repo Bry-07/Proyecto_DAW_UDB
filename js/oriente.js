@@ -1,18 +1,35 @@
 // =============================================
-// oriente.js
-// Manejo de la página Zona Oriente:
-//   - Arreglo de edificios con datos en objetos JS
-//   - Renderizado dinámico de tarjetas en el DOM
-//   - Filtrado por categoría
-//   - JS no invasivo (sin código en el HTML)
+// ARCHIVO: oriente.js
+// PROPÓSITO: Manejo completo de la página de Zona Oriente
+// FUNCIONALIDADES:
+//   - Arreglo de edificios con datos almacenados como objetos JS
+//   - Renderizado dinámico: todo el contenido se genera desde JavaScript
+//   - Sistema de filtrado: muestra edificios por categoría seleccionada
+//   - JS no invasivo: NO hay código JavaScript mezclado en el HTML
+// ESTRUCTURA:
+//   1. Array de edificios (edificiosOriente)
+//   2. Array de categorías para filtros (categoriasOriente)
+//   3. Funciones que crean y muestran contenido en el DOM
+//   4. Event listeners para la interactividad
 // =============================================
 
+// Espera a que el HTML esté completamente cargado antes de ejecutar el código
+// Esto asegura que los elementos del DOM (como .main-content) existan
 document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // ARREGLO PRINCIPAL: edificiosOriente
-    // Cada elemento es un objeto con los datos del edificio
+    // Base de datos de todos los edificios/instalaciones de Zona Oriente
+    // Cada elemento es un objeto con las siguientes propiedades:
+    //   - id: identificador único del edificio
+    //   - nombre: nombre que se muestra al usuario
+    //   - categoria: clasificación (academico, servicio, investigacion, etc.)
+    //   - descripcion: texto explicativo que aparece en la tarjeta
+    //   - enlace: URL a la página de detalles del edificio
+    //   - icono: clase del icono Font Awesome que se muestra
+    //   - imagenes: array de rutas de fotos (preparado para futuras expansiones)
     // =============================================
+    
     const edificiosOriente = [
         {
             id:          "edif-a",
@@ -162,6 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // ARREGLO DE CATEGORÍAS para los botones de filtro
+    // Cada objeto contiene:
+    //   - valor: el identificador usado en data-filtro (debe coincidir con categoría en edificios)
+    //   - etiqueta: el texto que se muestra en el botón al usuario
+    // Usado por generarBotonesFiltro() para crear los botones dinámicamente
     // =============================================
     const categoriasOriente = [
         { valor: "todos",         etiqueta: "Todos"          },
@@ -175,15 +196,23 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // =============================================
-    // REFERENCIA AL DOM
+    // SELECCIÓN DE ELEMENTO DEL DOM
     // =============================================
+    // Obtiene el contenedor principal donde irá todo el contenido
+    // Viene del HTML base.html con clase .main-content
+    // Acá se agregarán: header, filtros, contador y grilla de tarjetas
     const main = document.querySelector('.main-content');
 
     // =============================================
-    // CONSTRUCCIÓN DINÁMICA — todo el HTML lo genera el JS
+    // CONSTRUCCIÓN DINÁMICA DEL CONTENIDO
+    // El código crea TODOS los elementos HTML desde JavaScript
+    // Nó hay código HTML directo en archivos .html
+    // Ventajas: reutilizable, fácil de mantener, sin duplicación
     // =============================================
 
-    // Header de zona
+    // PASO 1: Crear y agregar el HEADER (título de la zona)
+    // Este es el encabezado visual con el título "Zona Oriente"
+    // Incluye un icono de mapa y un subtítulo explicativo
     const header = document.createElement('section');
     header.classList.add('zona-header');
     header.innerHTML = `
@@ -194,19 +223,25 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     main.appendChild(header);
 
-    // Contenedor de filtros
+    // PASO 2: Crear contenedor para los BOTONES DE FILTRO
+    // Los botones se generan dinámicamente por generarBotonesFiltro()
+    // El usuario puede hacer clic para filtrar por categoría
     const filtroWrapper = document.createElement('div');
     filtroWrapper.classList.add('filtro-wrapper');
     filtroWrapper.id = 'filtro-oriente';
     main.appendChild(filtroWrapper);
 
-    // Contador
+    // PASO 3: Crear contador de resultados
+    // Muestra cuántos edificios se están mostrando (ej: "Mostrando 5 edificios")
+    // Se actualiza cada vez que se aplica un filtro
     const contador = document.createElement('p');
     contador.classList.add('contador-resultados');
     contador.id = 'contador-oriente';
     main.appendChild(contador);
 
-    // Grilla de tarjetas
+    // PASO 4: Crear la GRILLA (grid) para las tarjetas de edificios
+    // Acá se mostrarán todas las tarjetas de edificios
+    // Se limpiará y rellenará cada vez que se aplica un filtro
     const grilla = document.createElement('div');
     grilla.classList.add('edificios-grid');
     grilla.id = 'grilla-oriente';
@@ -214,15 +249,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // FUNCIÓN: crearTarjeta
-    // Genera el HTML de una tarjeta desde el objeto del edificio
-    // @param {object} edificio
-    // @returns {HTMLElement}
+    // Crea una tarjeta de edificio en formato HTML
+    // Recibe un objeto edificio con todos sus datos
+    // Retorna un elemento <article> con estilo y contenido
+    // Los atributos data-* se usan para filtrado posterior
+    // @param {object} edificio - Objeto con id, nombre, categoría, etc.
+    // @returns {HTMLElement} - Element <article> listo para insertar en el DOM
     // =============================================
     function crearTarjeta(edificio) {
         const tarjeta = document.createElement('article');
         tarjeta.classList.add('edificio-card');
-        tarjeta.setAttribute('data-categoria', edificio.categoria);
-        tarjeta.setAttribute('data-id', edificio.id);
+        // Atributos data-* se usan para filtrado y selección por CSS/JS
+        tarjeta.setAttribute('data-categoria', edificio.categoria); // Para filtrar
+        tarjeta.setAttribute('data-id', edificio.id);               // Para identificar únicamente
         tarjeta.innerHTML = `
             <div class="card-icono">
                 <i class="${edificio.icono}"></i>
@@ -237,27 +276,35 @@ document.addEventListener("DOMContentLoaded", () => {
         return tarjeta;
     }
 
-    // =============================================
-    // FUNCIÓN: renderizarTarjetas
-    // Inserta las tarjetas en la grilla usando el DOM
-    // @param {Array} lista
-    // =============================================
     function renderizarTarjetas(lista) {
+        // Limpia la grilla: borra todas las tarjetas anteriores
         grilla.innerHTML = '';
+        
+        // Si la lista viene vacía (no hay edificios en esa categoría)
         if (lista.length === 0) {
+            // Muestra un mensaje de "no se encontraron resultados"
             grilla.innerHTML = `<p class="sin-resultados"><i class="fas fa-search"></i> No se encontraron edificios en esta categoría.</p>`;
+            // Limpia el contador (no muestra número si no hay resultados)
             contador.textContent = '';
-            return;
+            return; // Salir de la función
         }
+        
+        // Si hay edificios, actualiza el contador con la cantidad
+        // Usa operador ternario para pluralizar correctamente (edificio vs edificios)
         contador.textContent = `Mostrando ${lista.length} edificio${lista.length !== 1 ? 's' : ''}`;
+        
+        // Recorre cada edificio en la lista
+        // Para cada uno: crea una tarjeta con crearTarjeta() y la agrega a la grilla
         lista.forEach(edificio => grilla.appendChild(crearTarjeta(edificio)));
     }
 
     // =============================================
     // FUNCIÓN: filtrarPorCategoria
-    // Filtra el arreglo según la categoría seleccionada
-    // @param {string} categoria
-    // @returns {Array}
+    // Busca en el arreglo edificiosOriente los edificios que coincidan con la categoría
+    // Si la categoría es "todos", devuelve todos los edificios sin filtrar
+    // Si es otra categoría, usa .filter() para devolver solo los que coincidan
+    // @param {string} categoria - La categoría a filtrar (ej: "academico", "servicio")
+    // @returns {Array} - Array filtrado de edificios que cumplen la categoría
     // =============================================
     function filtrarPorCategoria(categoria) {
         if (categoria === "todos") return edificiosOriente;
@@ -266,7 +313,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // FUNCIÓN: generarBotonesFiltro
-    // Genera dinámicamente los botones desde el arreglo de categorías
+    // Crea todos los botones de filtro basándose en el arreglo categoriasOriente
+    // Cada botón tiene un data-filtro con el valor de la categoría
+    // El botón "Todos" inicia como activo (tiene clase .activo)
+    // Al hacer clic en un botón:
+    //   1. Desactiva todos los botones
+    //   2. Activa el botón presionado
+    //   3. Filtra los edificios según la categoría
+    //   4. Renderiza solo los que coinciden
     // =============================================
     function generarBotonesFiltro() {
         filtroWrapper.innerHTML = '';
@@ -277,9 +331,13 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.textContent = cat.etiqueta;
             if (cat.valor === "todos") btn.classList.add('activo');
 
+            // Evento: al hacer clic en un botón de filtro
             btn.addEventListener('click', () => {
+                // Quita la clase "activo" de TODOS los botones
                 filtroWrapper.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('activo'));
+                // Agrega la clase "activo" solo al botón que fue clickeado
                 btn.classList.add('activo');
+                // Filtra los edificios según la categoría y renderiza los resultados
                 renderizarTarjetas(filtrarPorCategoria(cat.valor));
             });
 
@@ -288,9 +346,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =============================================
-    // INICIALIZACIÓN
+    // INICIALIZACIÓN - Se ejecuta cuando el DOM está listo
     // =============================================
+    // 1. Genera todos los botones de filtro en el contenedor #filtro-oriente
     generarBotonesFiltro();
+    // 2. Renderiza TODAS las tarjetas de edificios al cargar la página
     renderizarTarjetas(edificiosOriente);
 
 }); // Fin DOMContentLoaded
