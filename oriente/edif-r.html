@@ -52,7 +52,7 @@
                                 </label>
                                 <input type="checkbox" id="drop-oriente" hidden />
                                 <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/oriente.html">Mapa - Zona Oriente</a></li>
+                                    <li><a href="../html/oriente.html">Zona Oriente</a></li>
                                     <li><a href="edif-a.html">Edificio A</a></li>
                                     <li><a href="edif-pinacoteca.html">Pinacoteca</a></li>
                                 </ul>
@@ -63,7 +63,7 @@
                                 </label>
                                 <input type="checkbox" id="drop-occidente" hidden />
                                 <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/occidente.html">Mapa - Zona Occidente</a></li>
+                                    <li><a href="../html/occidente.html">Zona Occidente</a></li>
                                     <li><a href="../occidente/hangar.html">Hangar</a></li>
                                     <li><a href="../occidente/observatorio.html">Observatorio</a></li>
                                 </ul>
@@ -85,13 +85,11 @@
     <main class="main-content">
         <section class="historia">
             <div class="hero">
-                <img src="../img/back.jpg" alt="edificiodelquesehabla">
+                <img src="../fotos/IMG_4403.JPG" alt="edificiodelquesehabla">
                 <div class="hero-text">
-                    <h1>Edificio X</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ipsa, magni perferendis quis,
-                        maiores
-                        nihil nostrum iure sequi, ad dolor sit deleniti aliquid? Ratione enim fugiat dicta iste,
-                        asperiores unde.
+                    <h1>Edificio R</h1>
+                    <p>En este edificio se encuentran las oficinas administrativas de la universidad, así como el
+                        departamento de admisiones y el departamento de recursos humanos.
                     </p>
                 </div>
             </div>
@@ -104,15 +102,8 @@
 
                 <div class="block">
                     <h2>Contenido</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, architecto eos nesciunt, nulla
-                        incidunt
-                        voluptate fugiat tempore, iusto voluptatem totam eveniet dolores excepturi consequatur. Beatae
-                        est delectus
-                        iusto ipsum officiis!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id earum iure ducimus, voluptas quasi,
-                        perferendis dolorem ut nemo fugiat, exercitationem asperiores? Odio reprehenderit magni soluta
-                        repellat!
-                        Illo laudantium a laboriosam.</p>
+                    <p>Edificio en donde se encuentra muchas oficinas de multiples departamentos como lo es la
+                        secretaria general , decanatos, finanzas</p>
 
                 </div>
 
@@ -121,9 +112,9 @@
                 <div class="block">
                     <h2>Galeria</h2>
                     <div class="galeria">
-                        <img src="../img/plaza.jpg" alt="img1">
-                        <img src="../img/plaza.jpg" alt="img2">
-                        <img src="../img/plaza.jpg" alt="img3">
+                        <img src="../fotos/IMG_4403.JPG" alt="img1">
+                        <img src="../fotos/IMG_4404.JPG" alt="img2">
+                        <img src="../fotos/IMG_4404.JPG" alt="img3">
                     </div>
                 </div>
 
@@ -133,20 +124,20 @@
                     <h2>Informacion General </h2>
                     <table>
                         <tr>
-                            <th>Dato 1</th>
-                            <td>inf dato1</td>
+                            <th>Decanatos</th>
+                            <td>Oficinas administrativas de decanato</td>
                         </tr>
                         <tr>
-                            <th>Dato 2</th>
-                            <td>inf dato2</td>
+                            <th>Vicerectoria academica</th>
+                            <td>oficina de administracion y finanzas</td>
                         </tr>
                         <tr>
-                            <th>Dato 3</th>
-                            <td>inf dato3</td>
+                            <th>Colecturia</th>
+                            <td>aqui es donde puedes realizar tus pagos de cuotas</td>
                         </tr>
                         <tr>
-                            <th>Dato 4</th>
-                            <td>inf dato4</td>
+                            <th>Secretaria General</th>
+                            <td>aca se encuentra las oficinas de secretaria general</td>
                         </tr>
                     </table>
                 </div>
@@ -155,10 +146,10 @@
                 <div class="block">
                     <h2>Caracteristicas</h2>
                     <ul class="list">
-                        <li>Dato 1</li>
-                        <li>Dato 2</li>
-                        <li>Dato 3</li>
-                        <li>Dato 4</li>
+                        <li>Finanzas</li>
+                        <li>Decanatos</li>
+                        <li>Colecturia</li>
+                        <li>Secretaria General</li>
                     </ul>
                 </div>
             </div>
@@ -186,11 +177,11 @@
             <div class="footer-links">
                 <h3>Enlaces Útiles</h3>
                 <ul>
-                    <li><a href="oriente.html">Zona Oriente</a></li>
-                    <li><a href="occidente.html">Zona Occidente</a></li>
-                    <li><a href="mapa.html">Mapa del Campus</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="creadores.html">Creadores</a></li>
+                    <li><a href="../html/oriente.html">Zona Oriente</a></li>
+                    <li><a href="../html/occidente.html">Zona Occidente</a></li>
+                    <li><a href="../html/mapa.html">Mapa del Campus</a></li>
+                    <li><a href="../html/contacto.html">Contacto</a></li>
+                    <li><a href="../html/creadores.html">Creadores</a></li>
                 </ul>
             </div>
 
@@ -220,6 +211,16 @@
 
     <!-- Navbar script -->
     <script src="../js/navbar.js"></script>
+
+    <!-- Centrar h1 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const h1 = document.querySelector('h1');
+            if (h1) {
+                h1.style.textAlign = 'center';
+            }
+        });
+    </script>
 
 </body>
 

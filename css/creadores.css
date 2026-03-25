@@ -1,94 +1,233 @@
-.creadores{
-    padding: 70px 40px;
-    margin-top: 5px;
+/* =============================================
+   CREADORES.CSS
+   Estilos para la página de desarrolladores
+   ============================================= */
+
+/* Fondo general */
+body {
+  background-image: url(../img/fondo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-top: 60px;
 }
 
-.titulo{
-    font-size: 50px;
-
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 31, 60, 0.80), rgba(10, 31, 60, 0.94));
+  z-index: -1;
 }
 
-.contenido{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+/* =============================================
+   HERO / ENCABEZADO
+   ============================================= */
+.creadores-main {
+  padding-bottom: 80px;
+}
+
+.creadores-hero {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.creadores-subtitulo {
+  color: #f4c107;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.creadores-titulo {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Línea decorativa bajo el título */
+.creadores-titulo-linea {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #f4c107, #ffda44);
+  border-radius: 4px;
+  margin: 0 auto 24px;
+}
+
+.creadores-descripcion {
+  color: #a0b0cc;
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.creadores-descripcion strong {
+  color: #d0dff5;
+}
+
+/* =============================================
+   GRID DE CARDS
+   ============================================= */
+.creadores-grid-section {
+  padding: 0 40px 60px;
+}
+
+.creadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =============================================
+   CARD DE DESARROLLADOR
+   ============================================= */
+.card-creador {
+  background: rgba(18, 41, 77, 0.90);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 0 24px 28px;
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Animación de entrada */
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-creador:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(244, 193, 7, 0.2);
+}
+
+/* Línea de color superior */
+.card-linea {
+  height: 5px;
+  width: calc(100% + 48px);   /* Ocupa todo el ancho incluyendo padding */
+  margin-left: -24px;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 28px;
+}
+
+/* =============================================
+   FOTO
+   ============================================= */
+.foto-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid;          /* El color lo pone el JS inline */
+  margin: 0 auto 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card-creador:hover .foto-wrapper {
+  transform: scale(1.06);
+}
+
+.card-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =============================================
+   BADGE ROL
+   ============================================= */
+.card-rol {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid;          /* Color lo pone el JS */
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.card-rol i {
+  margin-right: 5px;
+  font-size: 0.72rem;
+}
+
+/* =============================================
+   NOMBRE
+   ============================================= */
+.card-nombre {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* =============================================
+   CARNET Y CARRERA
+   ============================================= */
+.card-carnet,
+.card-carrera {
+  color: #8a9dc0;
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.card-carnet i,
+.card-carrera i {
+  color: #f4c107;
+  margin-right: 6px;
+  font-size: 0.78rem;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+  .creadores-titulo {
+    font-size: 2.2rem;
+  }
+
+  .creadores-grid-section {
+    padding: 0 20px 60px;
+  }
+
+  .creadores-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+  }
 }
 
-.card{
-     background: rgba(18, 41, 77, 0.88);
-    border-radius: 15px;
-    padding: 15px;
-    position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.274);
-    transition: all 0.3s ease;
+@media (max-width: 480px) {
+  .creadores-titulo {
+    font-size: 1.8rem;
+  }
+
+  .creadores-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
 }
-
-.linea{
-    height: 5px;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.linea-amarilla{
-    background-color: yellow;
-}
-
-.linea-rosa{
-    background-color: pink;
-}
-
-.linea-celeste{
-    background-color: cadetblue;
-}
-
-.linea-morado{
-    background-color: blueviolet;
-}
-
-.linea-verde{
-    background-color: yellowgreen;
-}
-
-
-.card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(255, 253, 108, 0.829);
-}
-
-.card img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: auto;
-    margin-bottom: 15px;
-    object-fit: cover;
-    align-items: center;
-    justify-content: center;
-}
-
-.rol{
-    font-size: 15px;
-    letter-spacing: 1px;
-    color: #ffff;
-    display: block;
-    margin: auto;
-}
-
-.card h3{
-    margin: auto;
-    font-size: 25px;
-    color: #ffff;
-}
-
-.card p{
-    font-size: 15px;
-    color: #ffff;
-    margin: auto;
-    text-align: justify;
-}
-
-
-

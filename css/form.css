@@ -74,6 +74,28 @@ body::before {
   font-size: 1.05rem;
 }
 
+/* Icono dentro del label */
+.label-icon {
+  color: #f4c107;
+  font-size: 0.95rem;
+  margin-right: 6px;
+}
+
+/* Asterisco de campo requerido */
+.campo-requerido {
+  color: #e74c3c;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* Nota de campos requeridos al pie del formulario */
+.nota-requeridos {
+  color: #7a8db3;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
 /* Inputs y select */
 .form-control,
 .form-select {
@@ -116,6 +138,11 @@ textarea.form-control {
   width: 100%;
   margin-top: 25px;
   transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.btn-submit i {
+  margin-right: 8px;
 }
 
 .btn-submit:hover {

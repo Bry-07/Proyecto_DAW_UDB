@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre: "Edificio A",
             imagenes: [
                 "../img_mapa/IMG_4406 1.svg",
-                "../img_mapa/IMG_4411 1.svg",
-                "../img_mapa/IMG_4414 1.svg"
+                "../img_mapa/IMG_4414 1.svg",
             ],
             descripcion: "El Edificio A alberga aulas de clases y oficinas administrativas de la UDB.",
             enlace: "../oriente/edif-a.html"
@@ -34,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_B": {
             nombre: "Edificio B",
             imagenes: [
-                "../img_mapa/edif_b_1.jpg"
+                "../img_mapa/IMG_4411 1.svg",
+                
             ],
             descripcion: "Edificio B con laboratorios y aulas especializadas.",
             enlace: "../oriente/edif-b.html"
@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_C": {
             nombre: "Edificio C",
             imagenes: [
-                "../img_mapa/edif_c_1.jpg"
+                "../img_mapa/IMG_4457 1.svg",
+                "../img_mapa/IMG_4448 1.svg",
             ],
             descripcion: "Edificio C con instalaciones modernas para clases.",
             enlace: "../oriente/edif-c.html"
@@ -58,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_CDIU": {
             nombre: "Centro de Desarrollo e Innovación UDB",
             imagenes: [
-                "../img_mapa/cdiu_1.jpg"
+                "../img_mapa/0e5d1a263f68ee03850a80f688c136b0_XL 1.svg",
             ],
             descripcion: "Centro de investigación e innovación tecnológica de la UDB.",
             enlace: "../oriente/edif-cdiu.html"
@@ -70,8 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Biblioteca": {
             nombre: "Biblioteca",
             imagenes: [
-                "../img_mapa/biblioteca_1.jpg",
-                "../img_mapa/biblioteca_2.jpg"
+                "../img_mapa/IMG_4374 1.svg",
             ],
             descripcion: "La biblioteca universitaria con miles de libros y recursos digitales.",
             enlace: "../oriente/edif-biblio.html"
@@ -83,8 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Vivienda_Salesiana": {
             nombre: "Vivienda Salesiana",
             imagenes: [
-                "../img_mapa/salesiana_1.jpg",
-                "../img_mapa/salesiana_2.jpg"
+                "../img_mapa/IMG_4339 1.svg",
             ],
             descripcion: "Residencia de los padres salesianos dentro del campus.",
             enlace: "../oriente/edif-viviendaS.html"
@@ -96,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Rafael_Meza_Ayau": {
             nombre: "Edificio Rafael Meza Ayau",
             imagenes: [
-                "../img_mapa/rma_1.jpg"
+                "../img_mapa/IMG_4356 1.svg",
+                "../img_mapa/IMG_4354 1.svg",
+                "../img_mapa/IMG_4351 1.svg",
             ],
             descripcion: "Edificio dedicado a actividades académicas y culturales.",
             enlace: "../oriente/edif-pinacoteca.html"
@@ -108,7 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Igle": {
             nombre: "Capilla UDB",
             imagenes: [
-                "../img_mapa/capilla_1.jpg"
+                "../img_mapa/IMG_4425 1.svg",
+                "../img_mapa/IMG_4429 1.svg",
+                "../img_mapa/IMG_4428 1.svg",
+                "../img_mapa/IMG_4423 1.svg",
+                "../img_mapa/IMG_4420 1.svg",
             ],
             descripcion: "Espacio de reflexión y espiritualidad de la comunidad salesiana.",
             enlace: "../oriente/capilla.html"
@@ -120,7 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_R": {
             nombre: "Edificio R",
             imagenes: [
-                "../img_mapa/edif_r_1.jpg"
+                "../img_mapa/IMG_4405 1.svg", 
+                "../img_mapa/IMG_4404 1.svg",
             ],
             descripcion: "Edificio R con aulas y espacios académicos.",
             enlace: "../oriente/edif-r.html"
@@ -132,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Centro_de_Pastoral": {
             nombre: "Centro de Pastoral",
             imagenes: [
-                "../img_mapa/pastoral_1.jpg"
+                "../img_mapa/IMG_4433 1.svg",
             ],
             descripcion: "Centro dedicado a la formación humana y espiritual del campus.",
             enlace: "../oriente/edif-CPastoral.html"
@@ -144,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Magna_A": {
             nombre: "Magna A",
             imagenes: [
-                "../img_mapa/magna_a_1.jpg"
+                "../img_mapa/IMG_4473 1.svg",
             ],
             descripcion: "Auditorio Magna A para eventos académicos y culturales.",
             enlace: "../oriente/edif-magnaA.html"
@@ -156,7 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Magna_B": {
             nombre: "Magna B",
             imagenes: [
-                "../img_mapa/magna_b_1.jpg"
+                "../img_mapa/IMG_4459 1.svg",
+                "../img_mapa/IMG_4472 1.svg",
             ],
             descripcion: "Auditorio Magna B para conferencias y actividades universitarias.",
             enlace: "../oriente/edif-magnaB.html"
@@ -168,7 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Magna_C": {
             nombre: "Magna C",
             imagenes: [
-                "../img_mapa/magna_c_1.jpg"
+                "../img_mapa/IMG_5157 1.svg",
+                "../img_mapa/IMG_5148 1.svg", 
+                "../img_mapa/IMG_5146 1.svg",
             ],
             descripcion: "Auditorio Magna C, espacio para grandes eventos del campus.",
             enlace: "../occidente/edif-magnaC.html"
@@ -180,7 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Profesores": {
             nombre: "Edificio de Profesores",
             imagenes: [
-                "../img_mapa/profesores_1.jpg"
+                "../img_mapa/IMG_4295 1.svg",
+                "../img_mapa/IMG_4436 1.svg",
+                "../img_mapa/IMG_4437 1.svg",
+                "../img_mapa/IMG_4441 1.svg",
             ],
             descripcion: "Edificio con cubículos y oficinas para el cuerpo docente.",
             enlace: "../oriente/edif-profesores.html"
@@ -192,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Centro_de_Repro": {
             nombre: "Centro de Reproducción",
             imagenes: [
-                "../img_mapa/repro_1.jpg"
+                "../img_mapa/IMG_4334 1.svg",
             ],
             descripcion: "Centro de reproducción de materiales académicos.",
             enlace: "../oriente/centroR.html"
@@ -204,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Comedor_Profe": {
             nombre: "Comedor de Profesores",
             imagenes: [
-                "../img_mapa/comedor_profe_1.jpg"
+                "../img_mapa/IMG_4299 1.svg",
             ],
             descripcion: "Área de alimentación exclusiva para el personal docente.",
             enlace: "../oriente/comedor1.html"
@@ -216,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Multigim_UDB": {
             nombre: "Multigimnasio UDB",
             imagenes: [
-                "../img_mapa/multigim_1.jpg"
+                "../img_mapa/IMG_4336 1.svg",
             ],
             descripcion: "Instalaciones deportivas para toda la comunidad universitaria.",
             enlace: "../oriente/edif-gym.html"
@@ -228,7 +240,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Ocho": {
             nombre: "Edificio 8",
             imagenes: [
-                "../img_mapa/edif_8_1.jpg"
+                "../img_mapa/IMG_5151 1.svg",
+                "../img_mapa/IMG_5150 1.svg",
             ],
             descripcion: "Edificio 8 con aulas y laboratorios especializados.",
             enlace: "../occidente/edif-8.html"
@@ -240,7 +253,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Facul": {
             nombre: "Edificio de Facultades",
             imagenes: [
-                "../img_mapa/facul_1.jpg"
+                "../img_mapa/IMG_5154 1.svg",
+                "../img_mapa/IMG_5156 1.svg",
+                "../img_mapa/IMG_5138 1.svg",
+                "../img_mapa/IMG_5140 1.svg",
             ],
             descripcion: "Edificio principal de las facultades de la UDB.",
             enlace: "../occidente/edif-ciencias.html"
@@ -252,7 +268,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Dos": {
             nombre: "Edificio 2",
             imagenes: [
-                "../img_mapa/edif_2_1.jpg"
+                "../img_mapa/IMG_5179 1.svg",
+                "../img_mapa/IMG_5195 1.svg",
+                "../img_mapa/IMG_5200 1.svg",
             ],
             descripcion: "Edificio 2 con aulas y servicios académicos.",
             enlace: "../occidente/edif-2.html"
@@ -264,7 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Tres": {
             nombre: "Edificio 3",
             imagenes: [
-                "../img_mapa/edif_3_1.jpg"
+                "../img_mapa/IMG_5176 1.svg",
+                "../img_mapa/IMG_5204 1.svg",
             ],
             descripcion: "Edificio 3 con laboratorios y aulas de la UDB.",
             enlace: "../occidente/edif-3.html"
@@ -276,7 +295,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Cuatro": {
             nombre: "Edificio 4",
             imagenes: [
-                "../img_mapa/edif_4_1.jpg"
+                "../img_mapa/IMG_5177 1.svg",
+                "../img_mapa/IMG_5175 1.svg",
             ],
             descripcion: "Edificio 4 con instalaciones académicas modernas.",
             enlace: "../occidente/edif-4.html"
@@ -288,7 +308,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Cinco": {
             nombre: "Edificio 5",
             imagenes: [
-                "../img_mapa/edif_5_1.jpg"
+                "../img_mapa/IMG_5167 1.svg",
+                "../img_mapa/IMG_5159 1.svg",
             ],
             descripcion: "Edificio 5 con aulas especializadas.",
             enlace: "../occidente/edif-5.html"
@@ -300,7 +321,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Seis": {
             nombre: "Edificio 6",
             imagenes: [
-                "../img_mapa/edif_6_1.jpg"
+                "../img_mapa/IMG_5162 1.svg",
+                "../img_mapa/IMG_5164 1.svg",
+                "../img_mapa/IMG_5160 1.svg",
             ],
             descripcion: "Edificio 6 con laboratorios y aulas de clases.",
             enlace: "../occidente/edif-6.html"
@@ -312,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Edif_Siete": {
             nombre: "Edificio 7",
             imagenes: [
-                "../img_mapa/edif_7_1.jpg"
+                "../img_mapa/IMG_5136 1.svg",
             ],
             descripcion: "Edificio 7 con instalaciones para actividades académicas.",
             enlace: "../occidente/edif-7.html"
@@ -324,7 +347,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "OWCC": {
             nombre: "OWCC",
             imagenes: [
-                "../img_mapa/owcc_1.jpg"
+                "../img_mapa/IMG_5210 1.svg",
+                "../img_mapa/IMG_5209 1.svg",
+                "../img_mapa/IMG_5173 1.svg",
             ],
             descripcion: "Centro de actividades y servicios estudiantiles.",
             enlace: "../occidente/OWCC.html"
@@ -336,7 +361,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "OMM": {
             nombre: "OMM",
             imagenes: [
-                "../img_mapa/omm_1.jpg"
+                "../img_mapa/IMG_5212 1.svg",
+                "../img_mapa/IMG_5213 1.svg",
             ],
             descripcion: "Edificio OMM de la Universidad Don Bosco.",
             enlace: "../occidente/observatorio.html"
@@ -348,7 +374,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Almacen_General": {
             nombre: "Almacén General",
             imagenes: [
-                "../img_mapa/almacen_1.jpg"
+                "../img_mapa/IMG_5273 1.svg",
+                "../img_mapa/IMG_5271 1.svg",
             ],
             descripcion: "Almacén general de materiales y recursos del campus.",
             enlace: "../occidente/almacén.html"
@@ -360,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Avion": {
             nombre: "Hangar - Facultad de Aeronáutica",
             imagenes: [
-                "../img_mapa/avion_1.jpg"
+                "../img_mapa/IMG_5276 1.svg",
             ],
             descripcion: "Instalaciones de la Facultad de Ingeniería Aeronáutica.",
             enlace: "../occidente/hangar.html"
@@ -372,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Comedor_Edif_Seis": {
             nombre: "Cafetería Zona Occidente",
             imagenes: [
-                "../img_mapa/cafeteria_occ_1.jpg"
+                "../img_mapa/IMG_5219 1.svg",
             ],
             descripcion: "Cafetería principal de la zona occidente del campus.",
             enlace: "../occidente/comedor2.html"
@@ -384,7 +411,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "Plaza_Bande": {
             nombre: "Plaza de las Banderas",
             imagenes: [
-                "../img_mapa/plaza_banderas_1.jpg"
+                "../img_mapa/IMG_4416 1.svg",
+                "../img_mapa/IMG_4417 1.svg",
+                "../img_mapa/IMG_4418 1.svg",
             ],
             descripcion: "Plaza central con las banderas de El Salvador y la UDB.",
             enlace: "../occidente/banderas.html"
@@ -407,11 +436,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // =============================================
     const infoContainer = document.getElementById('info-container');
     const mapaContainer = document.querySelector('.mapa-container');
-    const edificios     = document.querySelectorAll('path');
 
     // =============================================
     // CONSTRUCCIÓN DINÁMICA DEL CUADRO DE INFORMACIÓN
-    // Se crea una sola vez y se rellena con JS cada vez que el usuario hace clic
+    // Se crea una sola vez y se rellena con JS cada vez que el usuario interactúa
     // =============================================
     infoContainer.innerHTML = `
         <button id="btn-cerrar">✕</button>
@@ -429,14 +457,14 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     // Referencias a los elementos del cuadro recién creado
-    const btnCerrar   = document.getElementById('btn-cerrar');
-    const infoNombre  = document.getElementById('info-nombre');
-    const infoImagen  = document.getElementById('info-imagen');
-    const infoDesc    = document.getElementById('info-descripcion');
-    const btnVerMas   = document.getElementById('btn-ver-mas');
-    const btnAnterior = document.getElementById('btn-anterior');
-    const btnSiguiente= document.getElementById('btn-siguiente');
-    const indicadores = document.getElementById('indicadores');
+    const btnCerrar    = document.getElementById('btn-cerrar');
+    const infoNombre   = document.getElementById('info-nombre');
+    const infoImagen   = document.getElementById('info-imagen');
+    const infoDesc     = document.getElementById('info-descripcion');
+    const btnVerMas    = document.getElementById('btn-ver-mas');
+    const btnAnterior  = document.getElementById('btn-anterior');
+    const btnSiguiente = document.getElementById('btn-siguiente');
+    const indicadores  = document.getElementById('indicadores');
 
     // =============================================
     // FUNCIÓN: mostrarImagen
@@ -487,13 +515,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Detiene cualquier intervalo anterior antes de iniciar uno nuevo
     // =============================================
     function iniciarAutoCarrusel() {
-        // Detiene el intervalo anterior si existe
         if (intervaloCarrusel) clearInterval(intervaloCarrusel);
 
         // Solo inicia el auto-avance si hay más de una imagen
         if (imagenesActuales.length > 1) {
             intervaloCarrusel = setInterval(() => {
-                // Avanza a la siguiente imagen de forma cíclica
                 indiceImagenActual = (indiceImagenActual === imagenesActuales.length - 1)
                     ? 0
                     : indiceImagenActual + 1;
@@ -521,12 +547,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // =============================================
     function navegarCarrusel(direccion) {
         if (direccion === 'anterior') {
-            // Si estamos en la primera, va a la última
             indiceImagenActual = (indiceImagenActual === 0)
                 ? imagenesActuales.length - 1
                 : indiceImagenActual - 1;
         } else {
-            // Si estamos en la última, vuelve a la primera
             indiceImagenActual = (indiceImagenActual === imagenesActuales.length - 1)
                 ? 0
                 : indiceImagenActual + 1;
@@ -539,7 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // FUNCIÓN: posicionarCuadro
-    // Calcula y aplica la posición del cuadro de info cerca del edificio clicado,
+    // Calcula y aplica la posición del cuadro de info cerca del edificio activo,
     // asegurándose de que no se salga de los bordes del mapa
     // @param {DOMRect} rectEdificio - posición del edificio en pantalla
     // =============================================
@@ -575,15 +599,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // FUNCIÓN: mostrarInfoEdificio
     // Rellena y muestra el cuadro de información de un edificio
     // @param {object} datos - objeto del edificio desde datosEdificios
-    // @param {DOMRect} rectEdificio - posición del edificio clicado
+    // @param {DOMRect} rectEdificio - posición del edificio activo
     // =============================================
     function mostrarInfoEdificio(datos, rectEdificio) {
-        // Rellena el cuadro con los datos del edificio
         infoNombre.textContent = datos.nombre;
         infoDesc.textContent   = datos.descripcion;
         btnVerMas.href         = datos.enlace;
 
-        // Carga las imágenes del carrusel
         imagenesActuales   = datos.imagenes;
         indiceImagenActual = 0;
 
@@ -599,11 +621,9 @@ document.addEventListener("DOMContentLoaded", () => {
         infoContainer.style.display    = 'block';
         infoContainer.style.visibility = 'hidden';
 
-        // Posiciona y muestra el cuadro
         posicionarCuadro(rectEdificio);
         infoContainer.style.visibility = 'visible';
 
-        // Inicia el paso automático de imágenes
         iniciarAutoCarrusel();
     }
 
@@ -613,8 +633,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // =============================================
     function cerrarCuadro() {
         infoContainer.style.display = 'none';
-        edificios.forEach(e => e.classList.remove('seleccionado'));
-        detenerAutoCarrusel(); // Detiene el temporizador al cerrar
+        document.querySelectorAll('path').forEach(e => e.classList.remove('seleccionado'));
+        detenerAutoCarrusel();
     }
 
     // =============================================
@@ -629,28 +649,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnCerrar.addEventListener('click', cerrarCuadro);
 
     // =============================================
-    // EVENT LISTENER: Clic en cada edificio del SVG
-    // Al hacer clic se resalta el edificio y se muestra su información
-    // =============================================
-    edificios.forEach(edificio => {
-        edificio.addEventListener('click', (evento) => {
-            evento.stopPropagation(); // Evita que se propague y cierre el cuadro
-
-            // Quita resaltado de todos y agrega al clicado
-            edificios.forEach(e => e.classList.remove('seleccionado'));
-            edificio.classList.add('seleccionado');
-
-            // Busca los datos del edificio por su id
-            const datos = datosEdificios[edificio.id];
-            if (!datos) return; // Si no hay datos, no hace nada
-
-            // Muestra el cuadro con la info y el carrusel
-            mostrarInfoEdificio(datos, edificio.getBoundingClientRect());
-        });
-    });
-
-    // =============================================
-    // EVENT LISTENER: Clic fuera del cuadro → cerrar
+    // EVENT LISTENER: Clic fuera del cuadro y del mapa → cerrar
     // =============================================
     document.addEventListener('click', cerrarCuadro);
 
@@ -661,5 +660,85 @@ document.addEventListener("DOMContentLoaded", () => {
     infoContainer.addEventListener('click', (evento) => {
         evento.stopPropagation();
     });
+
+    // =============================================
+    // FUNCIÓN: esMobile
+    // Retorna true si el ancho de pantalla es <= 768px (móvil/tablet)
+    // =============================================
+    function esMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // =============================================
+    // FUNCIÓN: activarEdificio
+    // Centraliza la lógica de resaltar y mostrar info de un edificio.
+    // Se usa tanto desde click (móvil) como desde mouseover (desktop)
+    // @param {HTMLElement} edificio - el <path> del SVG sobre el que se interactuó
+    // =============================================
+    function activarEdificio(edificio) {
+        document.querySelectorAll('path').forEach(e => e.classList.remove('seleccionado'));
+        edificio.classList.add('seleccionado');
+
+        const datos = datosEdificios[edificio.id];
+        if (!datos) return; // Si no hay datos registrados, no hace nada
+
+        mostrarInfoEdificio(datos, edificio.getBoundingClientRect());
+    }
+
+    // =============================================
+    // FUNCIÓN: asignarEventosEdificios
+    // Asigna los eventos correctos según el dispositivo:
+    //   - Desktop (>768px): mouseover muestra la tarjeta y SE QUEDA abierta
+    //     (no se cierra al quitar el cursor — solo con ✕ o clic fuera del mapa)
+    //   - Móvil/Tablet (<=768px): solo onclick
+    // Se llama al inicio y cada vez que cambia el tamaño de pantalla (resize)
+    // =============================================
+    function asignarEventosEdificios() {
+        const paths = document.querySelectorAll('path');
+
+        // Clona cada path para eliminar todos los listeners anteriores
+        // y evitar que se acumulen eventos duplicados al hacer resize
+        paths.forEach(edificio => {
+            const clone = edificio.cloneNode(true);
+            edificio.parentNode.replaceChild(clone, edificio);
+        });
+
+        // Vuelve a seleccionar los paths ya reemplazados y asigna los eventos correctos
+        document.querySelectorAll('path').forEach(edificio => {
+            if (esMobile()) {
+                // --- MÓVIL / TABLET: solo clic ---
+                edificio.addEventListener('click', (evento) => {
+                    evento.stopPropagation(); // Evita que se propague y cierre el cuadro
+                    activarEdificio(edificio);
+                });
+            } else {
+                // --- DESKTOP: hover muestra la tarjeta y se queda abierta ---
+                // La tarjeta NO se oculta al quitar el cursor (resuelve el problema del chero)
+                // Solo se cierra con el botón ✕, clic fuera, o hover en otro edificio
+                edificio.addEventListener('mouseover', () => {
+                    activarEdificio(edificio);
+                });
+
+                // Click también funciona en desktop (accesibilidad y teclado)
+                edificio.addEventListener('click', (evento) => {
+                    evento.stopPropagation();
+                    activarEdificio(edificio);
+                });
+            }
+        });
+    }
+
+    // =============================================
+    // EVENT LISTENER: Resize de pantalla
+    // Si el usuario gira la tablet o redimensiona la ventana,
+    // cierra la tarjeta activa y reasigna los eventos al modo correcto
+    // =============================================
+    window.addEventListener('resize', () => {
+        cerrarCuadro();            // Cierra cualquier tarjeta abierta
+        asignarEventosEdificios(); // Reasigna hover o click según el nuevo tamaño
+    });
+
+    // Inicializa los eventos la primera vez al cargar la página
+    asignarEventosEdificios();
 
 }); // Fin DOMContentLoaded

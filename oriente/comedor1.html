@@ -18,210 +18,188 @@
 </head>
 
 <body>
-    <!-- ==================== NAVBAR ==================== -->
-    <header class="udb-header">
-        <div class="container-header">
-            <div class="logo">
-                <a href="../html/index.html">
-                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
-                </a>
+    <<!--====================NAVBAR====================-->
+        <header class="udb-header">
+            <div class="container-header">
+                <div class="logo">
+                    <a href="../html/index.html">
+                        <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <label for="drop-main" class="menu-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <input type="checkbox" id="drop-main" hidden />
+
+                <nav class="main-nav">
+                    <ul class="nav-menu">
+                        <li><a href="../html/index.html">Inicio</a></li>
+
+                        <!-- Crear un objeto para cada elemento de la lista -->
+
+                        <li class="dropdown">
+                            <label for="drop-edificios" class="toggle-label">
+                                Edificios <i class="fas fa-chevron-down"></i>
+                            </label>
+                            <input type="checkbox" id="drop-edificios" hidden />
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <label for="drop-oriente" class="toggle-label-submenu">
+                                        Zona Oriente <i class="fas fa-chevron-right"></i>
+                                    </label>
+                                    <input type="checkbox" id="drop-oriente" hidden />
+                                    <ul class="dropdown-menu-level3">
+                                        <li><a href="../html/oriente.html">Zona Oriente</a></li>
+                                        <li><a href="edif-a.html">Edificio A</a></li>
+                                        <li><a href="edif-pinacoteca.html">Pinacoteca</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <label for="drop-occidente" class="toggle-label-submenu">
+                                        Zona Occidente <i class="fas fa-chevron-right"></i>
+                                    </label>
+                                    <input type="checkbox" id="drop-occidente" hidden />
+                                    <ul class="dropdown-menu-level3">
+                                        <li><a href="../html/occidente.html">Zona Occidente</a></li>
+                                        <li><a href="../occidente/hangar.html">Hangar</a></li>
+                                        <li><a href="../occidente/observatorio.html">Observatorio</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="../html/contacto.html">Contacto</a></li>
+                        <li><a href="../html/creadores.html">Creadores</a></li>
+                    </ul>
+
+                    <a href="../html/mapa.html" class="btn-explorar">Explorar Campus</a>
+                </nav>
             </div>
+        </header>
 
-            <label for="drop-main" class="menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <input type="checkbox" id="drop-main" hidden />
-
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="../html/index.html">Inicio</a></li>
-
-                    <!-- Crear un objeto para cada elemento de la lista -->
-
-                    <li class="dropdown">
-                        <label for="drop-edificios" class="toggle-label">
-                            Edificios <i class="fas fa-chevron-down"></i>
-                        </label>
-                        <input type="checkbox" id="drop-edificios" hidden />
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <label for="drop-oriente" class="toggle-label-submenu">
-                                    Zona Oriente <i class="fas fa-chevron-right"></i>
-                                </label>
-                                <input type="checkbox" id="drop-oriente" hidden />
-                                <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/oriente.html">Mapa - Zona Oriente</a></li>
-                                    <li><a href="edif-a.html">Edificio A</a></li>
-                                    <li><a href="edif-pinacoteca.html">Pinacoteca</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <label for="drop-occidente" class="toggle-label-submenu">
-                                    Zona Occidente <i class="fas fa-chevron-right"></i>
-                                </label>
-                                <input type="checkbox" id="drop-occidente" hidden />
-                                <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/occidente.html">Mapa - Zona Occidente</a></li>
-                                    <li><a href="../occidente/hangar.html">Hangar</a></li>
-                                    <li><a href="../occidente/observatorio.html">Observatorio</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li><a href="../html/contacto.html">Contacto</a></li>
-                    <li><a href="../html/creadores.html">Creadores</a></li>
-                </ul>
-
-                <a href="../html/mapa.html" class="btn-explorar">Explorar Campus</a>
-            </nav>
+       <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+<main class="main-content">
+    <section class="historia">
+        <div class="hero">
+            <img src="../fotos/IMG_4298.JPG"Cafetín UDB">
+            <div class="hero-text">
+                <h1>Cafetín Universitario</h1>
+                <p>
+                    Punto de encuentro donde los estudiantes disfrutan de alimentos, descanso y convivencia dentro del campus.
+                </p>
+            </div>
         </div>
-    </header>
 
-    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+        <!-- contenido -->
+        <div class="contenido-historia">
 
-    <main class="main-content">
-        <section class="historia">
-            <div class="hero">
-                <img src="../img/back.jpg" alt="edificiodelquesehabla">
-                <div class="hero-text">
-                    <h1>Edificio X</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ipsa, magni perferendis quis,
-                        maiores
-                        nihil nostrum iure sequi, ad dolor sit deleniti aliquid? Ratione enim fugiat dicta iste,
-                        asperiores unde.
-                    </p>
+            <!-- historia -->
+            <div class="block">
+                <h2>Contenido</h2>
+                <p>El cafetín universitario es un espacio pensado para brindar alimentación y comodidad a los estudiantes durante su jornada académica.</p>
+                <p>Ofrece una variedad de comidas y bebidas accesibles, adaptadas a las necesidades de la comunidad estudiantil.</p>
+                <p>Además, funciona como un punto de encuentro donde los estudiantes pueden relajarse, socializar y compartir momentos entre clases.</p>
+                <p>Su ambiente dinámico lo convierte en una parte esencial de la vida diaria dentro del campus.</p>
+            </div>
+
+            <!-- mini galeria -->
+            <div class="block">
+                <h2>Galeria</h2>
+                <div class="galeria">
+                    <img src="../img/plaza.jpg" alt="img1">
+                    <img src="../img/plaza.jpg" alt="img2">
+                    <img src="../img/plaza.jpg" alt="img3">
                 </div>
             </div>
 
-            <!-- contenido -->
+            <!-- datos en tablas -->
+            <div class="block">
+                <h2>Informacion General </h2>
+                <table>
+                    <tr>
+                        <th>Área</th>
+                        <td>Servicios estudiantiles</td>
+                    </tr>
+                    <tr>
+                        <th>Función principal</th>
+                        <td>Venta de alimentos y bebidas</td>
+                    </tr>
+                    <tr>
+                        <th>Uso</th>
+                        <td>Alimentación, descanso y convivencia</td>
+                    </tr>
+                </table>
+            </div>
 
-            <div class="contenido-historia">
+            <!-- lista -->
+            <div class="block">
+                <h2>Caracteristicas</h2>
+                <ul class="list">
+                    <li>Variedad de opciones de comida y bebida</li>
+                    <li>Espacios para sentarse y compartir</li>
+                    <li>Ambiente social y dinámico</li>
+                    <li>Acceso rápido entre clases</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
 
-                <!-- historia -->
-
-                <div class="block">
-                    <h2>Contenido</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, architecto eos nesciunt, nulla
-                        incidunt
-                        voluptate fugiat tempore, iusto voluptatem totam eveniet dolores excepturi consequatur. Beatae
-                        est delectus
-                        iusto ipsum officiis!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id earum iure ducimus, voluptas quasi,
-                        perferendis dolorem ut nemo fugiat, exercitationem asperiores? Odio reprehenderit magni soluta
-                        repellat!
-                        Illo laudantium a laboriosam.</p>
-
-                </div>
-
-                <!-- mini galeria -->
-
-                <div class="block">
-                    <h2>Galeria</h2>
-                    <div class="galeria">
-                        <img src="../img/plaza.jpg" alt="img1">
-                        <img src="../img/plaza.jpg" alt="img2">
-                        <img src="../img/plaza.jpg" alt="img3">
+        <!-- ==================== FOOTER ==================== -->
+        <footer>
+            <div class="footer-container">
+                <!-- Logo y descripción -->
+                <div class="footer-logo">
+                    <img src="../img/dibujo1.svg" alt="UDB Logo">
+                    <p>Universidad Don Bosco - Campus Explorer 2026</p>
+                    <div class="footer-lema">
+                        <span>Lema Salesiano</span>
+                        <p>"La educación es cosa del corazón"</p>
                     </div>
+                    <div class="footer-divider"></div>
                 </div>
 
-                <!-- datos en tablas -->
-
-                <div class="block">
-                    <h2>Informacion General </h2>
-                    <table>
-                        <tr>
-                            <th>Dato 1</th>
-                            <td>inf dato1</td>
-                        </tr>
-                        <tr>
-                            <th>Dato 2</th>
-                            <td>inf dato2</td>
-                        </tr>
-                        <tr>
-                            <th>Dato 3</th>
-                            <td>inf dato3</td>
-                        </tr>
-                        <tr>
-                            <th>Dato 4</th>
-                            <td>inf dato4</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- lista -->
-                <div class="block">
-                    <h2>Caracteristicas</h2>
-                    <ul class="list">
-                        <li>Dato 1</li>
-                        <li>Dato 2</li>
-                        <li>Dato 3</li>
-                        <li>Dato 4</li>
+                <!-- Enlaces útiles -->
+                <div class="footer-links">
+                    <h3>Enlaces Útiles</h3>
+                    <ul>
+                        <li><a href="../html/oriente.html">Zona Oriente</a></li>
+                        <li><a href="../html/occidente.html">Zona Occidente</a></li>
+                        <li><a href="../html/mapa.html">Mapa del Campus</a></li>
+                        <li><a href="../html/contacto.html">Contacto</a></li>
+                        <li><a href="../html/creadores.html">Creadores</a></li>
                     </ul>
                 </div>
-            </div>
-        </section>
 
-
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-        <div class="footer-container">
-            <!-- Logo y descripción -->
-            <div class="footer-logo">
-                <img src="../img/dibujo1.svg" alt="UDB Logo">
-                <p>Universidad Don Bosco - Campus Explorer 2026</p>
-                <div class="footer-lema">
-                    <span>Lema Salesiano</span>
-                    <p>"La educación es cosa del corazón"</p>
+                <!-- Redes sociales -->
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/UDBelsalvador/" target="_blank" title="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/udbelsalvador/" target="_blank" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/UDBElsalvador" target="_blank" title="Twitter/X"><i
+                                class="fab fa-x-twitter"></i></a>
+                    </div>
+                    <p class="social-tagline">Mantente al día con las noticias y eventos de la UDB.</p>
                 </div>
-                <div class="footer-divider"></div>
             </div>
 
-            <!-- Enlaces útiles -->
-            <div class="footer-links">
-                <h3>Enlaces Útiles</h3>
-                <ul>
-                    <li><a href="oriente.html">Zona Oriente</a></li>
-                    <li><a href="occidente.html">Zona Occidente</a></li>
-                    <li><a href="mapa.html">Mapa del Campus</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="creadores.html">Creadores</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span>Universidad Don Bosco</span>. Todos los derechos reservados.</p>
             </div>
+        </footer>
 
-            <!-- Redes sociales -->
-            <div class="footer-social">
-                <h3>Síguenos</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/UDBelsalvador/" target="_blank" title="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/udbelsalvador/" target="_blank" title="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://x.com/UDBElsalvador" target="_blank" title="Twitter/X"><i
-                            class="fab fa-x-twitter"></i></a>
-                </div>
-                <p class="social-tagline">Mantente al día con las noticias y eventos de la UDB.</p>
-            </div>
-        </div>
+        <!-- ==================== SCRIPTS ==================== -->
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 <span>Universidad Don Bosco</span>. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- ==================== SCRIPTS ==================== -->
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Navbar script -->
-    <script src="../js/navbar.js"></script>
+        <!-- Navbar script -->
+        <script src="../js/navbar.js"></script>
 
 </body>
 

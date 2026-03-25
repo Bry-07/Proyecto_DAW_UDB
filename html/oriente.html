@@ -4,17 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Explorer - UDB</title>
+    <title>Zona Oriente - UDB</title>
     <link rel="icon" type="image/x-icon" href="../img/dibujo1.svg" />
-
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/css-base.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/soya.css">
+    <link rel="stylesheet" href="../css/zonas.css">
 </head>
 
 <body>
@@ -22,7 +19,7 @@
     <header class="udb-header">
         <div class="container-header">
             <div class="logo">
-                <a href="index.html">
+                <a href="../html/index.html">
                     <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
@@ -36,7 +33,7 @@
 
             <nav class="main-nav">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="../html/index.html">Inicio</a></li>
 
                     <!-- Crear un objeto para cada elemento de la lista -->
 
@@ -52,7 +49,7 @@
                                 </label>
                                 <input type="checkbox" id="drop-oriente" hidden />
                                 <ul class="dropdown-menu-level3">
-                                    <li><a href="oriente.html">Mapa - Zona Oriente</a></li>
+                                    <li><a href="oriente.html">Zona Oriente</a></li>
                                     <li><a href="../oriente/edif-a.html">Edificio A</a></li>
                                     <li><a href="../oriente/edif-pinacoteca.html">Pinacoteca</a></li>
                                 </ul>
@@ -63,7 +60,7 @@
                                 </label>
                                 <input type="checkbox" id="drop-occidente" hidden />
                                 <ul class="dropdown-menu-level3">
-                                    <li><a href="occidente.html">Mapa - Zona Occidente</a></li>
+                                    <li><a href="occidente.html">Zona Occidente</a></li>
                                     <li><a href="../occidente/hangar.html">Hangar</a></li>
                                     <li><a href="../occidente/observatorio.html">Observatorio</a></li>
                                 </ul>
@@ -71,27 +68,20 @@
                         </ul>
                     </li>
 
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="creadores.html">Creadores</a></li>
+                    <li><a href="../html/contacto.html">Contacto</a></li>
+                    <li><a href="../html/creadores.html">Creadores</a></li>
                 </ul>
 
-                <a href="mapa.html" class="btn-explorar">Explorar Campus</a>
+                <a href="../html/mapa.html" class="btn-explorar">Explorar Campus</a>
             </nav>
         </div>
     </header>
 
-    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <!-- El JS genera todo el contenido dinámicamente -->
+    <main class="main-content"></main>
 
-    <main class="main-content">
-
-
-
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="footer-container">
-            <!-- Logo y descripción -->
             <div class="footer-logo">
                 <img src="../img/dibujo1.svg" alt="UDB Logo">
                 <p>Universidad Don Bosco - Campus Explorer 2026</p>
@@ -101,8 +91,6 @@
                 </div>
                 <div class="footer-divider"></div>
             </div>
-
-            <!-- Enlaces útiles -->
             <div class="footer-links">
                 <h3>Enlaces Útiles</h3>
                 <ul>
@@ -113,8 +101,6 @@
                     <li><a href="creadores.html">Creadores</a></li>
                 </ul>
             </div>
-
-            <!-- Redes sociales -->
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <div class="social-icons">
@@ -128,19 +114,14 @@
                 <p class="social-tagline">Mantente al día con las noticias y eventos de la UDB.</p>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 <span>Universidad Don Bosco</span>. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- ==================== SCRIPTS ==================== -->
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Navbar script -->
     <script src="../js/navbar.js"></script>
-
+    <script src="../js/oriente.js"></script>
 </body>
 
 </html>

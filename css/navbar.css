@@ -213,11 +213,6 @@ input[type="checkbox"][hidden] {
   display: block;
 }
 
-/* Rotar icono cuando el submenu está abierto */
-.dropdown-submenu input[type="checkbox"]:checked ~ .toggle-label-submenu i {
-  transform: rotate(90deg);
-}
-
 /* Botón Explorar Campus */
 .btn-explorar {
   background: #f4c107;

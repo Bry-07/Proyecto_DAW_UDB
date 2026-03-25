@@ -19,10 +19,14 @@
     filter: brightness(0.3);
 }
 
-.hero-text{
+.hero-text {
     position: absolute;
     bottom: 30px;
-    left: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 750px;
+    width: 100%;
+    text-align: center;
 }
 
 .hero-text h1{
@@ -31,6 +35,7 @@
 
 .hero-text p{
     color: #fff;
+    text-align: center;
 }
 
 /* contenido */
