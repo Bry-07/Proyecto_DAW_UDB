@@ -59,26 +59,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // EDIFICIO A — Imágenes reales disponibles
         // --------------------------------------------------
         "Edif_A": {
-            nombre: "Edificio A",
+            nombre: "Edificio B",
             imagenes: [
-                "../img_mapa/IMG_4406 1.svg",
-                "../img_mapa/IMG_4414 1.svg",
+                "../img_mapa/IMG_4411 1.svg",
             ],
-            descripcion: "El Edificio A alberga aulas de clases y oficinas administrativas de la UDB.",
-            enlace: "../oriente/edif-a.html"
+            descripcion: "Edificio B con laboratorios y aulas especializadas.",
+             enlace: "../oriente/edif-b.html"
         },
 
         // --------------------------------------------------
         // EDIFICIO B
         // --------------------------------------------------
         "Edif_B": {
-            nombre: "Edificio B",
+            nombre: "Edificio A",
             imagenes: [
-                "../img_mapa/IMG_4411 1.svg",
+                "../img_mapa/IMG_4406 1.svg",
+                "../img_mapa/IMG_4414 1.svg",
                 
             ],
-            descripcion: "Edificio B con laboratorios y aulas especializadas.",
-            enlace: "../oriente/edif-b.html"
+            descripcion: "El Edificio A alberga aulas de clases y oficinas administrativas de la UDB.",
+            enlace: "../oriente/edif-a.html"
         },
 
         // --------------------------------------------------
@@ -458,7 +458,33 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             descripcion: "Plaza central con las banderas de El Salvador y la UDB.",
             enlace: "../occidente/banderas.html"
+        },
+
+        // --------------------------------------------------
+        // CARRO 
+        // --------------------------------------------------
+        "Carro": {
+            nombre: "Carrito de la Inge",
+            imagenes: [
+                "../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM 1.svg",
+            ],
+            descripcion: "Carro de la Inge.",
+            enlace: "../occidente/banderas.html"
+        },
+
+        // --------------------------------------------------
+        // CARRO2 
+        // --------------------------------------------------
+        "Carro2": {
+            nombre: "Carrito de la Inge 2",
+            imagenes: [
+                "../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM (1) 1 (1).svg",
+            ],
+            descripcion: "Carro de la Inge.",
+            enlace: "../occidente/banderas.html"
         }
+
+        
 
     }; // ← CIERRE del objeto datosEdificios
 
