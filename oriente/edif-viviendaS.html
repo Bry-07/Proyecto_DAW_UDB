@@ -15,137 +15,84 @@
     <link rel="stylesheet" href="../css/css-base.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/buscador-mensajes.css">
 </head>
 
 <body>
     <!-- ==================== NAVBAR ==================== -->
-    <header class="udb-header">
-        <div class="container-header">
-            <div class="logo">
-                <a href="../html/index.html">
-                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
-                </a>
-            </div>
 
-            <label for="drop-main" class="menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <input type="checkbox" id="drop-main" hidden />
+    <header class="udb-header"></header>
 
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="../html/index.html">Inicio</a></li>
-
-                    <!-- Crear un objeto para cada elemento de la lista -->
-
-                    <li class="dropdown">
-                        <label for="drop-edificios" class="toggle-label">
-                            Edificios <i class="fas fa-chevron-down"></i>
-                        </label>
-                        <input type="checkbox" id="drop-edificios" hidden />
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <label for="drop-oriente" class="toggle-label-submenu">
-                                    Zona Oriente <i class="fas fa-chevron-right"></i>
-                                </label>
-                                <input type="checkbox" id="drop-oriente" hidden />
-                                <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/oriente.html">Zona Oriente</a></li>
-                                    <li><a href="edif-a.html">Edificio A</a></li>
-                                    <li><a href="edif-pinacoteca.html">Pinacoteca</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <label for="drop-occidente" class="toggle-label-submenu">
-                                    Zona Occidente <i class="fas fa-chevron-right"></i>
-                                </label>
-                                <input type="checkbox" id="drop-occidente" hidden />
-                                <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/occidente.html">Zona Occidente</a></li>
-                                    <li><a href="../occidente/hangar.html">Hangar</a></li>
-                                    <li><a href="../occidente/observatorio.html">Observatorio</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li><a href="../html/contacto.html">Contacto</a></li>
-                    <li><a href="../html/creadores.html">Creadores</a></li>
-                </ul>
-
-                <a href="../html/mapa.html" class="btn-explorar">Explorar Campus</a>
-            </nav>
-        </div>
-    </header>
-
-   <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
-<main class="main-content">
-    <section class="historia">
-        <div class="hero">
-            <img src="../fotos/IMG_4340.JPG" alt="Vivienda Salesiana">
-            <div class="hero-text">
-                <h1>Vivienda Salesiana</h1>
-                <p>
-                    Espacio residencial destinado a la comunidad salesiana que forma parte de la vida espiritual y educativa del campus.
-                </p>
-            </div>
-        </div>
-
-        <!-- contenido -->
-        <div class="contenido-historia">
-
-            <!-- historia -->
-            <div class="block">
-                <h2>Contenido</h2>
-                <p>La vivienda salesiana es el lugar donde residen miembros de la comunidad religiosa encargada de acompañar la misión educativa de la universidad.</p>
-                <p>En este espacio habitan sacerdotes y formadores que contribuyen al desarrollo espiritual y humano de los estudiantes.</p>
-                <p>Además de ser una residencia, es un punto de apoyo para actividades pastorales y de orientación dentro del campus.</p>
-                <p>Su presencia refuerza la identidad salesiana y los valores que caracterizan a la institución.</p>
-            </div>
-
-            <!-- mini galeria -->
-            <div class="block">
-                <h2>Galeria</h2>
-                <div class="galeria">
-                    <img src="../fotos/IMG_4339.JPG" alt="img1">
-                    <img src="../fotos/IMG_4340.JPG" alt="img2">
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main class="main-content">
+        <section class="historia">
+            <div class="hero">
+                <img src="../fotos/IMG_4340.JPG" alt="Vivienda Salesiana">
+                <div class="hero-text">
+                    <h1>Vivienda Salesiana</h1>
+                    <p>
+                        Espacio residencial destinado a la comunidad salesiana que forma parte de la vida espiritual y
+                        educativa del campus.
+                    </p>
                 </div>
             </div>
 
-            <!-- datos en tablas -->
-            <div class="block">
-                <h2>Informacion General </h2>
-                <table>
-                    <tr>
-                        <th>Área</th>
-                        <td>Residencial y pastoral</td>
-                    </tr>
-                    <tr>
-                        <th>Función principal</th>
-                        <td>Residencia de la comunidad salesiana</td>
-                    </tr>
-                    <tr>
-                        <th>Uso</th>
-                        <td>Vivienda y apoyo a actividades formativas</td>
-                    </tr>
-                </table>
-            </div>
+            <!-- contenido -->
+            <div class="contenido-historia">
 
-            <!-- lista -->
-            <div class="block">
-                <h2>Caracteristicas</h2>
-                <ul class="list">
-                    <li>Espacio privado para la comunidad religiosa</li>
-                    <li>Ambiente tranquilo y organizado</li>
-                    <li>Vinculación directa con la pastoral universitaria</li>
-                    <li>Presencia constante de formadores y guías espirituales</li>
-                </ul>
+                <!-- historia -->
+                <div class="block">
+                    <h2>Contenido</h2>
+                    <p>La vivienda salesiana es el lugar donde residen miembros de la comunidad religiosa encargada de
+                        acompañar la misión educativa de la universidad.</p>
+                    <p>En este espacio habitan sacerdotes y formadores que contribuyen al desarrollo espiritual y humano
+                        de los estudiantes.</p>
+                    <p>Además de ser una residencia, es un punto de apoyo para actividades pastorales y de orientación
+                        dentro del campus.</p>
+                    <p>Su presencia refuerza la identidad salesiana y los valores que caracterizan a la institución.</p>
+                </div>
+
+                <!-- mini galeria -->
+                <div class="block">
+                    <h2>Galeria</h2>
+                    <div class="galeria">
+                        <img src="../fotos/IMG_4339.JPG" alt="img1">
+                        <img src="../fotos/IMG_4340.JPG" alt="img2">
+                    </div>
+                </div>
+
+                <!-- datos en tablas -->
+                <div class="block">
+                    <h2>Informacion General </h2>
+                    <table>
+                        <tr>
+                            <th>Área</th>
+                            <td>Residencial y pastoral</td>
+                        </tr>
+                        <tr>
+                            <th>Función principal</th>
+                            <td>Residencia de la comunidad salesiana</td>
+                        </tr>
+                        <tr>
+                            <th>Uso</th>
+                            <td>Vivienda y apoyo a actividades formativas</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- lista -->
+                <div class="block">
+                    <h2>Caracteristicas</h2>
+                    <ul class="list">
+                        <li>Espacio privado para la comunidad religiosa</li>
+                        <li>Ambiente tranquilo y organizado</li>
+                        <li>Vinculación directa con la pastoral universitaria</li>
+                        <li>Presencia constante de formadores y guías espirituales</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer>
@@ -198,7 +145,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Navbar script -->
-    <script src="../js/navbar.js"></script>
+    <script src="../js/navbar-oriente.js"></script>
+
+    <script src="../js/buscador.js"></script>
 
 </body>
 

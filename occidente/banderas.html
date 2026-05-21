@@ -15,98 +15,46 @@
     <link rel="stylesheet" href="../css/css-base.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/buscador-mensajes.css">
 </head>
 
 <body>
     <!-- ==================== NAVBAR ==================== -->
-    <header class="udb-header">
-        <div class="container-header">
-            <div class="logo">
-                <a href="../html/index.html">
-                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
-                </a>
-            </div>
 
-            <label for="drop-main" class="menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <input type="checkbox" id="drop-main" hidden />
-
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="../html/index.html">Inicio</a></li>
-
-                    <!-- Crear un objeto para cada elemento de la lista -->
-
-                    <li class="dropdown">
-                        <label for="drop-edificios" class="toggle-label">
-                            Edificios <i class="fas fa-chevron-down"></i>
-                        </label>
-                        <input type="checkbox" id="drop-edificios" hidden />
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <label for="drop-oriente" class="toggle-label-submenu">
-                                    Zona Oriente <i class="fas fa-chevron-right"></i>
-                                </label>
-                                <input type="checkbox" id="drop-oriente" hidden />
-                                <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/oriente.html">Zona Oriente</a></li>
-                                    <li><a href="../oriente/edif-a.html">Edificio A</a></li>
-                                    <li><a href="../oriente/edif-pinacoteca.html">Pinacoteca</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <label for="drop-occidente" class="toggle-label-submenu">
-                                    Zona Occidente <i class="fas fa-chevron-right"></i>
-                                </label>
-                                <input type="checkbox" id="drop-occidente" hidden />
-                                <ul class="dropdown-menu-level3">
-                                    <li><a href="../html/occidente.html">Zona Occidente</a></li>
-                                    <li><a href="../occidente/hangar.html">Hangar</a></li>
-                                    <li><a href="../occidente/observatorio.html">Observatorio</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li><a href="../html/contacto.html">Contacto</a></li>
-                    <li><a href="../html/creadores.html">Creadores</a></li>
-                </ul>
-
-                <a href="../html/mapa.html" class="btn-explorar">Explorar Campus</a>
-            </nav>
-        </div>
-    </header>
+    <header class="udb-header"></header>
 
     <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
-<main class="main-content">
-    <section class="historia">
-        <div class="hero">
-            <img src="../img_mapa/IMG_4418 1.svg" alt="Plaza de las Banderas">
-            <div class="hero-text">
-                <h1>Plaza de las Banderas</h1>
-                <p>
-                    Espacio emblemático del campus que simboliza la identidad, diversidad y unión de la comunidad universitaria.
-                </p>
-            </div>
-        </div>
-
-        <!-- contenido -->
-        <div class="contenido-historia">
-
-            <!-- historia -->
-            <div class="block">
-                <h2>Contenido</h2>
-                <p>La Plaza de las Banderas es uno de los espacios más representativos dentro del campus universitario, destacando por su valor simbólico e institucional.</p>
-                <p>En este lugar se exhiben diversas banderas que reflejan la identidad, cultura y proyección internacional de la universidad.</p>
-                <p>Además, funciona como punto de encuentro para estudiantes, así como escenario para actos cívicos y eventos importantes.</p>
-                <p>Su ambiente abierto y accesible la convierte en un espacio ideal para la convivencia y la integración de la comunidad.</p>
+    <main class="main-content">
+        <section class="historia">
+            <div class="hero">
+                <img src="../img_mapa/IMG_4418 1.svg" alt="Plaza de las Banderas">
+                <div class="hero-text">
+                    <h1>Plaza de las Banderas</h1>
+                    <p>
+                        Espacio emblemático del campus que simboliza la identidad, diversidad y unión de la comunidad
+                        universitaria.
+                    </p>
+                </div>
             </div>
 
-            <!-- mini galeria -->
-            <div class="block">
+            <!-- contenido -->
+            <div class="contenido-historia">
+
+                <!-- historia -->
+                <div class="block">
+                    <h2>Contenido</h2>
+                    <p>La Plaza de las Banderas es uno de los espacios más representativos dentro del campus
+                        universitario, destacando por su valor simbólico e institucional.</p>
+                    <p>En este lugar se exhiben diversas banderas que reflejan la identidad, cultura y proyección
+                        internacional de la universidad.</p>
+                    <p>Además, funciona como punto de encuentro para estudiantes, así como escenario para actos cívicos
+                        y eventos importantes.</p>
+                    <p>Su ambiente abierto y accesible la convierte en un espacio ideal para la convivencia y la
+                        integración de la comunidad.</p>
+                </div>
+
+                <!-- mini galeria -->
+                <div class="block">
                     <h2>Galeria</h2>
                     <div class="galeria">
                         <img src="../img_mapa/IMG_4416 1.svg" alt="img1">
@@ -115,38 +63,38 @@
                 </div>
 
 
-            <!-- datos en tablas -->
-            <div class="block">
-                <h2>Informacion General </h2>
-                <table>
-                    <tr>
-                        <th>Tipo de espacio</th>
-                        <td>Área abierta / Plaza</td>
-                    </tr>
-                    <tr>
-                        <th>Función principal</th>
-                        <td>Actos cívicos y punto de encuentro</td>
-                    </tr>
-                    <tr>
-                        <th>Uso</th>
-                        <td>Eventos, convivencia y actividades institucionales</td>
-                    </tr>
-                </table>
-            </div>
+                <!-- datos en tablas -->
+                <div class="block">
+                    <h2>Informacion General </h2>
+                    <table>
+                        <tr>
+                            <th>Tipo de espacio</th>
+                            <td>Área abierta / Plaza</td>
+                        </tr>
+                        <tr>
+                            <th>Función principal</th>
+                            <td>Actos cívicos y punto de encuentro</td>
+                        </tr>
+                        <tr>
+                            <th>Uso</th>
+                            <td>Eventos, convivencia y actividades institucionales</td>
+                        </tr>
+                    </table>
+                </div>
 
-            <!-- lista -->
-            <div class="block">
-                <h2>Caracteristicas</h2>
-                <ul class="list">
-                    <li>Exhibición de banderas representativas</li>
-                    <li>Espacio amplio y al aire libre</li>
-                    <li>Punto de reunión para estudiantes</li>
-                    <li>Escenario para eventos y actos importantes</li>
-                </ul>
+                <!-- lista -->
+                <div class="block">
+                    <h2>Caracteristicas</h2>
+                    <ul class="list">
+                        <li>Exhibición de banderas representativas</li>
+                        <li>Espacio amplio y al aire libre</li>
+                        <li>Punto de reunión para estudiantes</li>
+                        <li>Escenario para eventos y actos importantes</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer>
@@ -199,7 +147,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Navbar script -->
-    <script src="../js/navbar.js"></script>
+    <script src="../js/navbar-occidente.js"></script>
+
+    <script src="../js/buscador.js"></script>
 
 </body>
 

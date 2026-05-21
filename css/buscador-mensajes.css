@@ -1,0 +1,261 @@
+/* =============================================
+   buscador-mensajes.css
+   Estilos para:
+     - Barra de búsqueda en el navbar
+     - Tarjetas de mensajes guardados (localStorage)
+   ============================================= */
+
+/* =============================================
+   BUSCADOR
+   ============================================= */
+
+.buscador-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buscador-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.buscador-icon {
+    position: absolute;
+    left: 10px;
+    color: #aaa;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.buscador-input {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 13px;
+    padding: 6px 12px 6px 30px;
+    width: 180px;
+    transition: width 0.3s ease, background 0.3s ease;
+    outline: none;
+}
+
+.buscador-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.buscador-input:focus {
+    width: 220px;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #f4c107;
+}
+
+.buscador-resultados {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #0b2239;
+    border: 1px solid rgba(244, 193, 7, 0.3);
+    border-radius: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    width: 260px;
+    max-height: 280px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.resultado-item {
+    padding: 0;
+}
+
+.resultado-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.resultado-link i {
+    color: #f4c107;
+    font-size: 12px;
+}
+
+.resultado-link:hover {
+    background: rgba(244, 193, 7, 0.1);
+    color: #f4c107;
+}
+
+.sin-resultados {
+    padding: 10px 14px;
+    color: #888;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Scrollbar del buscador */
+.buscador-resultados::-webkit-scrollbar { width: 4px; }
+.buscador-resultados::-webkit-scrollbar-track { background: transparent; }
+.buscador-resultados::-webkit-scrollbar-thumb { background: #f4c107; border-radius: 4px; }
+
+/* Responsive: buscador en móvil */
+@media (max-width: 992px) {
+    .buscador-wrapper {
+        width: 100%;
+        padding: 8px 16px;
+    }
+    .buscador-input {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .buscador-input:focus {
+        width: 100%;
+    }
+    .buscador-resultados {
+        width: 100%;
+        position: static;
+        margin-top: 4px;
+    }
+}
+
+/* =============================================
+   SECCIÓN DE MENSAJES GUARDADOS
+   ============================================= */
+
+.mensajes-section {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.mensajes-section h2 {
+    color: #f4c107;
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+#lista-mensajes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mensaje-card {
+    background: #0b2239;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: transform 0.2s ease;
+}
+
+.mensaje-card:hover {
+    transform: translateY(-2px);
+}
+
+.mensaje-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.mensaje-nombre {
+    font-weight: 600;
+    color: #f4c107;
+    font-size: 15px;
+}
+
+.mensaje-fecha {
+    font-size: 12px;
+    color: #888;
+}
+
+.mensaje-body p {
+    color: #ccc;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.mensaje-body i {
+    color: #f4c107;
+    margin-right: 6px;
+    width: 14px;
+}
+
+.mensaje-acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btn-editar,
+.btn-eliminar {
+    padding: 7px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
+}
+
+.btn-editar {
+    background: rgba(244, 193, 7, 0.15);
+    color: #f4c107;
+    border: 1px solid #f4c107;
+}
+
+.btn-eliminar {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.btn-editar:hover  { opacity: 0.8; }
+.btn-eliminar:hover { opacity: 0.8; }
+
+.sin-mensajes {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Botón cancelar edición */
+#btn-cancelar-edicion {
+    display: none;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #888;
+    color: #888;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#btn-cancelar-edicion:hover {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+/* Acciones del formulario (enviar + cancelar) */
+.form-acciones {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
