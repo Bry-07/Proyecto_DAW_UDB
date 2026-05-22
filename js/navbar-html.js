@@ -24,15 +24,15 @@
 // =============================================
 const rutasNavbar = {
     inicio:        "../index.html",
-    mapa:          "mapa.html",
-    contacto:      "contacto.html",
-    creadores:     "creadores.html",
-    zonaOriente:   "oriente.html",
-    zonaOccidente: "occidente.html",
-    edificioA:     "oriente/edif-a.html",
-    pinacoteca:    "oriente/edif-pinacoteca.html",
-    hangar:        "occidente/hangar.html",
-    observatorio:  "occidente/observatorio.html"
+    contacto:      "../html/contacto.html",
+    mapa:          "../html/mapa.html",
+    creadores:     "../html/creadores.html",
+    zonaOriente:   "../html/oriente.html",
+    zonaOccidente: "../html/occidente.html",
+    edificioA:     "../oriente/edif-a.html",
+    pinacoteca:    "../oriente/edif-pinacoteca.html",
+    hangar:        "../occidente/hangar.html",
+    observatorio:  "../occidente/observatorio.html"
 };
 
 // =============================================

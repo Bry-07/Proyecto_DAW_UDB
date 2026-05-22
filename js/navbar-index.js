@@ -28,10 +28,10 @@ const rutasNavbar = {
     creadores:     "html/creadores.html",
     zonaOriente:   "html/oriente.html",
     zonaOccidente: "html/occidente.html",
-    edificioA:     "html/oriente/edif-a.html",
-    pinacoteca:    "html/oriente/edif-pinacoteca.html",
-    hangar:        "html/occidente/hangar.html",
-    observatorio:  "html/occidente/observatorio.html"
+    edificioA:     "oriente/edif-a.html",
+    pinacoteca:    "oriente/edif-pinacoteca.html",
+    hangar:        "occidente/hangar.html",
+    observatorio:  "occidente/observatorio.html"
 };
 
 // =============================================
@@ -47,7 +47,7 @@ function construirNavbar() {
         <div class="container-header">
             <div class="logo">
                 <a href="${rutasNavbar.inicio}">
-                    <img src="/img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
 

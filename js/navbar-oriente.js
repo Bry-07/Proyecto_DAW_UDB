@@ -23,14 +23,14 @@
 // solo modifícalo aquí.
 // =============================================
 const rutasNavbar = {
-    inicio:        "..index.html",
+    inicio:        "../index.html",
     mapa:          "../html/mapa.html",
     contacto:      "../html/contacto.html",
     creadores:     "../html/creadores.html",
     zonaOriente:   "../html/oriente.html",
     zonaOccidente: "../html/occidente.html",
-    edificioA:     "edif-a.html",
-    pinacoteca:    "edif-pinacoteca.html",
+    edificioA:     "../oriente/edif-a.html",
+    pinacoteca:    "../oriente/edif-pinacoteca.html",
     hangar:        "../occidente/hangar.html",
     observatorio:  "../occidente/observatorio.html"
 };
