@@ -57,7 +57,7 @@ const desarrolladores = [
         carnet:  "AB250136",                       // Código del carnet (siglas + número)
         rol:     "Desarrollador",                  // Tu rol en el proyecto
         carrera: "Técnico en Ingeniería de Computación", // Tu carrera universitaria
-        foto:    "../img_creadores/AB250136.jpg", // Ruta a la imagen (ubicada en carpeta img_creadores)
+        foto:    "../img_creadores/AB250136.JPG", // Ruta a la imagen (ubicada en carpeta img_creadores)
         color:   "#f4c107"                         // Color amarillo para esta card
     },
     
