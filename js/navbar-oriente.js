@@ -29,8 +29,8 @@ const rutasNavbar = {
     creadores:     "../html/creadores.html",
     zonaOriente:   "../html/oriente.html",
     zonaOccidente: "../html/occidente.html",
-    edificioA:     "../oriente/edif-a.html",
-    pinacoteca:    "../oriente/edif-pinacoteca.html",
+    edificioA:     "../../html/oriente/edif-a.html",
+    pinacoteca:    "../../html/oriente/edif-pinacoteca.html",
     hangar:        "../occidente/hangar.html",
     observatorio:  "../occidente/observatorio.html"
 };
