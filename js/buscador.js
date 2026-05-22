@@ -56,7 +56,8 @@ const catalogoEdificios = [
     { nombre: "Cafetería Zona Occidente",           ruta: "../occidente/comedor2.html"     },
     { nombre: "Comedor de Profesores",              ruta: "../oriente/comedor1.html"       },
     { nombre: "Centro de Reproducción",             ruta: "../oriente/centroR.html"        },
-    { nombre: "Base Historia",                      ruta: "../oriente/base-historia.html"  }
+    { nombre: "Base Historia",                      ruta: "../oriente/base-historia.html"  },
+    {nombre: "Carro de la Inge",                    ruta: "../occidente/carro.html"        }
 ];
 
 // =============================================
