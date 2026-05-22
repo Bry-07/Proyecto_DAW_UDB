@@ -1,15 +1,15 @@
 // =============================================
 // navbar-occidente.js
-// Para páginas dentro de la carpeta: occidente/
+// Para páginas dentro de la carpeta: html/occidente/
 // (hangar.html, edif-5.html, etc.)
 //
-// Rutas base desde occidente/:
-//   - Inicio:       ../html/index.html
-//   - Oriente:      ../html/oriente.html
-//   - Occidente:    ../html/occidente.html
-//   - Mapa:         ../html/mapa.html
-//   - Contacto:     ../html/contacto.html
-//   - Creadores:    ../html/creadores.html
+// Rutas base desde html/occidente/:
+//   - Inicio:       ../../index.html
+//   - Oriente:      ../oriente.html
+//   - Occidente:    ../occidente.html
+//   - Mapa:         ../mapa.html
+//   - Contacto:     ../contacto.html
+//   - Creadores:    ../creadores.html
 //   - Edif. A:      ../oriente/edif-a.html
 //   - Pinacoteca:   ../oriente/edif-pinacoteca.html
 //   - Hangar:       hangar.html
@@ -23,12 +23,12 @@
 // solo modifícalo aquí.
 // =============================================
 const rutasNavbar = {
-    inicio:        "../index.html",
-    mapa:          "../html/mapa.html",
-    contacto:      "../html/contacto.html",
-    creadores:     "../html/creadores.html",
-    zonaOriente:   "../html/oriente.html",
-    zonaOccidente: "../html/occidente.html",
+    inicio:        "../../index.html",
+    mapa:          "../mapa.html",
+    contacto:      "../contacto.html",
+    creadores:     "../creadores.html",
+    zonaOriente:   "../oriente.html",
+    zonaOccidente: "../occidente.html",
     edificioA:     "../oriente/edif-a.html",
     pinacoteca:    "../oriente/edif-pinacoteca.html",
     hangar:        "hangar.html",
@@ -48,7 +48,7 @@ function construirNavbar() {
         <div class="container-header">
             <div class="logo">
                 <a href="${rutasNavbar.inicio}">
-                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    <img src="../../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
 

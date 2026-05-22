@@ -1,19 +1,18 @@
 // =============================================
-// navbar-html.js
-// Para páginas dentro de la carpeta: html/
-// (index.html, contacto.html, mapa.html, etc.)
+// navbar-index.js
+// Para la página: index.html (raíz del proyecto)
 //
-// Rutas base desde html/:
+// Rutas base desde raíz:
 //   - Inicio:       index.html
-//   - Oriente:      oriente.html
-//   - Occidente:    occidente.html
-//   - Mapa:         mapa.html
-//   - Contacto:     contacto.html
-//   - Creadores:    creadores.html
-//   - Edif. A:      ../oriente/edif-a.html
-//   - Pinacoteca:   ../oriente/edif-pinacoteca.html
-//   - Hangar:       ../occidente/hangar.html
-//   - Observatorio: ../occidente/observatorio.html
+//   - Mapa:         html/mapa.html
+//   - Contacto:     html/contacto.html
+//   - Creadores:    html/creadores.html
+//   - Oriente:      html/oriente.html
+//   - Occidente:    html/occidente.html
+//   - Edif. A:      html/oriente/edif-a.html
+//   - Pinacoteca:   html/oriente/edif-pinacoteca.html
+//   - Hangar:       html/occidente/hangar.html
+//   - Observatorio: html/occidente/observatorio.html
 // =============================================
 
 // =============================================
@@ -24,15 +23,15 @@
 // =============================================
 const rutasNavbar = {
     inicio:        "index.html",
-    mapa:          "/html/mapa.html",
-    contacto:      "/html/contacto.html",
-    creadores:     "/html/creadores.html",
-    zonaOriente:   "/html/oriente.html",
-    zonaOccidente: "/html/occidente.html",
-    edificioA:     "/oriente/edif-a.html",
-    pinacoteca:    "/oriente/edif-pinacoteca.html",
-    hangar:        "/occidente/hangar.html",
-    observatorio:  "/occidente/observatorio.html"
+    mapa:          "html/mapa.html",
+    contacto:      "html/contacto.html",
+    creadores:     "html/creadores.html",
+    zonaOriente:   "html/oriente.html",
+    zonaOccidente: "html/occidente.html",
+    edificioA:     "html/oriente/edif-a.html",
+    pinacoteca:    "html/oriente/edif-pinacoteca.html",
+    hangar:        "html/occidente/hangar.html",
+    observatorio:  "html/occidente/observatorio.html"
 };
 
 // =============================================
@@ -48,7 +47,7 @@ function construirNavbar() {
         <div class="container-header">
             <div class="logo">
                 <a href="${rutasNavbar.inicio}">
-                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    <img src="/img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
 
