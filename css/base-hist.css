@@ -1,4 +1,4 @@
-.historia{
+.historia {
     background-color: #061726;
     color: #fff;
     padding-bottom: 60px;
@@ -6,13 +6,13 @@
 
 /* hero section */
 
-.hero{
+.hero {
     position: relative;
     height: 300px;
     overflow: hidden;
 }
 
-.hero img{
+.hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -29,18 +29,18 @@
     text-align: center;
 }
 
-.hero-text h1{
+.hero-text h1 {
     font-size: 36px;
 }
 
-.hero-text p{
+.hero-text p {
     color: #fff;
     text-align: center;
 }
 
 /* contenido */
 
-.contenido-historia{
+.contenido-historia {
     max-width: 1100px;
     margin: auto;
     padding: 40px;
@@ -48,7 +48,7 @@
     gap: 30px;
 }
 
-.block{
+.block {
     background-color: #0b2239;
     padding: 25px;
     border-radius: 15px;
@@ -58,13 +58,13 @@
 
 /* titulos */
 
-.block h2{
+.block h2 {
     margin-bottom: 15px;
 }
 
 /*texto */
 
-.block p{
+.block p {
     color: #fff;
     text-align: justify;
     margin: auto;
@@ -72,71 +72,100 @@
 
 /* galeria */
 
-.galeria{
+.galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
 }
 
-.galeria img{
+.galeria img {
     width: 100%;
     border-radius: 10px;
     transition: 0.3s;
 }
 
-.galeria img:hover{
+.galeria img:hover {
     transform: scale(1.05);
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.galeria img,
+.galeria video {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+@media (min-width:768px) {
+
+    .galeria img,
+    .galeria video {
+        width: 48%;
+    }
 }
 
 /* tabla */
 
-.table{
+.table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th{
+th {
     text-align: left;
     color: #fff;
     padding: 10px;
 }
 
-td{
+td {
     padding: 10px;
     color: #fff;
 }
 
-tr{
+tr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.247);
 }
 
 /* listas */
 
-.historia ul{
+.historia ul {
     list-style: none;
     padding: 0;
 }
 
-.historia ul li{
+.historia ul li {
     padding: 8px 0;
     position: relative;
     padding-left: 20px;
 }
 
 .historia ul li::before {
-  content: "›";
-  position: absolute;
-  left: 0;
-  color: #facc15;
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #facc15;
 }
 
 @media (max-width: 768px) {
-    .hero-text h1{
+    .hero-text h1 {
         font-size: 24px;
     }
 
-    .contenido-historia{
+    .contenido-historia {
         padding: 20px;
     }
-    
+
 }

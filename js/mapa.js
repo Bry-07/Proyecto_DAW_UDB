@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM 1.svg",
             ],
             descripcion: "Carro de la Inge.",
-            enlace: "../occidente/banderas.html"
+            enlace: "../occidente/carro.html"
         },
 
         // --------------------------------------------------
@@ -481,7 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM (1) 1 (1).svg",
             ],
             descripcion: "Carro de la Inge.",
-            enlace: "../occidente/banderas.html"
+            enlace: "../occidente/carro.html"
         }
 
         
