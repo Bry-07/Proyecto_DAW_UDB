@@ -1,19 +1,19 @@
 // =============================================
 // navbar-html.js
 // Para páginas dentro de la carpeta: html/
-// (index.html, contacto.html, mapa.html, etc.)
+// (oriente.html, occidente.html, mapa.html, etc.)
 //
 // Rutas base desde html/:
-//   - Inicio:       index.html
+//   - Inicio:       ../index.html
 //   - Oriente:      oriente.html
 //   - Occidente:    occidente.html
 //   - Mapa:         mapa.html
 //   - Contacto:     contacto.html
 //   - Creadores:    creadores.html
-//   - Edif. A:      ../oriente/edif-a.html
-//   - Pinacoteca:   ../oriente/edif-pinacoteca.html
-//   - Hangar:       ../occidente/hangar.html
-//   - Observatorio: ../occidente/observatorio.html
+//   - Edif. A:      oriente/edif-a.html
+//   - Pinacoteca:   oriente/edif-pinacoteca.html
+//   - Hangar:       occidente/hangar.html
+//   - Observatorio: occidente/observatorio.html
 // =============================================
 
 // =============================================
@@ -29,10 +29,10 @@ const rutasNavbar = {
     creadores:     "creadores.html",
     zonaOriente:   "oriente.html",
     zonaOccidente: "occidente.html",
-    edificioA:     "../oriente/edif-a.html",
-    pinacoteca:    "../oriente/edif-pinacoteca.html",
-    hangar:        "../occidente/hangar.html",
-    observatorio:  "../occidente/observatorio.html"
+    edificioA:     "oriente/edif-a.html",
+    pinacoteca:    "oriente/edif-pinacoteca.html",
+    hangar:        "occidente/hangar.html",
+    observatorio:  "occidente/observatorio.html"
 };
 
 // =============================================

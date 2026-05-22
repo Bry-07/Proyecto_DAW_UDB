@@ -1,15 +1,15 @@
 // =============================================
 // navbar-oriente.js
-// Para páginas dentro de la carpeta: oriente/
+// Para páginas dentro de la carpeta: html/oriente/
 // (edif-a.html, capilla.html, etc.)
 //
-// Rutas base desde oriente/:
-//   - Inicio:       ../html/index.html
-//   - Oriente:      ../html/oriente.html
-//   - Occidente:    ../html/occidente.html
-//   - Mapa:         ../html/mapa.html
-//   - Contacto:     ../html/contacto.html
-//   - Creadores:    ../html/creadores.html
+// Rutas base desde html/oriente/:
+//   - Inicio:       ../../index.html
+//   - Oriente:      ../oriente.html
+//   - Occidente:    ../occidente.html
+//   - Mapa:         ../mapa.html
+//   - Contacto:     ../contacto.html
+//   - Creadores:    ../creadores.html
 //   - Edif. A:      edif-a.html
 //   - Pinacoteca:   edif-pinacoteca.html
 //   - Hangar:       ../occidente/hangar.html
@@ -23,12 +23,12 @@
 // solo modifícalo aquí.
 // =============================================
 const rutasNavbar = {
-    inicio:        "../index.html",
-    mapa:          "../html/mapa.html",
-    contacto:      "../html/contacto.html",
-    creadores:     "../html/creadores.html",
-    zonaOriente:   "../html/oriente.html",
-    zonaOccidente: "../html/occidente.html",
+    inicio:        "../../index.html",
+    mapa:          "../mapa.html",
+    contacto:      "../contacto.html",
+    creadores:     "../creadores.html",
+    zonaOriente:   "../oriente.html",
+    zonaOccidente: "../occidente.html",
     edificioA:     "edif-a.html",
     pinacoteca:    "edif-pinacoteca.html",
     hangar:        "../occidente/hangar.html",
@@ -48,7 +48,7 @@ function construirNavbar() {
         <div class="container-header">
             <div class="logo">
                 <a href="${rutasNavbar.inicio}">
-                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    <img src="../../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
 
