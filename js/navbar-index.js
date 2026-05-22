@@ -1,19 +1,19 @@
 // =============================================
-// navbar-occidente.js
-// Para páginas dentro de la carpeta: occidente/
-// (hangar.html, edif-5.html, etc.)
+// navbar-html.js
+// Para páginas dentro de la carpeta: html/
+// (index.html, contacto.html, mapa.html, etc.)
 //
-// Rutas base desde occidente/:
-//   - Inicio:       ../html/index.html
-//   - Oriente:      ../html/oriente.html
-//   - Occidente:    ../html/occidente.html
-//   - Mapa:         ../html/mapa.html
-//   - Contacto:     ../html/contacto.html
-//   - Creadores:    ../html/creadores.html
+// Rutas base desde html/:
+//   - Inicio:       index.html
+//   - Oriente:      oriente.html
+//   - Occidente:    occidente.html
+//   - Mapa:         mapa.html
+//   - Contacto:     contacto.html
+//   - Creadores:    creadores.html
 //   - Edif. A:      ../oriente/edif-a.html
 //   - Pinacoteca:   ../oriente/edif-pinacoteca.html
-//   - Hangar:       hangar.html
-//   - Observatorio: observatorio.html
+//   - Hangar:       ../occidente/hangar.html
+//   - Observatorio: ../occidente/observatorio.html
 // =============================================
 
 // =============================================
@@ -23,16 +23,16 @@
 // solo modifícalo aquí.
 // =============================================
 const rutasNavbar = {
-    inicio:        "../index.html",
-    mapa:          "../html/mapa.html",
-    contacto:      "../html/contacto.html",
-    creadores:     "../html/creadores.html",
-    zonaOriente:   "../html/oriente.html",
-    zonaOccidente: "../html/occidente.html",
-    edificioA:     "../oriente/edif-a.html",
-    pinacoteca:    "../oriente/edif-pinacoteca.html",
-    hangar:        "hangar.html",
-    observatorio:  "observatorio.html"
+    inicio:        "index.html",
+    mapa:          "/html/mapa.html",
+    contacto:      "/html/contacto.html",
+    creadores:     "/html/creadores.html",
+    zonaOriente:   "/html/oriente.html",
+    zonaOccidente: "/html/occidente.html",
+    edificioA:     "/oriente/edif-a.html",
+    pinacoteca:    "/oriente/edif-pinacoteca.html",
+    hangar:        "/occidente/hangar.html",
+    observatorio:  "/occidente/observatorio.html"
 };
 
 // =============================================
@@ -112,8 +112,8 @@ function construirNavbar() {
 function setActiveMenuItemOnLoad() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-menu > li > a').forEach(link => {
-        const href = link.getAttribute('href').split('/').pop();
-        if (href === currentPage) {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
             link.parentElement.classList.add('active');
         } else {
             link.parentElement.classList.remove('active');

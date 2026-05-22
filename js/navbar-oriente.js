@@ -23,7 +23,7 @@
 // solo modifícalo aquí.
 // =============================================
 const rutasNavbar = {
-    inicio:        "../html/index.html",
+    inicio:        "../index.html",
     mapa:          "../html/mapa.html",
     contacto:      "../html/contacto.html",
     creadores:     "../html/creadores.html",
