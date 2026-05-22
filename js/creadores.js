@@ -129,380 +129,380 @@ const desarrolladores = [
    ============================================= */
 function crearCardDesarrollador(dev, indice) {
 
-    /* ==========================================
-       LÍNEA 1: Crear el contenedor principal
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('article')
-         Crea un nuevo elemento HTML llamado <article>
-         (Este es el contenedor más grande de la card)
-       
-       - const card = ...
-         Guarda ese elemento en una variable llamada 'card'
-       
-       NOTA:
-       El elemento se crea en la memoria, aún no aparece
-       en la página. Lo añadiremos después.
-       ========================================== */
-    const card = document.createElement('article');
-    
-    /* ==========================================
-       LÍNEA 2: Dar clase CSS al contenedor
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.classList.add('card-creador')
-       
-       classList = lista de clases del elemento
-       add() = agregar una clase
-       'card-creador' = nombre de la clase (en el CSS)
-       
-       RESULTADO:
-       La card ahora tiene la clase 'card-creador'
-       El CSS se aplica automáticamente
-       ========================================== */
-    card.classList.add('card-creador');
-    
-    /* ==========================================
-       LÍNEA 3: Agregar animación escalonada
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.style.animationDelay = ...
-       
-       animationDelay = espera antes de iniciar la animación
-       `${indice * 0.12}s` = cálculo del tiempo
-       
-       EXPLICACIÓN DEL CÁLCULO:
-       - indice = 0, 1, 2, 3, 4 (posición en el arreglo)
-       - indice * 0.12 = multiplicar por 0.12
-       
-       EJEMPLO:
-       - 1er desarrollador (indice=0): 0 * 0.12 = 0s (sin espera)
-       - 2do desarrollador (indice=1): 1 * 0.12 = 0.12s (espera 0.12 segundos)
-       - 3er desarrollador (indice=2): 2 * 0.12 = 0.24s (espera 0.24 segundos)
-       - 4to desarrollador (indice=3): 3 * 0.12 = 0.36s
-       - 5to desarrollador (indice=4): 4 * 0.12 = 0.48s
-       
-       RESULTADO VISUAL:
-       Las cards aparecen una tras otra (escalonadamente)
-       en lugar de todas al mismo tiempo.
-       ========================================== */
-    card.style.animationDelay = `${indice * 0.12}s`;
+     /* ==========================================
+        LÍNEA 1: Crear el contenedor principal
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('article')
+          Crea un nuevo elemento HTML llamado <article>
+          (Este es el contenedor más grande de la card)
+        
+        - const card = ...
+          Guarda ese elemento en una variable llamada 'card'
+        
+        NOTA:
+        El elemento se crea en la memoria, aún no aparece
+        en la página. Lo añadiremos después.
+        ========================================== */
+     const card = document.createElement('article');
+     
+     /* ==========================================
+        LÍNEA 2: Dar clase CSS al contenedor
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.classList.add('card-creador')
+        
+        classList = lista de clases del elemento
+        add() = agregar una clase
+        'card-creador' = nombre de la clase (en el CSS)
+        
+        RESULTADO:
+        La card ahora tiene la clase 'card-creador'
+        El CSS se aplica automáticamente
+        ========================================== */
+     card.classList.add('card-creador');
+     
+     /* ==========================================
+        LÍNEA 3: Agregar animación escalonada
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.style.animationDelay = ...
+        
+        animationDelay = espera antes de iniciar la animación
+        `${indice * 0.12}s` = cálculo del tiempo
+        
+        EXPLICACIÓN DEL CÁLCULO:
+        - indice = 0, 1, 2, 3, 4 (posición en el arreglo)
+        - indice * 0.12 = multiplicar por 0.12
+        
+        EJEMPLO:
+        - 1er desarrollador (indice=0): 0 * 0.12 = 0s (sin espera)
+        - 2do desarrollador (indice=1): 1 * 0.12 = 0.12s (espera 0.12 segundos)
+        - 3er desarrollador (indice=2): 2 * 0.12 = 0.24s (espera 0.24 segundos)
+        - 4to desarrollador (indice=3): 3 * 0.12 = 0.36s
+        - 5to desarrollador (indice=4): 4 * 0.12 = 0.48s
+        
+        RESULTADO VISUAL:
+        Las cards aparecen una tras otra (escalonadamente)
+        en lugar de todas al mismo tiempo.
+        ========================================== */
+     card.style.animationDelay = `${indice * 0.12}s`;
 
-    /* ==========================================
-       LÍNEA 4-5: Crear la línea de color superior
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('div')
-         Crea un <div> que representará una línea
-       
-       - linea.classList.add('card-linea')
-         Le da la clase 'card-linea' (para el CSS)
-       
-       PROPÓSITO:
-       Es la línea delgada de color en la parte superior
-       de cada card
-       ========================================== */
-    const linea = document.createElement('div');
-    linea.classList.add('card-linea');
-    
-    /* ==========================================
-       LÍNEA 6: Asignar color a la línea
-       
-       QUÉ HACE EXACTAMENTE:
-       - linea.style.background = dev.color
-       
-       background = color de fondo
-       dev.color = toma el color del objeto desarrollador
-       
-       EJEMPLO:
-       Si dev.color es "#f4c107" (amarillo)
-       La línea será de color amarillo
-       ========================================== */
-    linea.style.background = dev.color;
+     /* ==========================================
+        LÍNEA 4-5: Crear la línea de color superior
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('div')
+          Crea un <div> que representará una línea
+        
+        - linea.classList.add('card-linea')
+          Le da la clase 'card-linea' (para el CSS)
+        
+        PROPÓSITO:
+        Es la línea delgada de color en la parte superior
+        de cada card
+        ========================================== */
+     const linea = document.createElement('div');
+     linea.classList.add('card-linea');
+     
+     /* ==========================================
+        LÍNEA 6: Asignar color a la línea
+        
+        QUÉ HACE EXACTAMENTE:
+        - linea.style.background = dev.color
+        
+        background = color de fondo
+        dev.color = toma el color del objeto desarrollador
+        
+        EJEMPLO:
+        Si dev.color es "#f4c107" (amarillo)
+        La línea será de color amarillo
+        ========================================== */
+     linea.style.background = dev.color;
 
-    /* ==========================================
-       LÍNEA 7-8: Crear contenedor de la foto
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('div')
-         Crea un <div>
-       
-       - fotoWrapper.classList.add('foto-wrapper')
-         Le da la clase 'foto-wrapper'
-       
-       PROPÓSITO:
-       Es el contenedor que rodea la foto
-       Tiene un borde de color alrededor de la foto
-       ========================================== */
-    const fotoWrapper = document.createElement('div');
-    fotoWrapper.classList.add('foto-wrapper');
-    
-    /* ==========================================
-       LÍNEA 9: Asignar color al borde de la foto
-       
-       QUÉ HACE EXACTAMENTE:
-       - fotoWrapper.style.borderColor = dev.color
-       
-       borderColor = color del borde
-       dev.color = el color del desarrollador
-       
-       RESULTADO:
-       El borde alrededor de la foto tiene el mismo
-       color que la línea superior (color personalizado)
-       ========================================== */
-    fotoWrapper.style.borderColor = dev.color;
+     /* ==========================================
+        LÍNEA 7-8: Crear contenedor de la foto
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('div')
+          Crea un <div>
+        
+        - fotoWrapper.classList.add('foto-wrapper')
+          Le da la clase 'foto-wrapper'
+        
+        PROPÓSITO:
+        Es el contenedor que rodea la foto
+        Tiene un borde de color alrededor de la foto
+        ========================================== */
+     const fotoWrapper = document.createElement('div');
+     fotoWrapper.classList.add('foto-wrapper');
+     
+     /* ==========================================
+        LÍNEA 9: Asignar color al borde de la foto
+        
+        QUÉ HACE EXACTAMENTE:
+        - fotoWrapper.style.borderColor = dev.color
+        
+        borderColor = color del borde
+        dev.color = el color del desarrollador
+        
+        RESULTADO:
+        El borde alrededor de la foto tiene el mismo
+        color que la línea superior (color personalizado)
+        ========================================== */
+     fotoWrapper.style.borderColor = dev.color;
 
-    /* ==========================================
-       LÍNEA 10-11: Crear elemento <img>
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('img')
-         Crea un elemento <img> para la foto
-       
-       - foto.src = dev.foto
-         Asigna la ruta de la foto
-         EJEMPLO: "../img_creadores/AB250136.jpg"
-       
-       - foto.alt = `Foto de ${dev.nombre}`
-         Texto alternativo si la imagen no carga
-         Usa template string para ver el nombre
-         Ej: "Foto de Bryan Ernesto Anaya Brizuela"
-       
-       - foto.classList.add('card-foto')
-         Le da la clase CSS para estilos
-       ========================================== */
-    const foto = document.createElement('img');
-    foto.src = dev.foto;
-    foto.alt = `Foto de ${dev.nombre}`;
-    foto.classList.add('card-foto');
+     /* ==========================================
+        LÍNEA 10-11: Crear elemento <img>
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('img')
+          Crea un elemento <img> para la foto
+        
+        - foto.src = dev.foto
+          Asigna la ruta de la foto
+          EJEMPLO: "../img_creadores/AB250136.jpg"
+        
+        - foto.alt = `Foto de ${dev.nombre}`
+          Texto alternativo si la imagen no carga
+          Usa template string para ver el nombre
+          Ej: "Foto de Bryan Ernesto Anaya Brizuela"
+        
+        - foto.classList.add('card-foto')
+          Le da la clase CSS para estilos
+        ========================================== */
+     const foto = document.createElement('img');
+     foto.src = dev.foto;
+     foto.alt = `Foto de ${dev.nombre}`;
+     foto.classList.add('card-foto');
 
-    /* ==========================================
-       LÍNEA 12: Agregar foto dentro del contenedor
-       
-       QUÉ HACE EXACTAMENTE:
-       - fotoWrapper.appendChild(foto)
-       
-       appendChild() = agregar un hijo/elemento dentro
-       fotoWrapper = el contenedor
-       foto = el elemento que voy a meter dentro
-       
-       RESULTADO VISUAL:
-       La foto <img> ahora está dentro del contenedor <div>
-       
-       ESTRUCTURA:
-       <div class="foto-wrapper">
-           <img src="..." alt="...">
-       </div>
-       ========================================== */
-    fotoWrapper.appendChild(foto);
+     /* ==========================================
+        LÍNEA 12: Agregar foto dentro del contenedor
+        
+        QUÉ HACE EXACTAMENTE:
+        - fotoWrapper.appendChild(foto)
+        
+        appendChild() = agregar un hijo/elemento dentro
+        fotoWrapper = el contenedor
+        foto = el elemento que voy a meter dentro
+        
+        RESULTADO VISUAL:
+        La foto <img> ahora está dentro del contenedor <div>
+        
+        ESTRUCTURA:
+        <div class="foto-wrapper">
+            <img src="..." alt="...">
+        </div>
+        ========================================== */
+     fotoWrapper.appendChild(foto);
 
-    /* ==========================================
-       LÍNEA 13-17: Crear el badge del rol
-       
-       QUÉ HACE:
-       Crea un pequeño banner que dice el rol
-       (Ej: "Desarrollador")
-       
-       LÍNEA 13: Crea un <span>
-       LÍNEA 14: Le da la clase 'card-rol'
-       
-       LÍNEA 15-16: Estilos de color
-       - style.background = `${dev.color}22`
-         Toma el color pero lo hace TRANSPARENTE (22)
-         EJEMPLO: 
-         #f4c107 → #f410722 (amarillo transparente)
-       
-       - style.color = dev.color
-         El texto del rol es del color sólido
-       
-       - style.borderColor = `${dev.color}55`
-         El borde es del color pero más transparente (55)
-       
-       LÍNEA 17: innerHTML agrega contenido
-       - <i class="fas fa-code"></i>
-         Icono de código (del Font Awesome)
-       - ${dev.rol}
-         Inserta el rol del desarrollador
-       ========================================== */
-    const rolBadge = document.createElement('span');
-    rolBadge.classList.add('card-rol');
-    rolBadge.style.background = `${dev.color}22`;
-    rolBadge.style.color = dev.color;
-    rolBadge.style.borderColor = `${dev.color}55`;
-    rolBadge.innerHTML = `<i class="fas fa-code"></i> ${dev.rol}`;
+     /* ==========================================
+        LÍNEA 13-17: Crear el badge del rol
+        
+        QUÉ HACE:
+        Crea un pequeño banner que dice el rol
+        (Ej: "Desarrollador")
+        
+        LÍNEA 13: Crea un <span>
+        LÍNEA 14: Le da la clase 'card-rol'
+        
+        LÍNEA 15-16: Estilos de color
+        - style.background = `${dev.color}22`
+          Toma el color pero lo hace TRANSPARENTE (22)
+          EJEMPLO: 
+          #f4c107 → #f410722 (amarillo transparente)
+        
+        - style.color = dev.color
+          El texto del rol es del color sólido
+        
+        - style.borderColor = `${dev.color}55`
+          El borde es del color pero más transparente (55)
+        
+        LÍNEA 17: innerHTML agrega contenido
+        - <i class="fas fa-code"></i>
+          Icono de código (del Font Awesome)
+        - ${dev.rol}
+          Inserta el rol del desarrollador
+        ========================================== */
+     const rolBadge = document.createElement('span');
+     rolBadge.classList.add('card-rol');
+     rolBadge.style.background = `${dev.color}22`;
+     rolBadge.style.color = dev.color;
+     rolBadge.style.borderColor = `${dev.color}55`;
+     rolBadge.innerHTML = `<i class="fas fa-code"></i> ${dev.rol}`;
 
-    /* ==========================================
-       LÍNEA 18-20: Crear el nombre del desarrollador
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('h3')
-         Crea un encabezado pequeño <h3>
-         (para el nombre)
-       
-       - nombre.classList.add('card-nombre')
-         Le da la clase CSS
-       
-       - nombre.textContent = dev.nombre
-         Inserta el nombre del objeto
-         EJEMPLO: "Bryan Ernesto Anaya Brizuela"
-       ========================================== */
-    const nombre = document.createElement('h3');
-    nombre.classList.add('card-nombre');
-    nombre.textContent = dev.nombre;
+     /* ==========================================
+        LÍNEA 18-20: Crear el nombre del desarrollador
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('h3')
+          Crea un encabezado pequeño <h3>
+          (para el nombre)
+        
+        - nombre.classList.add('card-nombre')
+          Le da la clase CSS
+        
+        - nombre.textContent = dev.nombre
+          Inserta el nombre del objeto
+          EJEMPLO: "Bryan Ernesto Anaya Brizuela"
+        ========================================== */
+     const nombre = document.createElement('h3');
+     nombre.classList.add('card-nombre');
+     nombre.textContent = dev.nombre;
 
-    /* ==========================================
-       LÍNEA 21-24: Crear el carnet
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('p')
-         Crea un párrafo <p>
-       
-       - carnet.classList.add('card-carnet')
-         Le da la clase CSS
-       
-       - carnet.innerHTML = ...
-         Inserta contenido que incluye:
-         - <i class="fas fa-id-card"></i>
-           Icono de carnet (del Font Awesome)
-         - ${dev.carnet}
-           El número del carnet
-           EJEMPLO: "AB250136"
-       ========================================== */
-    const carnet = document.createElement('p');
-    carnet.classList.add('card-carnet');
-    carnet.innerHTML = `<i class="fas fa-id-card"></i> ${dev.carnet}`;
+     /* ==========================================
+        LÍNEA 21-24: Crear el carnet
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('p')
+          Crea un párrafo <p>
+        
+        - carnet.classList.add('card-carnet')
+          Le da la clase CSS
+        
+        - carnet.innerHTML = ...
+          Inserta contenido que incluye:
+          - <i class="fas fa-id-card"></i>
+            Icono de carnet (del Font Awesome)
+          - ${dev.carnet}
+            El número del carnet
+            EJEMPLO: "AB250136"
+        ========================================== */
+     const carnet = document.createElement('p');
+     carnet.classList.add('card-carnet');
+     carnet.innerHTML = `<i class="fas fa-id-card"></i> ${dev.carnet}`;
 
-    /* ==========================================
-       LÍNEA 25-28: Crear la carrera
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.createElement('p')
-         Crea un párrafo <p> para la carrera
-       
-       - carrera.classList.add('card-carrera')
-         Le da la clase CSS
-       
-       - carrera.innerHTML = ...
-         Inserta contenido que incluye:
-         - <i class="fas fa-graduation-cap"></i>
-           Icono de graduación (del Font Awesome)
-         - ${dev.carrera}
-           La carrera del desarrollador
-           EJEMPLO: "Técnico en Ingeniería de Computación"
-       ========================================== */
-    const carrera = document.createElement('p');
-    carrera.classList.add('card-carrera');
-    carrera.innerHTML = `<i class="fas fa-graduation-cap"></i> ${dev.carrera}`;
+     /* ==========================================
+        LÍNEA 25-28: Crear la carrera
+        
+        QUÉ HACE EXACTAMENTE:
+        - document.createElement('p')
+          Crea un párrafo <p> para la carrera
+        
+        - carrera.classList.add('card-carrera')
+          Le da la clase CSS
+        
+        - carrera.innerHTML = ...
+          Inserta contenido que incluye:
+          - <i class="fas fa-graduation-cap"></i>
+            Icono de graduación (del Font Awesome)
+          - ${dev.carrera}
+            La carrera del desarrollador
+            EJEMPLO: "Técnico en Ingeniería de Computación"
+        ========================================== */
+     const carrera = document.createElement('p');
+     carrera.classList.add('card-carrera');
+     carrera.innerHTML = `<i class="fas fa-graduation-cap"></i> ${dev.carrera}`;
 
-    /* ==========================================
-       LÍNEA 29: Agregar línea a la card
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.appendChild(linea)
-       
-       Toma el elemento <div> "linea" que creamos
-       y lo mete dentro de "card"
-       
-       ESTRUCTURA ACTUAL:
-       <article class="card-creador">
-           <div class="card-linea"></div>
-       </article>
-       ========================================== */
-    card.appendChild(linea);
-    
-    /* ==========================================
-       LÍNEA 30: Agregar foto dentro de la card
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.appendChild(fotoWrapper)
-       
-       Toma el contenedor de la foto (que ya tiene la <img>)
-       y lo mete dentro de "card"
-       
-       ESTRUCTURA ACTUAL:
-       <article class="card-creador">
-           <div class="card-linea"></div>
-           <div class="foto-wrapper">
-               <img src="..." alt="...">
-           </div>
-       </article>
-       ========================================== */
-    card.appendChild(fotoWrapper);
-    
-    /* ==========================================
-       LÍNEA 31: Agregar badge del rol dentro de la card
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.appendChild(rolBadge)
-       
-       Mete el banner del rol dentro de la card
-       
-       ESTRUCTURA ACTUAL:
-       <article class="card-creador">
-           <div class="card-linea"></div>
-           <div class="foto-wrapper">...</div>
-           <span class="card-rol">...</span>
-       </article>
-       ========================================== */
-    card.appendChild(rolBadge);
-    
-    /* ==========================================
-       LÍNEA 32: Agregar nombre dentro de la card
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.appendChild(nombre)
-       
-       Mete el <h3> con el nombre dentro de la card
-       ========================================== */
-    card.appendChild(nombre);
-    
-    /* ==========================================
-       LÍNEA 33: Agregar carnet dentro de la card
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.appendChild(carnet)
-       
-       Mete el <p> con el carnet dentro de la card
-       ========================================== */
-    card.appendChild(carnet);
-    
-    /* ==========================================
-       LÍNEA 34: Agregar carrera dentro de la card
-       
-       QUÉ HACE EXACTAMENTE:
-       - card.appendChild(carrera)
-       
-       Mete el <p> con la carrera dentro de la card
-       
-       ESTRUCTURA FINAL COMPLETA:
-       <article class="card-creador">
-           <div class="card-linea"></div>
-           <div class="foto-wrapper">
-               <img src="..." alt="...">
-           </div>
-           <span class="card-rol"><i></i> Desarrollador</span>
-           <h3 class="card-nombre">Bryan Ernesto Anaya Brizuela</h3>
-           <p class="card-carnet"><i></i> AB250136</p>
-           <p class="card-carrera"><i></i> Técnico en Ingeniería...</p>
-       </article>
-       ========================================== */
-    card.appendChild(carrera);
+     /* ==========================================
+        LÍNEA 29: Agregar línea a la card
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.appendChild(linea)
+        
+        Toma el elemento <div> "linea" que creamos
+        y lo mete dentro de "card"
+        
+        ESTRUCTURA ACTUAL:
+        <article class="card-creador">
+            <div class="card-linea"></div>
+        </article>
+        ========================================== */
+     card.appendChild(linea);
+     
+     /* ==========================================
+        LÍNEA 30: Agregar foto dentro de la card
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.appendChild(fotoWrapper)
+        
+        Toma el contenedor de la foto (que ya tiene la <img>)
+        y lo mete dentro de "card"
+        
+        ESTRUCTURA ACTUAL:
+        <article class="card-creador">
+            <div class="card-linea"></div>
+            <div class="foto-wrapper">
+                <img src="..." alt="...">
+            </div>
+        </article>
+        ========================================== */
+     card.appendChild(fotoWrapper);
+     
+     /* ==========================================
+        LÍNEA 31: Agregar badge del rol dentro de la card
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.appendChild(rolBadge)
+        
+        Mete el banner del rol dentro de la card
+        
+        ESTRUCTURA ACTUAL:
+        <article class="card-creador">
+            <div class="card-linea"></div>
+            <div class="foto-wrapper">...</div>
+            <span class="card-rol">...</span>
+        </article>
+        ========================================== */
+     card.appendChild(rolBadge);
+     
+     /* ==========================================
+        LÍNEA 32: Agregar nombre dentro de la card
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.appendChild(nombre)
+        
+        Mete el <h3> con el nombre dentro de la card
+        ========================================== */
+     card.appendChild(nombre);
+     
+     /* ==========================================
+        LÍNEA 33: Agregar carnet dentro de la card
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.appendChild(carnet)
+        
+        Mete el <p> con el carnet dentro de la card
+        ========================================== */
+     card.appendChild(carnet);
+     
+     /* ==========================================
+        LÍNEA 34: Agregar carrera dentro de la card
+        
+        QUÉ HACE EXACTAMENTE:
+        - card.appendChild(carrera)
+        
+        Mete el <p> con la carrera dentro de la card
+        
+        ESTRUCTURA FINAL COMPLETA:
+        <article class="card-creador">
+            <div class="card-linea"></div>
+            <div class="foto-wrapper">
+                <img src="..." alt="...">
+            </div>
+            <span class="card-rol"><i></i> Desarrollador</span>
+            <h3 class="card-nombre">Bryan Ernesto Anaya Brizuela</h3>
+            <p class="card-carnet"><i></i> AB250136</p>
+            <p class="card-carrera"><i></i> Técnico en Ingeniería...</p>
+        </article>
+        ========================================== */
+     card.appendChild(carrera);
 
-    /* ==========================================
-       LÍNEA 35: Retornar la card completa
-       
-       QUÉ HACE EXACTAMENTE:
-       - return card
-       
-       Devuelve el elemento <article> que acabamos
-       de construir con todos sus elementos dentro.
-       
-       IMPORTANTE:
-       Ahora esta card está completa pero aún no
-       está en la página. La función renderizarCreadores()
-       se encargará de ponerla en la página.
-       ========================================== */
-    return card;
+     /* ==========================================
+        LÍNEA 35: Retornar la card completa
+        
+        QUÉ HACE EXACTAMENTE:
+        - return card
+        
+        Devuelve el elemento <article> que acabamos
+        de construir con todos sus elementos dentro.
+        
+        IMPORTANTE:
+        Ahora esta card está completa pero aún no
+        está en la página. La función renderizarCreadores()
+        se encargará de ponerla en la página.
+        ========================================== */
+     return card;
 }
 
 
@@ -524,141 +524,141 @@ function crearCardDesarrollador(dev, indice) {
    La página muestra 5 cards con todos los desarrolladores
    ============================================= */
 function renderizarCreadores() {
-    /* ==========================================
-       LÍNEA 1: Buscar el contenedor en el HTML
-       
-       QUÉ HACE EXACTAMENTE:
-       - document.getElementById('contenedor-creadores')
-       
-       getElementById() = buscar un elemento por su ID
-       'contenedor-creadores' = el ID que buscamos
-                                (debe estar en el HTML)
-       
-       - const contenedor = ...
-         Guarda el resultado en una variable
-       
-       IMPORTANTE:
-       Este elemento debe existir en el HTML,
-       algo como:
-       <section id="contenedor-creadores"></section>
-       ========================================== */
-    const contenedor = document.getElementById('contenedor-creadores');
-    
-    /* ==========================================
-       LÍNEA 2: Verificar que el contenedor existe
-       
-       QUÉ HACE EXACTAMENTE:
-       - if (!contenedor) return;
-       
-       if = si (condicional)
-       !contenedor = si el contenedor NO existe
-       return = terminar la función aquí
-       
-       LÓGICA:
-       Si no encontramos el contenedor,
-       no hay nada que hacer, así que salimos.
-       
-       VENTAJA:
-       Evita un error si el HTML no tiene
-       el elemento id="contenedor-creadores"
-       ========================================== */
-    if (!contenedor) return;
-
-    /* ==========================================
-       LÍNEA 3: Limpiar el contenedor
-       
-       QUÉ HACE EXACTAMENTE:
-       - contenedor.innerHTML = '';
-       
-       innerHTML = todo el contenido HTML dentro
-       = '' = cadena vacía (nada)
-       
-       RESULTADO:
-       Borra cualquier contenido anterior que
-       hubiera dentro del contenedor.
-       
-       IMPORTANCIA:
-       Si esta función se llama 2 veces,
-       sin esto tendríamos 10 cards duplicadas.
-       ========================================== */
-    contenedor.innerHTML = '';
-
-    /* ==========================================
-       LÍNEA 4: Recorrer el arreglo de desarrolladores
-       
-       QUÉ HACE EXACTAMENTE:
-       - desarrolladores.forEach((dev, indice) => { ... })
-       
-       forEach() = repetir para CADA elemento
-       (dev, indice) = parámetros de cada iteración
-       
-       PARÁMETROS:
-       - dev = el objeto desarrollador actual
-         EJEMPLO primera iteración:
-         {
-           nombre: "Bryan...",
-           carnet: "AB250136",
-           ...
-         }
-       
-       - indice = el número de la posición (0, 1, 2, 3, 4)
-         EJEMPLO primera iteración: indice = 0
-                 segunda iteración: indice = 1
-       
-       =>       = flecha, significa "hacer esto"
-       
-       FLUJO COMPLETO:
-       Iteración 1: desarrolladores[0], indice=0
-       Iteración 2: desarrolladores[1], indice=1
-       Iteración 3: desarrolladores[2], indice=2
-       Iteración 4: desarrolladores[3], indice=3
-       Iteración 5: desarrolladores[4], indice=4
-       ========================================== */
-    desarrolladores.forEach((dev, indice) => {
-        /* ========================================
-           LÍNEA 5: Crear la card del desarrollador
-           
-           QUÉ HACE EXACTAMENTE:
-           - const card = crearCardDesarrollador(dev, indice)
-           
-           Llama la función crearCardDesarrollador()
-           que creamos arriba, pasando:
-           - dev = el objeto del desarrollador actual
-           - indice = su posición en el arreglo
-           
-           RETORNA:
-           Un elemento <article> completo con toda la card
-           
-           GUARDA EN:
-           const card = la variable 'card' contiene
-           el elemento HTML creado
-        ======================================== */
-        const card = crearCardDesarrollador(dev, indice);
+     /* ==========================================
+        LÍNEA 1: Buscar el contenedor en el HTML
         
-        /* ========================================
-           LÍNEA 6: Agregar la card al contenedor
-           
-           QUÉ HACE EXACTAMENTE:
-           - contenedor.appendChild(card)
-           
-           appendChild() = agregar un hijo/elemento dentro
-           contenedor = el contenedor del HTML
-           card = la card que acabamos de crear
-           
-           RESULTADO:
-           La card ahora aparece en la página HTML
-           dentro del contenedor
-           
-           ESTRUCTURA DESPUÉS:
-           <section id="contenedor-creadores">
-               <article class="card-creador">...</article>
-           </section>
-        ======================================== */
-        contenedor.appendChild(card);
-    });
-    // ← CIERRE DEL forEach
-    // Ya se ejecutó 5 veces, una por cada desarrollador
-    // Ahora la página tiene 5 cards completas
+        QUÉ HACE EXACTAMENTE:
+        - document.getElementById('contenedor-creadores')
+        
+        getElementById() = buscar un elemento por su ID
+        'contenedor-creadores' = el ID que buscamos
+                                 (debe estar en el HTML)
+        
+        - const contenedor = ...
+          Guarda el resultado en una variable
+        
+        IMPORTANTE:
+        Este elemento debe existir en el HTML,
+        algo como:
+        <section id="contenedor-creadores"></section>
+        ========================================== */
+     const contenedor = document.getElementById('contenedor-creadores');
+     
+     /* ==========================================
+        LÍNEA 2: Verificar que el contenedor existe
+        
+        QUÉ HACE EXACTAMENTE:
+        - if (!contenedor) return;
+        
+        if = si (condicional)
+        !contenedor = si el contenedor NO existe
+        return = terminar la función aquí
+        
+        LÓGICA:
+        Si no encontramos el contenedor,
+        no hay nada que hacer, así que salimos.
+        
+        VENTAJA:
+        Evita un error si el HTML no tiene
+        el elemento id="contenedor-creadores"
+        ========================================== */
+     if (!contenedor) return;
+
+     /* ==========================================
+        LÍNEA 3: Limpiar el contenedor
+        
+        QUÉ HACE EXACTAMENTE:
+        - contenedor.innerHTML = '';
+        
+        innerHTML = todo el contenido HTML dentro
+        = '' = cadena vacía (nada)
+        
+        RESULTADO:
+        Borra cualquier contenido anterior que
+        hubiera dentro del contenedor.
+        
+        IMPORTANCIA:
+        Si esta función se llama 2 veces,
+        sin esto tendríamos 10 cards duplicadas.
+        ========================================== */
+     contenedor.innerHTML = '';
+
+     /* ==========================================
+        LÍNEA 4: Recorrer el arreglo de desarrolladores
+        
+        QUÉ HACE EXACTAMENTE:
+        - desarrolladores.forEach((dev, indice) => { ... })
+        
+        forEach() = repetir para CADA elemento
+        (dev, indice) = parámetros de cada iteración
+        
+        PARÁMETROS:
+        - dev = el objeto desarrollador actual
+          EJEMPLO primera iteración:
+          {
+            nombre: "Bryan...",
+            carnet: "AB250136",
+            ...
+          }
+        
+        - indice = el número de la posición (0, 1, 2, 3, 4)
+          EJEMPLO primera iteración: indice = 0
+                  segunda iteración: indice = 1
+        
+        =>       = flecha, significa "hacer esto"
+        
+        FLUJO COMPLETO:
+        Iteración 1: desarrolladores[0], indice=0
+        Iteración 2: desarrolladores[1], indice=1
+        Iteración 3: desarrolladores[2], indice=2
+        Iteración 4: desarrolladores[3], indice=3
+        Iteración 5: desarrolladores[4], indice=4
+        ========================================== */
+     desarrolladores.forEach((dev, indice) => {
+         /* ========================================
+            LÍNEA 5: Crear la card del desarrollador
+            
+            QUÉ HACE EXACTAMENTE:
+            - const card = crearCardDesarrollador(dev, indice)
+            
+            Llama la función crearCardDesarrollador()
+            que creamos arriba, pasando:
+            - dev = el objeto del desarrollador actual
+            - indice = su posición en el arreglo
+            
+            RETORNA:
+            Un elemento <article> completo con toda la card
+            
+            GUARDA EN:
+            const card = la variable 'card' contiene
+            el elemento HTML creado
+         ======================================== */
+         const card = crearCardDesarrollador(dev, indice);
+         
+         /* ========================================
+            LÍNEA 6: Agregar la card al contenedor
+            
+            QUÉ HACE EXACTAMENTE:
+            - contenedor.appendChild(card)
+            
+            appendChild() = agregar un hijo/elemento dentro
+            contenedor = el contenedor del HTML
+            card = la card que acabamos de crear
+            
+            RESULTADO:
+            La card ahora aparece en la página HTML
+            dentro del contenedor
+            
+            ESTRUCTURA DESPUÉS:
+            <section id="contenedor-creadores">
+                <article class="card-creador">...</article>
+            </section>
+         ======================================== */
+         contenedor.appendChild(card);
+     });
+     // ← CIERRE DEL forEach
+     // Ya se ejecutó 5 veces, una por cada desarrollador
+     // Ahora la página tiene 5 cards completas
 }
 
 /* =============================================
