@@ -1,233 +1,492 @@
 /* =============================================
    CREADORES.CSS
-   Estilos para la página de desarrolladores
    ============================================= */
 
-/* Fondo general */
+:root {
+  --azul-oscuro: #060d1f;
+  --azul-mid:    #0b1a35;
+  --azul-card:   #0d2040;
+  --dorado:      #f4c107;
+  --dorado-glow: rgba(244, 193, 7, 0.25);
+  --texto:       #e8edf5;
+  --texto-suave: #7a8db3;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* FONDO: imagen de edificios fija */
 body {
   background-image: url(../img/fondo.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--texto);
+  overflow-x: hidden;
   min-height: 100vh;
-  padding-top: 60px;
 }
 
+/* Overlay oscuro sobre la foto */
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 31, 60, 0.80), rgba(10, 31, 60, 0.94));
-  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 13, 31, 0.78) 0%,
+    rgba(6, 13, 31, 0.88) 60%,
+    rgba(6, 13, 31, 0.97) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Capa de luces de color que respira */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 30%, rgba(244,193,7,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 85% 70%, rgba(56,189,248,0.05) 0%, transparent 55%);
+  z-index: 0;
+  pointer-events: none;
+  animation: fondoBreathing 8s ease-in-out infinite alternate;
+}
+
+@keyframes fondoBreathing {
+  from { opacity: 0.5; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.04); }
 }
 
 /* =============================================
-   HERO / ENCABEZADO
-   ============================================= */
-.creadores-main {
-  padding-bottom: 80px;
+   PARTÍCULAS
+============================================= */
+.fondo-animado {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
 }
 
+.particula {
+  position: absolute;
+  border-radius: 50%;
+  animation: flotar linear infinite;
+  opacity: 0;
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+
+/* Scanlines sutiles */
+.fondo-animado::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.025) 3px,
+    rgba(0,0,0,0.025) 4px
+  );
+  animation: scanMove 14s linear infinite;
+}
+
+@keyframes scanMove {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100px; }
+}
+
+/* =============================================
+   MAIN
+============================================= */
+.creadores-main {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+}
+
+/* =============================================
+   HERO
+============================================= */
 .creadores-hero {
   text-align: center;
-  padding: 70px 20px 40px;
+  padding: 80px 20px 60px;
+  position: relative;
 }
 
-.creadores-subtitulo {
-  color: #f4c107;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
+/* Halo dorado detrás del hero */
+.creadores-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 320px;
+  background: radial-gradient(ellipse, rgba(244,193,7,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  animation: haloBreath 5s ease-in-out infinite alternate;
 }
+
+@keyframes haloBreath {
+  from { opacity: 0.4; transform: translate(-50%, -50%) scale(0.95); }
+  to   { opacity: 1;   transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(244,193,7,0.1);
+  border: 1px solid rgba(244,193,7,0.3);
+  border-radius: 100px;
+  padding: 6px 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dorado);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeDown 0.8s ease both;
+}
+
+.hero-eyebrow i { font-size: 0.7rem; }
 
 .creadores-titulo {
-  color: #ffffff;
-  font-size: 3rem;
-  font-weight: 800;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.1;
   margin-bottom: 16px;
-  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(244,193,7,0.2);
+  animation: fadeDown 0.8s ease 0.1s both;
 }
 
-/* Línea decorativa bajo el título */
-.creadores-titulo-linea {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #f4c107, #ffda44);
+.hero-linea {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--dorado), transparent);
+  margin: 0 auto 28px;
+  animation: expandir 1s ease 0.3s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-linea::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -30px;
+  width: 30px; height: 100%;
+  background: rgba(255,255,255,0.8);
   border-radius: 4px;
-  margin: 0 auto 24px;
+  animation: lineaShine 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes lineaShine {
+  0%   { left: -30px; opacity: 0; }
+  20%  { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+@keyframes expandir {
+  from { width: 0; opacity: 0; }
+  to   { width: 60px; opacity: 1; }
 }
 
 .creadores-descripcion {
-  color: #a0b0cc;
-  font-size: 1rem;
   max-width: 560px;
   margin: 0 auto;
+  color: var(--texto-suave);
+  font-size: 1rem;
   line-height: 1.7;
+  animation: fadeUp 0.8s ease 0.4s both;
 }
 
-.creadores-descripcion strong {
-  color: #d0dff5;
+.creadores-descripcion strong { color: var(--dorado); font-weight: 600; }
+
+/* =============================================
+   STATS
+============================================= */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 36px;
+  animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.hero-stat {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.hero-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dorado);
+  text-shadow: 0 0 20px rgba(244,193,7,0.4);
+}
+
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  align-self: center;
 }
 
 /* =============================================
-   GRID DE CARDS
-   ============================================= */
+   GRID
+============================================= */
 .creadores-grid-section {
-  padding: 0 40px 60px;
+  padding: 20px 40px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .creadores-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 28px;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-items: center;
 }
 
 /* =============================================
-   CARD DE DESARROLLADOR
-   ============================================= */
+   CARD
+============================================= */
 .card-creador {
-  background: rgba(18, 41, 77, 0.90);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 0 24px 28px;
-  position: relative;
+  background: rgba(13, 32, 64, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 0 0 28px;
+  width: 100%;
+  max-width: 260px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* Animación de entrada */
+  position: relative;
+  overflow: hidden;
+  cursor: default;
   opacity: 0;
-  animation: fadeInUp 0.5s ease forwards;
+  transform: translateY(30px);
+  animation: cardEntrada 0.6s ease forwards;
+  transition: transform 0.4s cubic-bezier(.23,1.01,.32,1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes cardEntrada {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .card-creador:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 16px 40px rgba(244, 193, 7, 0.2);
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(244,193,7,0.3);
 }
 
-/* Línea de color superior */
+/* Brillo interior al hover */
+.card-creador::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%,
+    var(--color-card, rgba(244,193,7,0.12)) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-creador:hover::before { opacity: 1; }
+
+/* Reflejo de luz que barre la card */
+.card-creador::after {
+  content: '';
+  position: absolute;
+  top: -60%; left: -60%;
+  width: 60%; height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.06) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  opacity: 0;
+}
+
+.card-creador:hover::after {
+  opacity: 1;
+  left: 130%;
+  transition: left 0.6s ease, opacity 0.1s ease;
+}
+
+/* Línea superior */
 .card-linea {
-  height: 5px;
-  width: calc(100% + 48px);   /* Ocupa todo el ancho incluyendo padding */
-  margin-left: -24px;
-  border-radius: 16px 16px 0 0;
+  height: 4px;
+  width: 100%;
   margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* =============================================
-   FOTO
-   ============================================= */
+.card-linea::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -40px;
+  width: 40px; height: 100%;
+  background: rgba(255,255,255,0.6);
+  animation: lineaCardShine 4s ease-in-out infinite;
+}
+
+@keyframes lineaCardShine {
+  0%   { left: -40px; opacity: 0; }
+  10%  { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+/* Foto */
 .foto-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
-  border: 3px solid;          /* El color lo pone el JS inline */
+  border: 3px solid;
   margin: 0 auto 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
+  padding: 3px;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(.23,1.01,.32,1),
+              box-shadow 0.4s ease;
 }
 
 .card-creador:hover .foto-wrapper {
-  transform: scale(1.06);
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Anillo giratorio */
+.foto-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px dashed;
+  border-color: inherit;
+  opacity: 0;
+  animation: girar 6s linear infinite;
+  transition: opacity 0.3s ease;
+}
+
+.card-creador:hover .foto-wrapper::after { opacity: 0.5; }
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .card-foto {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
   display: block;
 }
 
-/* =============================================
-   BADGE ROL
-   ============================================= */
 .card-rol {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid;          /* Color lo pone el JS */
-  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease;
 }
 
-.card-rol i {
-  margin-right: 5px;
-  font-size: 0.72rem;
-}
+.card-creador:hover .card-rol { transform: scale(1.05); }
 
-/* =============================================
-   NOMBRE
-   ============================================= */
 .card-nombre {
-  color: #ffffff;
-  font-size: 1.05rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.98rem;
   font-weight: 700;
+  color: #fff;
   margin-bottom: 10px;
+  padding: 0 18px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.card-creador:hover .card-nombre { color: var(--dorado); }
+
+.card-carnet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--texto-suave);
+  font-size: 0.82rem;
+  margin-bottom: 8px;
+}
+
+.card-carnet i { color: var(--dorado); font-size: 0.75rem; }
+
+.card-carrera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+  padding: 0 16px;
   line-height: 1.4;
 }
 
-/* =============================================
-   CARNET Y CARRERA
-   ============================================= */
-.card-carnet,
-.card-carrera {
-  color: #8a9dc0;
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  line-height: 1.5;
+.card-carrera i {
+  color: var(--dorado);
+  font-size: 0.75rem;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
-.card-carnet i,
-.card-carrera i {
-  color: #f4c107;
-  margin-right: 6px;
-  font-size: 0.78rem;
+/* =============================================
+   ANIMACIONES BASE
+============================================= */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =============================================
    RESPONSIVE
-   ============================================= */
+============================================= */
 @media (max-width: 768px) {
-  .creadores-titulo {
-    font-size: 2.2rem;
-  }
-
-  .creadores-grid-section {
-    padding: 0 20px 60px;
-  }
-
-  .creadores-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .creadores-titulo {
-    font-size: 1.8rem;
-  }
-
-  .creadores-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-  }
+  .creadores-grid-section { padding: 20px 20px 80px; }
+  .creadores-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+  .card-creador { max-width: 100%; }
+  .creadores-hero { padding: 60px 20px 40px; }
 }

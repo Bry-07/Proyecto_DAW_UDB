@@ -294,11 +294,51 @@ function iniciarEdicion(id) {
 // @param {number} id - ID del mensaje a eliminar
 // =============================================
 function eliminarMensaje(id) {
-    if (!confirm('¿Seguro que deseas eliminar este mensaje?')) return;
-    cargarMensajesDeStorage();
-    mensajesGuardados = mensajesGuardados.filter(m => m.id !== id);
-    guardarMensajesEnStorage();
-    renderizarMensajes();
+    mostrarModalEliminar(id);
+}
+
+function mostrarModalEliminar(id) {
+    // Elimina modal anterior si existe
+    const modalAnterior = document.getElementById('modal-eliminar');
+    if (modalAnterior) modalAnterior.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'modal-eliminar';
+    modal.innerHTML = `
+        <div class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-icono">
+                    <i class="fas fa-trash"></i>
+                </div>
+                <h3 class="modal-titulo">¿Eliminar mensaje?</h3>
+                <p class="modal-texto">Esta acción no se puede deshacer.</p>
+                <div class="modal-botones">
+                    <button class="modal-btn-cancelar" id="modal-cancelar">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button class="modal-btn-eliminar" id="modal-confirmar">
+                        <i class="fas fa-trash"></i> Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Animar entrada
+    setTimeout(() => modal.querySelector('.modal-box').classList.add('modal-show'), 10);
+
+    document.getElementById('modal-cancelar').addEventListener('click', () => {
+        modal.remove();
+    });
+
+    document.getElementById('modal-confirmar').addEventListener('click', () => {
+        cargarMensajesDeStorage();
+        mensajesGuardados = mensajesGuardados.filter(m => m.id !== id);
+        guardarMensajesEnStorage();
+        renderizarMensajes();
+        modal.remove();
+    });
 }
 
 // =============================================

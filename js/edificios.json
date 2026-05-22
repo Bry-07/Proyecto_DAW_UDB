@@ -1,0 +1,200 @@
+{
+    "Edif_A": {
+        "nombre": "Edificio B",
+        "imagenes": ["../img_mapa/IMG_4411 1.svg"],
+        "descripcion": "Edificio B con laboratorios y aulas especializadas.",
+        "enlace": "../oriente/edif-b.html"
+    },
+    "Edif_B": {
+        "nombre": "Edificio A",
+        "imagenes": ["../img_mapa/IMG_4406 1.svg", "../img_mapa/IMG_4414 1.svg"],
+        "descripcion": "El Edificio A alberga aulas de clases y oficinas administrativas de la UDB.",
+        "enlace": "../oriente/edif-a.html"
+    },
+    "Edif_C": {
+        "nombre": "Edificio C",
+        "imagenes": ["../img_mapa/IMG_4457 1.svg", "../img_mapa/IMG_4448 1.svg"],
+        "descripcion": "Edificio C con instalaciones modernas para clases.",
+        "enlace": "../oriente/edif-c.html"
+    },
+    "Edif_CDIU": {
+        "nombre": "Centro de Desarrollo e Innovación UDB",
+        "imagenes": ["../img_mapa/0e5d1a263f68ee03850a80f688c136b0_XL 1.svg"],
+        "descripcion": "Centro de investigación e innovación tecnológica de la UDB.",
+        "enlace": "../oriente/edif-cdiu.html"
+    },
+    "Biblioteca": {
+        "nombre": "Biblioteca",
+        "imagenes": ["../img_mapa/IMG_4374 1.svg"],
+        "descripcion": "La biblioteca universitaria con miles de libros y recursos digitales.",
+        "enlace": "../oriente/edif-biblio.html"
+    },
+    "Vivienda_Salesiana": {
+        "nombre": "Vivienda Salesiana",
+        "imagenes": ["../img_mapa/IMG_4339 1.svg"],
+        "descripcion": "Residencia de los padres salesianos dentro del campus.",
+        "enlace": "../oriente/edif-viviendaS.html"
+    },
+    "Edif_Rafael_Meza_Ayau": {
+        "nombre": "Edificio Rafael Meza Ayau",
+        "imagenes": ["../img_mapa/IMG_4356 1.svg", "../img_mapa/IMG_4354 1.svg", "../img_mapa/IMG_4351 1.svg"],
+        "descripcion": "Edificio dedicado a actividades académicas y culturales.",
+        "enlace": "../oriente/edif-pinacoteca.html"
+    },
+    "Igle": {
+        "nombre": "Capilla UDB",
+        "imagenes": ["../img_mapa/IMG_4425 1.svg", "../img_mapa/IMG_4429 1.svg", "../img_mapa/IMG_4428 1.svg", "../img_mapa/IMG_4423 1.svg", "../img_mapa/IMG_4420 1.svg"],
+        "descripcion": "Espacio de reflexión y espiritualidad de la comunidad salesiana.",
+        "enlace": "../oriente/capilla.html"
+    },
+    "Edif_R": {
+        "nombre": "Edificio R",
+        "imagenes": ["../img_mapa/IMG_4405 1.svg", "../img_mapa/IMG_4404 1.svg"],
+        "descripcion": "Edificio R con aulas y espacios académicos.",
+        "enlace": "../oriente/edif-r.html"
+    },
+    "Centro_de_Pastoral": {
+        "nombre": "Centro de Pastoral",
+        "imagenes": ["../img_mapa/IMG_4433 1.svg"],
+        "descripcion": "Centro dedicado a la formación humana y espiritual del campus.",
+        "enlace": "../oriente/edif-CPastoral.html"
+    },
+    "Magna_A": {
+        "nombre": "Magna A",
+        "imagenes": ["../img_mapa/IMG_4473 1.svg"],
+        "descripcion": "Auditorio Magna A para eventos académicos y culturales.",
+        "enlace": "../oriente/edif-magnaA.html"
+    },
+    "Magna_B": {
+        "nombre": "Magna B",
+        "imagenes": ["../img_mapa/IMG_4459 1.svg", "../img_mapa/IMG_4472 1.svg"],
+        "descripcion": "Auditorio Magna B para conferencias y actividades universitarias.",
+        "enlace": "../oriente/edif-magnaB.html"
+    },
+    "Magna_C": {
+        "nombre": "Magna C",
+        "imagenes": ["../img_mapa/IMG_5157 1.svg", "../img_mapa/IMG_5148 1.svg", "../img_mapa/IMG_5146 1.svg"],
+        "descripcion": "Auditorio Magna C, espacio para grandes eventos del campus.",
+        "enlace": "../occidente/edif-magnaC.html"
+    },
+    "Edif_Profesores": {
+        "nombre": "Edificio de Profesores",
+        "imagenes": ["../img_mapa/IMG_4295 1.svg", "../img_mapa/IMG_4436 1.svg", "../img_mapa/IMG_4437 1.svg", "../img_mapa/IMG_4441 1.svg"],
+        "descripcion": "Edificio con cubículos y oficinas para el cuerpo docente.",
+        "enlace": "../oriente/edif-profesores.html"
+    },
+    "Centro_de_Repro": {
+        "nombre": "Centro de Reproducción",
+        "imagenes": ["../img_mapa/IMG_4334 1.svg"],
+        "descripcion": "Centro de reproducción de materiales académicos.",
+        "enlace": "../oriente/centroR.html"
+    },
+    "Comedor_Profe": {
+        "nombre": "Comedor de Profesores",
+        "imagenes": ["../img_mapa/IMG_4299 1.svg"],
+        "descripcion": "Área de alimentación exclusiva para el personal docente.",
+        "enlace": "../oriente/comedor1.html"
+    },
+    "Multigim_UDB": {
+        "nombre": "Multigimnasio UDB",
+        "imagenes": ["../img_mapa/IMG_4336 1.svg"],
+        "descripcion": "Instalaciones deportivas para toda la comunidad universitaria.",
+        "enlace": "../oriente/edif-gym.html"
+    },
+    "Edif_Ocho": {
+        "nombre": "Edificio 8",
+        "imagenes": ["../img_mapa/IMG_5151 1.svg", "../img_mapa/IMG_5150 1.svg"],
+        "descripcion": "Edificio 8 con aulas y laboratorios especializados.",
+        "enlace": "../occidente/edif-8.html"
+    },
+    "Edif_Facul": {
+        "nombre": "Edificio de Facultades",
+        "imagenes": ["../img_mapa/IMG_5154 1.svg", "../img_mapa/IMG_5156 1.svg", "../img_mapa/IMG_5138 1.svg", "../img_mapa/IMG_5140 1.svg"],
+        "descripcion": "Edificio principal de las facultades de la UDB.",
+        "enlace": "../occidente/edif-ciencias.html"
+    },
+    "Edif_Dos": {
+        "nombre": "Edificio 2",
+        "imagenes": ["../img_mapa/IMG_5179 1.svg", "../img_mapa/IMG_5195 1.svg", "../img_mapa/IMG_5200 1.svg"],
+        "descripcion": "Edificio 2 con aulas y servicios académicos.",
+        "enlace": "../occidente/edif-2.html"
+    },
+    "Edif_Tres": {
+        "nombre": "Edificio 3",
+        "imagenes": ["../img_mapa/IMG_5176 1.svg", "../img_mapa/IMG_5204 1.svg"],
+        "descripcion": "Edificio 3 con laboratorios y aulas de la UDB.",
+        "enlace": "../occidente/edif-3.html"
+    },
+    "Edif_Cuatro": {
+        "nombre": "Edificio 4",
+        "imagenes": ["../img_mapa/IMG_5177 1.svg", "../img_mapa/IMG_5175 1.svg"],
+        "descripcion": "Edificio 4 con instalaciones académicas modernas.",
+        "enlace": "../occidente/edif-4.html"
+    },
+    "Edif_Cinco": {
+        "nombre": "Edificio 5",
+        "imagenes": ["../img_mapa/IMG_5167 1.svg", "../img_mapa/IMG_5159 1.svg"],
+        "descripcion": "Edificio 5 con aulas especializadas.",
+        "enlace": "../occidente/edif-5.html"
+    },
+    "Edif_Seis": {
+        "nombre": "Edificio 6",
+        "imagenes": ["../img_mapa/IMG_5162 1.svg", "../img_mapa/IMG_5164 1.svg", "../img_mapa/IMG_5160 1.svg"],
+        "descripcion": "Edificio 6 con laboratorios y aulas de clases.",
+        "enlace": "../occidente/edif-6.html"
+    },
+    "Edif_Siete": {
+        "nombre": "Edificio 7",
+        "imagenes": ["../img_mapa/IMG_5136 1.svg"],
+        "descripcion": "Edificio 7 con instalaciones para actividades académicas.",
+        "enlace": "../occidente/edif-7.html"
+    },
+    "OWCC": {
+        "nombre": "OWCC",
+        "imagenes": ["../img_mapa/IMG_5210 1.svg", "../img_mapa/IMG_5209 1.svg", "../img_mapa/IMG_5173 1.svg"],
+        "descripcion": "Centro de actividades y servicios estudiantiles.",
+        "enlace": "../occidente/OWCC.html"
+    },
+    "OMM": {
+        "nombre": "OMM",
+        "imagenes": ["../img_mapa/IMG_5212 1.svg", "../img_mapa/IMG_5213 1.svg"],
+        "descripcion": "Edificio OMM de la Universidad Don Bosco.",
+        "enlace": "../occidente/observatorio.html"
+    },
+    "Almacen_General": {
+        "nombre": "Almacén General",
+        "imagenes": ["../img_mapa/IMG_5273 1.svg", "../img_mapa/IMG_5271 1.svg"],
+        "descripcion": "Almacén general de materiales y recursos del campus.",
+        "enlace": "../occidente/almacén.html"
+    },
+    "Avion": {
+        "nombre": "Hangar - Facultad de Aeronáutica",
+        "imagenes": ["../img_mapa/IMG_5276 1.svg"],
+        "descripcion": "Instalaciones de la Facultad de Ingeniería Aeronáutica.",
+        "enlace": "../occidente/hangar.html"
+    },
+    "Comedor_Edif_Seis": {
+        "nombre": "Cafetería Zona Occidente",
+        "imagenes": ["../img_mapa/IMG_5219 1.svg"],
+        "descripcion": "Cafetería principal de la zona occidente del campus.",
+        "enlace": "../occidente/comedor2.html"
+    },
+    "Plaza_Bande": {
+        "nombre": "Plaza de las Banderas",
+        "imagenes": ["../img_mapa/IMG_4416 1.svg", "../img_mapa/IMG_4417 1.svg", "../img_mapa/IMG_4418 1.svg"],
+        "descripcion": "Plaza central con las banderas de El Salvador y la UDB.",
+        "enlace": "../occidente/banderas.html"
+    },
+    "Carro": {
+        "nombre": "Carrito de la Inge",
+        "imagenes": ["../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM 1.svg"],
+        "descripcion": "Carro de la Inge.",
+        "enlace": "../occidente/banderas.html"
+    },
+    "Carro2": {
+        "nombre": "Carrito de la Inge 2",
+        "imagenes": ["../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM (1) 1 (1).svg"],
+        "descripcion": "Carro de la Inge.",
+        "enlace": "../occidente/banderas.html"
+    }
+}
