@@ -206,3 +206,100 @@ textarea.form-control {
 .exito-msg i {
   margin-right: 8px;
 }
+
+/* ===== MODAL ELIMINAR ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+.modal-box {
+    background: #0b2239;
+    border: 1px solid rgba(244, 193, 7, 0.3);
+    border-radius: 16px;
+    padding: 40px 36px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transform: scale(0.85);
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.modal-box.modal-show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-icono {
+    width: 64px;
+    height: 64px;
+    background: rgba(220, 53, 69, 0.15);
+    border: 2px solid rgba(220, 53, 69, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: #dc3545;
+}
+
+.modal-titulo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.modal-texto {
+    color: #7a8db3;
+    font-size: 0.92rem;
+    margin-bottom: 28px;
+}
+
+.modal-botones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.modal-btn-cancelar {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: 1px solid #2a4a7a;
+    background: transparent;
+    color: #7a8db3;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-btn-cancelar:hover {
+    border-color: #f4c107;
+    color: #f4c107;
+}
+
+.modal-btn-eliminar {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg, #dc3545, #c0392b);
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-btn-eliminar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}

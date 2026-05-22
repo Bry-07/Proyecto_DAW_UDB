@@ -6,13 +6,10 @@
    Cuando haces clic (o hover en desktop) en un edificio,
    aparece un cuadro con información, fotos y detalles.
    
-   FUNCIONALIDADES:
-   1. Detecta clics/hover en cada edificio del mapa SVG
-   2. Muestra un cuadro con nombre, fotos y descripción
-   3. Carrusel automático de imágenes (cambia cada 3 segundos)
-   4. Navegación manual de fotos (flechas y puntos)
-   5. Responsive: diferente comportamiento en móvil vs desktop
-   6. Posicionamiento inteligente del cuadro (no sale de pantalla)
+   USA:
+   - jQuery para efectos, eventos y manipulación del DOM
+   - AJAX ($.getJSON) para cargar los datos desde edificios.json
+   - JavaScript puro para lógica del carrusel
    ============================================= */
 
 /* =============================================
@@ -469,7 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM 1.svg",
             ],
             descripcion: "Carro de la Inge.",
-            enlace: "../occidente/carro.html"
+            enlace: "../occidente/banderas.html"
         },
 
         // --------------------------------------------------
@@ -481,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM (1) 1 (1).svg",
             ],
             descripcion: "Carro de la Inge.",
-            enlace: "../occidente/carro.html"
+            enlace: "../occidente/banderas.html"
         }
 
         
@@ -490,203 +487,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =============================================
        VARIABLES: Control del carrusel
-       
-       QUÉ SON Y PARA QUÉ SIRVEN:
-       
-       1. indiceImagenActual = 0
-          - Guarda cuál imagen se está mostrando
-          - Comienza en 0 (primera imagen)
-          - Cuando haces clic en "Siguiente", aumenta
-          - Cuando haces clic en "Anterior", disminuye
-          EJEMPLO:
-          - Si hay 3 fotos: índices son 0, 1, 2
-          - Si estés en 1, es la segunda foto
-       
-       2. imagenesActuales = []
-          - Array vacío al inicio
-          - Se LLENA cuando haces clic en un edificio
-          - Contiene las rutas de las fotos de ESE edificio
-          EJEMPLO:
-          - Haces clic en Edif_A
-          - imagenesActuales ahora es:
-            ["../img_mapa/IMG_4406.svg", "../img_mapa/IMG_4414.svg"]
-       
-       3. intervaloCarrusel = null
-          - Guarda el "temporizador" del carrusel automático
-          - null = no hay carrusel activo
-          - Cuando se crea el carrusel, guarda aquí su ID
-          - Cuando cierras el cuadro, cancela este temporizador
-          VENTAJA:
-          Si cambias de edificio, detiene el antiguo
-          temporizador ANTES de crear uno nuevo
        ============================================= */
-    let indiceImagenActual = 0;    // Qué foto se está mostrando (0 = primera)
-    let imagenesActuales   = [];   // Array con las fotos del edificio actual
-    let intervaloCarrusel  = null; // Temporizador del carrusel automático
+    let indiceImagenActual = 0;
+    let imagenesActuales   = [];
+    let intervaloCarrusel  = null;
 
     /* =============================================
-       REFERENCIAS AL DOM
-       
-       QUÉ HACE:
-       Busca elementos en el HTML y los guarda
-       en variables para usarlos várias veces.
-       
-       POR QUÉ:
-       - Más rápido: busca UNA sola vez
-       - Menos código: no repites getElementById()
-       
-       ELEMENTOS:
-       - infoContainer: el <div> que contiene TODO el cuadro de información
-       - mapaContainer: el contenedor del SVG (div con clase "mapa-container")
+       REFERENCIAS AL DOM (con jQuery)
        ============================================= */
-    const infoContainer = document.getElementById('info-container');   // El cuadro info
-    const mapaContainer = document.querySelector('.mapa-container');  // El SVG del mapa
+    const $infoContainer = $('#info-container');
+    const $mapaContainer = $('.mapa-container');
 
     /* =============================================
-       CONSTRUCCIÓN DINÁMICA: Cuadro de información
-       
-       QUÉ SUCEDE AQUÍ:
-       Se CONSTRUYE todo el HTML del cuadro usando codigo JS.
-       NO está escrito en el HTML, se hace aquí con template string.
-       
-       VENTAJA:
-       - No necesitas HTML repetido
-       - Todo el cuadro está aquí en un lugar
-       - Fácil de modificar
-       
-       ESTRUCTURA DEL CUADRO:
-       
-       ✕  ← botón cerrar
-       ===================
-       Nombre del edificio
-       ===================
-       [< ] [IMAGEN] [> ]  ← carrusel
-        ●   ●   ●         ← indicadores (puntos)
-       ===================
-       Descripción...
-       [Ver más información]
-       
-       IMPORTANTE:
-       El cuadro está VACÍO al inicio.
-       Se LLENA cuando haces clic en un edificio.
+       CONSTRUCCIÓN DINÁMICA del cuadro de información
        ============================================= */
-    infoContainer.innerHTML = `
-        <!-- BOTÓN CERRAR (X) -->
+    $infoContainer.html(`
         <button id="btn-cerrar">✕</button>
-        
-        <!-- TÍTULO: Nombre del edificio -->
         <h3 id="info-nombre">Nombre del edificio</h3>
-
-        <!-- CARRUSEL DE IMÁGENES -->
         <div id="carrusel">
-            <!-- FLECHA IZQUIERDA: ir a la foto anterior -->
             <button id="btn-anterior">&#8249;</button>
-            
-            <!-- IMAGEN: la foto del edificio -->
             <img id="info-imagen" src="" alt="Imagen del edificio" />
-            
-            <!-- FLECHA DERECHA: ir a la siguiente foto -->
             <button id="btn-siguiente">&#8250;</button>
-            
-            <!-- INDICADORES: puntos para saltar a una imagen específica -->
             <div id="indicadores"></div>
         </div>
-
-        <!-- DESCRIPCIÓN: Texto sobre el edificio -->
         <p id="info-descripcion">Descripción del edificio.</p>
-        
-        <!-- ENLACE: Botón para ir a la página de detalles -->
         <a id="btn-ver-mas" href="#">Ver más información</a>
-    `;
+    `);
 
     /* =============================================
-       REFERENCIAS A ELEMENTOS CREADOS
-       
-       QUÉ HACE:
-       Busca los elementos que ACABAMOS de crear
-       con innerHTML y los guarda en variables
-       para poder manipularlos después.
-       
-       NOTA:
-       Estos elementos EXISTEN porque los creamos
-       arriba con innerHTML. Ahora los guardamos
-       en variables para no escribir getElementById()
-       cada vez que los usemos.
+       REFERENCIAS a elementos creados (jQuery)
        ============================================= */
-    const btnCerrar    = document.getElementById('btn-cerrar');     // botón X
-    const infoNombre   = document.getElementById('info-nombre');    // titulo
-    const infoImagen   = document.getElementById('info-imagen');    // la foto
-    const infoDesc     = document.getElementById('info-descripcion'); // texto
-    const btnVerMas    = document.getElementById('btn-ver-mas');    // enlace
-    const btnAnterior  = document.getElementById('btn-anterior');   // flecha <
-    const btnSiguiente = document.getElementById('btn-siguiente');  // flecha >
-    const indicadores  = document.getElementById('indicadores');    // contenedor de puntos
+    const $btnCerrar    = $('#btn-cerrar');
+    const $infoNombre   = $('#info-nombre');
+    const $infoImagen   = $('#info-imagen');
+    const $infoDesc     = $('#info-descripcion');
+    const $btnVerMas    = $('#btn-ver-mas');
+    const $btnAnterior  = $('#btn-anterior');
+    const $btnSiguiente = $('#btn-siguiente');
+    const $indicadores  = $('#indicadores');
 
     // =============================================
     // FUNCIÓN: mostrarImagen
-    // Muestra la imagen con efecto fade suave y actualiza los puntos indicadores
-    // @param {number} indice - posición de la imagen en el arreglo imagenesActuales
+    // Muestra la imagen con fadeOut/fadeIn de jQuery
     // =============================================
     function mostrarImagen(indice) {
-        // Efecto fade: desvanece la imagen, cambia la fuente, vuelve a mostrar
-        infoImagen.style.opacity = '0';
-        setTimeout(() => {
-            infoImagen.src = imagenesActuales[indice];
-            infoImagen.style.opacity = '1';
-        }, 200);
+        $infoImagen.fadeOut(200, function () {
+            $(this).attr('src', imagenesActuales[indice]).fadeIn(200);
+        });
 
-        // Actualiza cuál punto está activo
-        const puntos = indicadores.querySelectorAll('.punto');
-        puntos.forEach((punto, i) => {
-            punto.classList.toggle('activo', i === indice);
+        $indicadores.find('.punto').each(function (i) {
+            $(this).toggleClass('activo', i === indice);
         });
     }
 
     // =============================================
     // FUNCIÓN: crearIndicadores
-    // Genera un punto por cada imagen del carrusel
-    // Al hacer clic en un punto, salta a esa imagen
-    // @param {number} totalImagenes - cantidad de imágenes del edificio
     // =============================================
     function crearIndicadores(totalImagenes) {
-        indicadores.innerHTML = ''; // Limpia indicadores anteriores
-
+        $indicadores.empty();
         for (let i = 0; i < totalImagenes; i++) {
-            const punto = document.createElement('span');
-            punto.classList.add('punto');
-
-            // Clic en el punto → ir a esa imagen
-            punto.addEventListener('click', () => {
-                indiceImagenActual = i;
-                mostrarImagen(indiceImagenActual);
-            });
-
-            indicadores.appendChild(punto);
+            const $punto = $('<span>').addClass('punto');
+            $punto.on('click', (function (idx) {
+                return function () {
+                    indiceImagenActual = idx;
+                    mostrarImagen(indiceImagenActual);
+                };
+            })(i));
+            $indicadores.append($punto);
         }
     }
 
     // =============================================
     // FUNCIÓN: iniciarAutoCarrusel
-    // Inicia el paso automático de imágenes cada 3 segundos
-    // Detiene cualquier intervalo anterior antes de iniciar uno nuevo
     // =============================================
     function iniciarAutoCarrusel() {
         if (intervaloCarrusel) clearInterval(intervaloCarrusel);
-
-        // Solo inicia el auto-avance si hay más de una imagen
         if (imagenesActuales.length > 1) {
-            intervaloCarrusel = setInterval(() => {
+            intervaloCarrusel = setInterval(function () {
                 indiceImagenActual = (indiceImagenActual === imagenesActuales.length - 1)
                     ? 0
                     : indiceImagenActual + 1;
                 mostrarImagen(indiceImagenActual);
-            }, 3000); // Cambia cada 3 segundos
+            }, 3000);
         }
     }
 
     // =============================================
     // FUNCIÓN: detenerAutoCarrusel
-    // Detiene el carrusel automático (al cerrar el cuadro o al navegar manualmente)
     // =============================================
     function detenerAutoCarrusel() {
         if (intervaloCarrusel) {
@@ -697,9 +584,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // =============================================
     // FUNCIÓN: navegarCarrusel
-    // Avanza o retrocede en el carrusel de forma cíclica
-    // Al navegar manualmente se reinicia el temporizador automático
-    // @param {string} direccion - 'anterior' o 'siguiente'
     // =============================================
     function navegarCarrusel(direccion) {
         if (direccion === 'anterior') {
@@ -712,55 +596,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 : indiceImagenActual + 1;
         }
         mostrarImagen(indiceImagenActual);
-
-        // Reinicia el temporizador para que cuente desde cero tras la acción manual
         iniciarAutoCarrusel();
     }
 
     // =============================================
     // FUNCIÓN: posicionarCuadro
-    // Calcula y aplica la posición del cuadro de info cerca del edificio activo,
-    // asegurándose de que no se salga de los bordes del mapa
-    // @param {DOMRect} rectEdificio - posición del edificio en pantalla
     // =============================================
     function posicionarCuadro(rectEdificio) {
-        const rectMapa = mapaContainer.getBoundingClientRect();
+        const rectMapa = $mapaContainer[0].getBoundingClientRect();
 
-        // Intenta colocar el cuadro encima del edificio
-        let posTop  = rectEdificio.top  - rectMapa.top  - infoContainer.offsetHeight - 10;
+        let posTop  = rectEdificio.top - rectMapa.top - $infoContainer.outerHeight() - 10;
         let posLeft = rectEdificio.left - rectMapa.left
-                    + (rectEdificio.width  / 2)
-                    - (infoContainer.offsetWidth / 2);
+                    + (rectEdificio.width / 2)
+                    - ($infoContainer.outerWidth() / 2);
 
-        // Si se sale por arriba → lo pone debajo
-        if (posTop < 0) {
-            posTop = rectEdificio.bottom - rectMapa.top + 10;
-        }
-
-        // Si se sale por la izquierda → ajusta al borde
+        if (posTop < 0) posTop = rectEdificio.bottom - rectMapa.top + 10;
         if (posLeft < 0) posLeft = 5;
 
-        // Si se sale por la derecha → ajusta al borde
-        const anchoCuadro = infoContainer.offsetWidth;
-        const anchoMapa   = mapaContainer.offsetWidth;
-        if (posLeft + anchoCuadro > anchoMapa) {
-            posLeft = anchoMapa - anchoCuadro - 5;
-        }
+        const anchoCuadro = $infoContainer.outerWidth();
+        const anchoMapa   = $mapaContainer.outerWidth();
+        if (posLeft + anchoCuadro > anchoMapa) posLeft = anchoMapa - anchoCuadro - 5;
 
-        infoContainer.style.top  = posTop  + 'px';
-        infoContainer.style.left = posLeft + 'px';
+        $infoContainer.css({ top: posTop + 'px', left: posLeft + 'px' });
     }
 
     // =============================================
     // FUNCIÓN: mostrarInfoEdificio
-    // Rellena y muestra el cuadro de información de un edificio
-    // @param {object} datos - objeto del edificio desde datosEdificios
-    // @param {DOMRect} rectEdificio - posición del edificio activo
+    // Usa jQuery para animar la aparición del cuadro con slideDown
     // =============================================
     function mostrarInfoEdificio(datos, rectEdificio) {
-        infoNombre.textContent = datos.nombre;
-        infoDesc.textContent   = datos.descripcion;
-        btnVerMas.href         = datos.enlace;
+        $infoNombre.text(datos.nombre);
+        $infoDesc.text(datos.descripcion);
+        $btnVerMas.attr('href', datos.enlace);
 
         imagenesActuales   = datos.imagenes;
         indiceImagenActual = 0;
@@ -768,133 +635,119 @@ document.addEventListener("DOMContentLoaded", () => {
         crearIndicadores(imagenesActuales.length);
         mostrarImagen(0);
 
-        // Muestra u oculta las flechas según la cantidad de imágenes
-        const hayVariasImagenes = imagenesActuales.length > 1;
-        btnAnterior.style.display  = hayVariasImagenes ? 'block' : 'none';
-        btnSiguiente.style.display = hayVariasImagenes ? 'block' : 'none';
+        const hayVarias = imagenesActuales.length > 1;
+        $btnAnterior.toggle(hayVarias);
+        $btnSiguiente.toggle(hayVarias);
 
-        // Muestra el cuadro invisible para poder medir su tamaño
-        infoContainer.style.display    = 'block';
-        infoContainer.style.visibility = 'hidden';
-
+        // Muestra invisible para medir, luego posiciona y anima con jQuery
+        $infoContainer.css({ display: 'block', visibility: 'hidden', opacity: 0 });
         posicionarCuadro(rectEdificio);
-        infoContainer.style.visibility = 'visible';
+        $infoContainer.css('visibility', 'visible').animate({ opacity: 1 }, 250);
 
         iniciarAutoCarrusel();
     }
 
     // =============================================
     // FUNCIÓN: cerrarCuadro
-    // Oculta el cuadro de información, quita el resaltado y detiene el carrusel
+    // Usa jQuery fadeOut para ocultar el cuadro
     // =============================================
     function cerrarCuadro() {
-        infoContainer.style.display = 'none';
-        document.querySelectorAll('path').forEach(e => e.classList.remove('seleccionado'));
+        $infoContainer.fadeOut(200);
+        $('path').removeClass('seleccionado');
         detenerAutoCarrusel();
     }
 
     // =============================================
-    // EVENT LISTENERS DEL CARRUSEL
+    // EVENT LISTENERS DEL CARRUSEL (jQuery)
     // =============================================
-    btnAnterior.addEventListener('click',  () => navegarCarrusel('anterior'));
-    btnSiguiente.addEventListener('click', () => navegarCarrusel('siguiente'));
+    $btnAnterior.on('click', function () { navegarCarrusel('anterior'); });
+    $btnSiguiente.on('click', function () { navegarCarrusel('siguiente'); });
+    $btnCerrar.on('click', cerrarCuadro);
 
-    // =============================================
-    // EVENT LISTENER: Cerrar al hacer clic en la X
-    // =============================================
-    btnCerrar.addEventListener('click', cerrarCuadro);
+    // Clic fuera del cuadro → cerrar
+    $(document).on('click', cerrarCuadro);
 
-    // =============================================
-    // EVENT LISTENER: Clic fuera del cuadro y del mapa → cerrar
-    // =============================================
-    document.addEventListener('click', cerrarCuadro);
-
-    // =============================================
-    // EVENT LISTENER: Clic dentro del cuadro → NO cerrar
-    // Evita que el clic en el popup se propague al document
-    // =============================================
-    infoContainer.addEventListener('click', (evento) => {
-        evento.stopPropagation();
-    });
+    // Clic dentro del cuadro → NO cerrar
+    $infoContainer.on('click', function (e) { e.stopPropagation(); });
 
     // =============================================
     // FUNCIÓN: esMobile
-    // Retorna true si el ancho de pantalla es <= 768px (móvil/tablet)
     // =============================================
     function esMobile() {
-        return window.innerWidth <= 768;
+        return $(window).width() <= 768;
     }
 
     // =============================================
     // FUNCIÓN: activarEdificio
-    // Centraliza la lógica de resaltar y mostrar info de un edificio.
-    // Se usa tanto desde click (móvil) como desde mouseover (desktop)
-    // @param {HTMLElement} edificio - el <path> del SVG sobre el que se interactuó
     // =============================================
-    function activarEdificio(edificio) {
-        document.querySelectorAll('path').forEach(e => e.classList.remove('seleccionado'));
-        edificio.classList.add('seleccionado');
+    function activarEdificio($edificio, datosEdificios) {
+        $('path').removeClass('seleccionado');
+        $edificio.addClass('seleccionado');
 
-        const datos = datosEdificios[edificio.id];
-        if (!datos) return; // Si no hay datos registrados, no hace nada
+        const datos = datosEdificios[$edificio.attr('id')];
+        if (!datos) return;
 
-        mostrarInfoEdificio(datos, edificio.getBoundingClientRect());
+        mostrarInfoEdificio(datos, $edificio[0].getBoundingClientRect());
     }
 
     // =============================================
     // FUNCIÓN: asignarEventosEdificios
-    // Asigna los eventos correctos según el dispositivo:
-    //   - Desktop (>768px): mouseover muestra la tarjeta y SE QUEDA abierta
-    //     (no se cierra al quitar el cursor — solo con ✕ o clic fuera del mapa)
-    //   - Móvil/Tablet (<=768px): solo onclick
-    // Se llama al inicio y cada vez que cambia el tamaño de pantalla (resize)
     // =============================================
-    function asignarEventosEdificios() {
-        const paths = document.querySelectorAll('path');
+    function asignarEventosEdificios(datosEdificios) {
+        // Elimina eventos anteriores y reasigna
+        $('path').off('click mouseover');
 
-        // Clona cada path para eliminar todos los listeners anteriores
-        // y evitar que se acumulen eventos duplicados al hacer resize
-        paths.forEach(edificio => {
-            const clone = edificio.cloneNode(true);
-            edificio.parentNode.replaceChild(clone, edificio);
-        });
+        $('path').each(function () {
+            const $edificio = $(this);
 
-        // Vuelve a seleccionar los paths ya reemplazados y asigna los eventos correctos
-        document.querySelectorAll('path').forEach(edificio => {
             if (esMobile()) {
-                // --- MÓVIL / TABLET: solo clic ---
-                edificio.addEventListener('click', (evento) => {
-                    evento.stopPropagation(); // Evita que se propague y cierre el cuadro
-                    activarEdificio(edificio);
+                $edificio.on('click', function (e) {
+                    e.stopPropagation();
+                    activarEdificio($edificio, datosEdificios);
                 });
             } else {
-                // --- DESKTOP: hover muestra la tarjeta y se queda abierta ---
-                // La tarjeta NO se oculta al quitar el cursor (resuelve el problema del chero)
-                // Solo se cierra con el botón ✕, clic fuera, o hover en otro edificio
-                edificio.addEventListener('mouseover', () => {
-                    activarEdificio(edificio);
+                $edificio.on('mouseover', function () {
+                    activarEdificio($edificio, datosEdificios);
                 });
-
-                // Click también funciona en desktop (accesibilidad y teclado)
-                edificio.addEventListener('click', (evento) => {
-                    evento.stopPropagation();
-                    activarEdificio(edificio);
+                $edificio.on('click', function (e) {
+                    e.stopPropagation();
+                    activarEdificio($edificio, datosEdificios);
                 });
             }
         });
     }
 
     // =============================================
-    // EVENT LISTENER: Resize de pantalla
-    // Si el usuario gira la tablet o redimensiona la ventana,
-    // cierra la tarjeta activa y reasigna los eventos al modo correcto
+    // RESIZE: reasigna eventos al cambiar tamaño
     // =============================================
-    window.addEventListener('resize', () => {
-        cerrarCuadro();            // Cierra cualquier tarjeta abierta
-        asignarEventosEdificios(); // Reasigna hover o click según el nuevo tamaño
+    $(window).on('resize', function () {
+        cerrarCuadro();
+        // datosEdificios ya están en el closure del $.getJSON
+        // Se reasignan mediante la variable guardada abajo
+        if (window._datosEdificiosUDB) {
+            asignarEventosEdificios(window._datosEdificiosUDB);
+        }
     });
 
-    // Inicializa los eventos la primera vez al cargar la página
-    asignarEventosEdificios();
+    /* =============================================
+       AJAX: Carga los datos desde edificios.json
+       usando $.getJSON (jQuery + AJAX)
+       
+       FLUJO:
+       1. Hace petición GET a ../js/edificios.json
+       2. jQuery parsea el JSON automáticamente
+       3. Se llama a asignarEventosEdificios con los datos
+       4. Si falla, muestra error en consola
+       ============================================= */
+    $.getJSON('../js/edificios.json')
+        .done(function (datosEdificios) {
+            // Guarda en variable global para poder reasignar en resize
+            window._datosEdificiosUDB = datosEdificios;
+            // Inicializa los eventos con los datos cargados
+            asignarEventosEdificios(datosEdificios);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.error('Error al cargar edificios.json:', textStatus, errorThrown);
+        });
 
-}); // Fin DOMContentLoaded
+}); // Fin $(document).ready
