@@ -164,6 +164,15 @@ document.addEventListener("DOMContentLoaded", () => {
             enlace:      "../occidente/banderas.html",
             icono:       "fas fa-flag",
             imagenes:    ["../img_mapa/plaza_banderas_1.jpg"]
+        },
+        {
+            id:          "Carro",
+            nombre:      "Carro de la Inge",
+            categoria:   "servicio",
+            descripcion: "Fabuloso auto de la inge, símbolo de la carrera y punto de encuentro para los estudiantes de ingeniería.",
+            enlace:      "../occidente/carro.html",
+            icono:       "fas fa-car",
+            imagenes:    ["../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM (1) 1 (1).svg"]
         }
     ]; // Fin edificiosOccidente
 
