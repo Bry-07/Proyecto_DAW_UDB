@@ -23,12 +23,12 @@
 // solo modifícalo aquí.
 // =============================================
 const rutasNavbar = {
-    inicio:        "../../index.html",
-    mapa:          "../mapa.html",
-    contacto:      "../contacto.html",
-    creadores:     "../creadores.html",
-    zonaOriente:   "../oriente.html",
-    zonaOccidente: "../occidente.html",
+    inicio:        "..index.html",
+    mapa:          "../html/mapa.html",
+    contacto:      "../html/contacto.html",
+    creadores:     "../html/creadores.html",
+    zonaOriente:   "../html/oriente.html",
+    zonaOccidente: "../html/occidente.html",
     edificioA:     "edif-a.html",
     pinacoteca:    "edif-pinacoteca.html",
     hangar:        "../occidente/hangar.html",
@@ -48,7 +48,7 @@ function construirNavbar() {
         <div class="container-header">
             <div class="logo">
                 <a href="${rutasNavbar.inicio}">
-                    <img src="../../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    <img src="../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
 
