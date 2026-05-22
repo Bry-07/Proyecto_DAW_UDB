@@ -48,7 +48,7 @@ function construirNavbar() {
         <div class="container-header">
             <div class="logo">
                 <a href="${rutasNavbar.inicio}">
-                    <img src="../../img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
+                    <img src="img/dibujo1.svg" alt="Universidad Don Bosco Logo" class="logo-img">
                 </a>
             </div>
 
