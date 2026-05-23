@@ -25,39 +25,39 @@
 // El buscador usa este objeto para filtrar
 // =============================================
 const catalogoEdificios = [
-    { nombre: "Edificio A",                         ruta: "../oriente/edif-a.html"         },
-    { nombre: "Edificio B",                         ruta: "../oriente/edif-b.html"         },
-    { nombre: "Edificio C",                         ruta: "../oriente/edif-c.html"         },
-    { nombre: "Edificio R",                         ruta: "../oriente/edif-r.html"         },
-    { nombre: "Edificio 2",                         ruta: "../occidente/edif-2.html"       },
-    { nombre: "Edificio 3",                         ruta: "../occidente/edif-3.html"       },
-    { nombre: "Edificio 4",                         ruta: "../occidente/edif-4.html"       },
-    { nombre: "Edificio 5",                         ruta: "../occidente/edif-5.html"       },
-    { nombre: "Edificio 6",                         ruta: "../occidente/edif-6.html"       },
-    { nombre: "Edificio 7",                         ruta: "../occidente/edif-7.html"       },
-    { nombre: "Edificio 8",                         ruta: "../occidente/edif-8.html"       },
-    { nombre: "Edificio de Ciencias",               ruta: "../occidente/edif-ciencias.html"},
-    { nombre: "Edificio de Profesores",             ruta: "../oriente/edif-profesores.html"},
-    { nombre: "Biblioteca",                         ruta: "../oriente/edif-biblio.html"   },
-    { nombre: "Centro de Desarrollo e Innovación",  ruta: "../oriente/edif-cdiu.html"      },
-    { nombre: "Capilla UDB",                        ruta: "../oriente/capilla.html"        },
-    { nombre: "Centro de Pastoral",                 ruta: "../oriente/edif-CPastoral.html" },
-    { nombre: "Magna A",                            ruta: "../oriente/edif-magnaA.html"   },
-    { nombre: "Magna B",                            ruta: "../oriente/edif-magnaB.html"   },
-    { nombre: "Magna C",                            ruta: "../occidente/edif-magnaC.html" },
-    { nombre: "Multigimnasio UDB",                  ruta: "../oriente/edif-gym.html"       },
-    { nombre: "Pinacoteca",                         ruta: "../oriente/edif-pinacoteca.html"},
-    { nombre: "Vivienda Salesiana",                 ruta: "../oriente/edif-viviendaS.html" },
-    { nombre: "Hangar - Facultad de Aeronáutica",   ruta: "../occidente/hangar.html"       },
-    { nombre: "Observatorio Meteorológico",         ruta: "../occidente/observatorio.html" },
-    { nombre: "OWCC",                               ruta: "../occidente/OWCC.html"         },
-    { nombre: "Almacén General",                    ruta: "../occidente/almacén.html"      },
-    { nombre: "Plaza de las Banderas",              ruta: "../occidente/banderas.html"     },
-    { nombre: "Cafetería Zona Occidente",           ruta: "../occidente/comedor2.html"     },
-    { nombre: "Comedor de Profesores",              ruta: "../oriente/comedor1.html"       },
-    { nombre: "Centro de Reproducción",             ruta: "../oriente/centroR.html"        },
-    { nombre: "Base Historia",                      ruta: "../oriente/base-historia.html"  },
-    {nombre: "Carro de la Inge",                    ruta: "../occidente/carro.html"        }
+    { nombre: "Edificio A",                         ruta: "oriente/edif-a.html"         },
+    { nombre: "Edificio B",                         ruta: "oriente/edif-b.html"         },
+    { nombre: "Edificio C",                         ruta: "oriente/edif-c.html"         },
+    { nombre: "Edificio R",                         ruta: "oriente/edif-r.html"         },
+    { nombre: "Edificio 2",                         ruta: "occidente/edif-2.html"       },
+    { nombre: "Edificio 3",                         ruta: "occidente/edif-3.html"       },
+    { nombre: "Edificio 4",                         ruta: "occidente/edif-4.html"       },
+    { nombre: "Edificio 5",                         ruta: "occidente/edif-5.html"       },
+    { nombre: "Edificio 6",                         ruta: "occidente/edif-6.html"       },
+    { nombre: "Edificio 7",                         ruta: "occidente/edif-7.html"       },
+    { nombre: "Edificio 8",                         ruta: "occidente/edif-8.html"       },
+    { nombre: "Edificio de Ciencias",               ruta: "occidente/edif-ciencias.html"},
+    { nombre: "Edificio de Profesores",             ruta: "oriente/edif-profesores.html"},
+    { nombre: "Biblioteca",                         ruta: "oriente/edif-biblio.html"   },
+    { nombre: "Centro de Desarrollo e Innovación",  ruta: "oriente/edif-cdiu.html"      },
+    { nombre: "Capilla UDB",                        ruta: "oriente/capilla.html"        },
+    { nombre: "Centro de Pastoral",                 ruta: "oriente/edif-CPastoral.html" },
+    { nombre: "Magna A",                            ruta: "oriente/edif-magnaA.html"   },
+    { nombre: "Magna B",                            ruta: "oriente/edif-magnaB.html"   },
+    { nombre: "Magna C",                            ruta: "occidente/edif-magnaC.html" },
+    { nombre: "Multigimnasio UDB",                  ruta: "oriente/edif-gym.html"       },
+    { nombre: "Pinacoteca",                         ruta: "oriente/edif-pinacoteca.html"},
+    { nombre: "Vivienda Salesiana",                 ruta: "oriente/edif-viviendaS.html" },
+    { nombre: "Hangar - Facultad de Aeronáutica",   ruta: "occidente/hangar.html"       },
+    { nombre: "Observatorio Meteorológico",         ruta: "occidente/observatorio.html" },
+    { nombre: "OWCC",                               ruta: "occidente/OWCC.html"         },
+    { nombre: "Almacén General",                    ruta: "occidente/almacén.html"      },
+    { nombre: "Plaza de las Banderas",              ruta: "occidente/banderas.html"     },
+    { nombre: "Cafetería Zona Occidente",           ruta: "occidente/comedor2.html"     },
+    { nombre: "Comedor de Profesores",              ruta: "oriente/comedor1.html"       },
+    { nombre: "Centro de Reproducción",             ruta: "oriente/centroR.html"        },
+    { nombre: "Base Historia",                      ruta: "oriente/base-historia.html"  },
+    {nombre: "Carro de la Inge",                    ruta: "occidente/carro.html"        }
 ];
 
 // =============================================
@@ -69,9 +69,19 @@ const catalogoEdificios = [
 function detectarRutaBase() {
     const path = window.location.pathname;
 
-    if (path.includes('/oriente/'))   return '../../';   // desde oriente/
-    if (path.includes('/occidente/')) return '../../';   // desde occidente/
-    return '../';                                         // desde html/ u otras
+    if (path.includes('/html/')) {
+        return '../';
+    }
+
+    if (path.includes('/oriente/')) {
+        return '../';
+    }
+
+    if (path.includes('/occidente/')) {
+        return '../';
+    }
+
+    return '';
 }
 
 // =============================================
@@ -149,24 +159,18 @@ function mostrarResultados(resultados) {
         return;
     }
 
-    // Detecta la carpeta actual para ajustar rutas
-    const paginaActual = window.location.pathname;
-    const enSubcarpeta = paginaActual.includes('/oriente/') || paginaActual.includes('/occidente/');
+    // Detecta la ruta base según la carpeta actual
+    const base = detectarRutaBase();
 
+    // Construye los resultados
     lista.innerHTML = resultados.map(edificio => {
-        // Si estamos en oriente/ u occidente/, ajusta la ruta
-        // Ejemplo: "../oriente/edif-a.html" → "../../oriente/edif-a.html"  (no aplica aquí, pero sí para occidente→oriente)
-        // En realidad desde oriente/ o occidente/ las rutas ../oriente/ y ../occidente/ ya funcionan igual
-        // Solo desde html/ necesitamos "../oriente/" que ya viene así en el catalogo
-        const rutaFinal = enSubcarpeta
-            ? edificio.ruta.replace('../', '../../')
-            : edificio.ruta;
-
-        return `<li class="resultado-item">
-            <a href="${rutaFinal}" class="resultado-link">
-                <i class="fas fa-building"></i> ${edificio.nombre}
-            </a>
-        </li>`;
+        return `
+            <li class="resultado-item">
+                <a href="${base + edificio.ruta}" class="resultado-link">
+                    <i class="fas fa-building"></i> ${edificio.nombre}
+                </a>
+            </li>
+        `;
     }).join('');
 
     lista.style.display = 'block';
