@@ -486,6 +486,11 @@ body::after {
    RESPONSIVE
 ============================================= */
 @media (max-width: 768px) {
+  /* Desactivar partículas en móvil para optimizar rendimiento */
+  .fondo-animado {
+    display: none;
+  }
+  
   .creadores-grid-section { padding: 20px 20px 80px; }
   .creadores-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
   .card-creador { max-width: 100%; }

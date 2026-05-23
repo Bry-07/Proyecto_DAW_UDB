@@ -116,8 +116,13 @@
   <script src="../js/buscador.js"></script>
 
   <script>
-    /* Partículas flotantes */
+    /* Partículas flotantes - Deshabilitadas en móvil para optimizar rendimiento */
     (function generarParticulas() {
+      // No generar partículas en dispositivos móviles (viewport < 768px)
+      if (window.innerWidth < 768) {
+        return;
+      }
+      
       const fondo = document.getElementById('fondo-animado');
       const colores = ['#f4c107', '#38bdf8', '#a855f7', '#22c55e', '#ff6b9d'];
       for (let i = 0; i < 30; i++) {
