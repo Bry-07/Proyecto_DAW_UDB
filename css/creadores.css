@@ -221,6 +221,7 @@ body::after {
 .hero-stats {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-top: 36px;
   animation: fadeUp 0.8s ease 0.6s both;
@@ -489,4 +490,30 @@ body::after {
   .creadores-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
   .card-creador { max-width: 100%; }
   .creadores-hero { padding: 60px 20px 40px; }
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-stat {
+    margin: 0;
+  }
+
+  .hero-stat-divider {
+    display: none;
+  }
+
+  .creadores-grid {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .card-creador {
+    max-width: none;
+    width: 100%;
+  }
 }
