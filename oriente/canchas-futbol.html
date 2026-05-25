@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Explorer - UDB</title>
+  <link rel="icon" type="image/x-icon" href="../img/dibujo1.svg" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base-hist.css">
+  <link rel="stylesheet" href="../css/css-base.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/buscador-mensajes.css">
+</head>
+
+<body>
+  <!-- ==================== NAVBAR ==================== -->
+
+  <header class="udb-header"></header>
+
+  <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+
+  <main class="main-content">
+    <section class="historia">
+      <div class="hero">
+        <img src="../fotos/IMG_4319.JPG" alt="edificiodelquesehabla">
+        <div class="hero-text">
+         <h1>Canchas de fútbol</h1>
+         <p>Área deportiva de la universidad destinada para actividades recreativas, entrenamientos y torneos de fútbol organizados dentro de la institución.</p>
+        </div>
+      </div>
+
+      <!-- contenido -->
+
+      <div class="contenido-historia">
+
+        <!-- historia -->
+
+        <div class="block">
+          <h2>Contenido</h2>
+  <p>
+    Las canchas de fútbol de la universidad son un espacio utilizado por estudiantes para realizar actividades deportivas, entrenamientos y partidos recreativos. 
+    El área cuenta con 2 canchas de grama que permiten el desarrollo de diferentes encuentros deportivos y actividades físicas.
+  </p>
+
+  <p>
+    Además de ser utilizadas para partidos casuales, en ocasiones también se realizan torneos internos y competencias deportivas organizadas por la universidad.
+  </p>
+        <!-- mini galeria -->
+
+        <div class="block">
+          <h2>Galería</h2>
+          <div class="galeria">
+            <img src="../img_mapa/IMG_4319 1.svg" alt="img1">
+            <img src="../img_mapa/IMG_4320 1.svg" alt="img2">
+
+          </div>
+        </div>
+
+        <!-- datos en tablas -->
+
+        <div class="block">
+          <h2>Información General</h2>
+  <table>
+    <tr>
+      <th>2 canchas de grama</th>
+      <td>El área deportiva cuenta con dos canchas para la práctica de fútbol.</td>
+    </tr>
+    <tr>
+      <th>Uso recreativo</th>
+      <td>Son utilizadas por estudiantes para entrenamientos y partidos amistosos.</td>
+    </tr>
+    <tr>
+      <th>Torneos deportivos</th>
+      <td>En ocasiones se realizan torneos y competencias dentro de las instalaciones.</td>
+    </tr>
+    <tr>
+      <th>Área deportiva universitaria</th>
+      <td>Forma parte de los espacios recreativos y deportivos de la universidad.</td>
+    </tr>
+  </table>
+        </div>
+
+        <!-- lista -->
+        <div class="block">
+          <h2>Características</h2>
+  <ul class="list">
+    <li>Cuenta con 2 canchas de grama.</li>
+    <li>Espacio utilizado para actividades deportivas.</li>
+    <li>Área recreativa para estudiantes universitarios.</li>
+    <li>Se realizan partidos y entrenamientos de fútbol.</li>
+    <li>En ocasiones se desarrollan torneos deportivos.</li>
+  </ul>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-container">
+      <!-- Logo y descripción -->
+      <div class="footer-logo">
+        <img src="../img/dibujo1.svg" alt="UDB Logo">
+        <p>Universidad Don Bosco - Campus Explorer 2026</p>
+        <div class="footer-lema">
+          <span>Lema Salesiano</span>
+          <p>"La educación es cosa del corazón"</p>
+        </div>
+        <div class="footer-divider"></div>
+      </div>
+
+      <!-- Enlaces útiles -->
+      <div class="footer-links">
+        <h3>Enlaces Útiles</h3>
+        <ul>
+          <li><a href="../html/oriente.html">Zona Oriente</a></li>
+          <li><a href="../html/occidente.html">Zona Occidente</a></li>
+          <li><a href="../html/mapa.html">Mapa del Campus</a></li>
+          <li><a href="../html/contacto.html">Contacto</a></li>
+          <li><a href="../html/creadores.html">Creadores</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="footer-social">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/UDBelsalvador/" target="_blank" title="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/udbelsalvador/" target="_blank" title="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://x.com/UDBElsalvador" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <p class="social-tagline">Mantente al día con las noticias y eventos de la UDB.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>Universidad Don Bosco</span>. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Navbar script -->
+  <script src="../js/navbar-oriente.js"></script>
+
+  <script src="../js/buscador.js"></script>
+
+  <!-- Centrar h1 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const h1 = document.querySelector('h1');
+      if (h1) {
+        h1.style.textAlign = 'center';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

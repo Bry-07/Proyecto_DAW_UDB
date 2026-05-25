@@ -479,7 +479,92 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             descripcion: "Carro de la Inge.",
             enlace: "../occidente/carro.html"
+        },
+
+        // --------------------------------------------------
+        // CANCHA1 
+        // --------------------------------------------------
+        "Can_Uno": {
+            nombre: "Cancha de baloncesto",
+            imagenes: [
+                 "../img_mapa/image 1.svg",
+            ],
+            descripcion: "Cancha 1 para poder jugar baloncesto",
+             enlace: "../oriente/canchas-baloncesto.html"
+        },
+
+        // --------------------------------------------------
+        // CANCHA2 
+        // --------------------------------------------------
+        "Can_Dos": {
+            nombre: "Cancha de baloncesto",
+            imagenes: [
+                "../img_mapa/IMG_4311 1.svg",
+            ],
+            descripcion: "Cancha 2 para poder jugar baloncesto",
+             enlace: "../oriente/canchas-baloncesto.html"
+        },
+
+        // --------------------------------------------------
+        // CANCHA3
+        // --------------------------------------------------
+        "Can_Tres": {
+            nombre: "Cancha de baloncesto",
+            imagenes: [
+                "../img_mapa/Captura de pantalla 2026-05-24 193923 1.svg",
+            ],
+            descripcion: "Cancha 3 para poder jugar baloncesto",
+             enlace: "../oriente/canchas-baloncesto.html"
+        },
+
+          // --------------------------------------------------
+        // CANCHA4
+        // --------------------------------------------------
+        "Can_Cuatro": {
+            nombre: "Cancha de baloncesto",
+            imagenes: [
+                 "../img_mapa/IMG_4328 1.svg",
+            ],
+            descripcion: "Cancha 4 para poder jugar baloncesto",
+             enlace: "../oriente/canchas-baloncesto.html"
+        },
+
+            // --------------------------------------------------
+        // CANCHAgrama
+        // --------------------------------------------------
+        "Cancha_De": {
+            nombre: "Cancha de fútbol",
+            imagenes: [
+                 "../img_mapa/IMG_4319 1.svg",
+            ],
+            descripcion: "Cancha con grama para poder jugar fútbol",
+             enlace: "../oriente/canchas-futbol.html"
+        },
+
+         // --------------------------------------------------
+        // CANCHAgrama2
+        // --------------------------------------------------
+        "Cancha_Iz": {
+            nombre: "Cancha de fútbol",
+            imagenes: [
+                 "../img_mapa/IMG_4320 1.svg",
+            ],
+            descripcion: "Cancha con grama para poder jugar fútbol",
+             enlace: "../oriente/canchas-futbol.html"
+        },
+
+        "Banos_Edif_C": {
+            nombre: "Baños Edificio C y Edificio B",
+            imagenes: [
+                 "../img_mapa/IMG_4456 1.svg",
+            ],
+            descripcion: "Baños en la zona del Edificio C y B",
+            enlace: "../oriente/canchas-futbol.html"
         }
+
+
+
+
 
         
 
