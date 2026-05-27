@@ -249,28 +249,28 @@
 
     "sanitariosudb": {
         "nombre": "Sanitarios Edificio 6 y Comedor",
-        "imagenes": ["../img_mapa/sanitarios_1.jpg"],
+        "imagenes": ["../fotos/sanitarios1.jpeg"],
         "descripcion": "Sanitarios entre el Edificio 6 y el Comedor",
         "enlace": "../oriente/sanitariosudb.html"
     },
 
     "Mesa_Edif_Siete_Uno": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/mesas-edif7.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Edif_Siete_Dos": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/mesas-edif7.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Edif_Siete_Tres": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/mesas-edif7.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria.",
         "enlace": "../oriente/mesasUDB.html"
     },
@@ -284,42 +284,42 @@
 
     "Mesa_Biblio_Uno": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../fotos/IMG_4400.JPG"],
+        "imagenes": ["../fotos/IMG_4400.JPG", "../fotos/biblio.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Biblio_Dos": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../fotos/IMG_4400.JPG"],
+        "imagenes": ["../fotos/IMG_4400.JPG", "../fotos/biblio.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Mag_B_Uno": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/magnab.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Mag_B_Dos": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/magnab.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Edif_Cuat_Dos": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/edif-4.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
         "enlace": "../oriente/mesasUDB.html"
     },
 
     "Mesa_Edif_Cuat_Uno": {
         "nombre": "Mesas UDB",
-        "imagenes": ["../img_mapa/mesas_1.jpg"],
+        "imagenes": ["../fotos/edif-4.jpeg"],
         "descripcion": "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
         "enlace": "../oriente/mesasUDB.html"
     }
