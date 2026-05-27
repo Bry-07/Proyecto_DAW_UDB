@@ -57,7 +57,10 @@ const catalogoEdificios = [
     { nombre: "Comedor de Profesores",              ruta: "oriente/comedor1.html"       },
     { nombre: "Centro de Reproducción",             ruta: "oriente/centroR.html"        },
     { nombre: "Base Historia",                      ruta: "oriente/base-historia.html"  },
-    {nombre: "Carro de la Inge",                    ruta: "occidente/carro.html"        }
+    { nombre: "Carro de la Inge",                   ruta: "occidente/carro.html"        },
+    { nombre: "Sanitarios UDB",                     ruta: "oriente/sanitariosUDB.html"  },
+    { nombre: "Baños UDB",                          ruta: "oriente/sanitariosUDB.html"  },
+    { nombre: "Mesas UDB",                          ruta: "oriente/mesasUDB.html"       }
 ];
 
 // =============================================

@@ -553,21 +553,120 @@ document.addEventListener("DOMContentLoaded", () => {
              enlace: "../oriente/canchas-futbol.html"
         },
 
+        // --------------------------------------------------
+        // Baños/Sanitarios Edificio C y B - Edificios 6 y Comedor
+        // --------------------------------------------------
         "Banos_Edif_C": {
             nombre: "Baños Edificio C y Edificio B",
             imagenes: [
                  "../img_mapa/IMG_4456 1.svg",
             ],
             descripcion: "Baños en la zona del Edificio C y B",
-            enlace: "../oriente/canchas-futbol.html"
+            enlace: "../oriente/sanitariosudb.html"
+        },
+
+
+        "sanitariosudb": {
+            nombre: "Sanitarios UDB",
+            imagenes: [
+                 "../img_mapa/sanitarios_1.jpg",
+            ],
+            descripcion: "Instalaciones sanitarias asignadas para el uso de la comunidad universitaria.",
+            enlace: "../oriente/sanitariosudb.html"
+        },
+
+        // --------------------------------------------------
+        // MESAS UDB
+        // --------------------------------------------------
+        "Mesa_Edif_Siete_Uno": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Edif_Siete_Dos": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Edif_Siete_Tres": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Plaza": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../fotos/IMG_4050.jpg", "../fotos/IMG_4443.JPG",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Biblio_Uno": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../fotos/IMG_4400.JPG",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Biblio_Dos": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../fotos/IMG_4400.JPG",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Mag_B_Uno": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Mag_B_Dos": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Edif_Cuat_Dos": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
+        },
+
+        "Mesa_Edif_Cuat_Uno": {
+            nombre: "Mesas UDB",
+            imagenes: [
+                "../img_mapa/mesas_1.jpg",
+            ],
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace: "../oriente/mesasUDB.html"
         }
-
-
-
-
-
-        
-
     }; // ← CIERRE del objeto datosEdificios
 
     /* =============================================

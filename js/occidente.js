@@ -173,6 +173,24 @@ document.addEventListener("DOMContentLoaded", () => {
             enlace:      "../occidente/carro.html",
             icono:       "fas fa-car",
             imagenes:    ["../img_mapa/WhatsApp Image 2026-05-03 at 12.23.51 PM (1) 1 (1).svg"]
+        },
+        {
+            id:         "sanitariosudb",
+            nombre:     "Sanitarios UDB",
+            categoria:  "servicio",
+            descripcion: "Instalaciones sanitarias asignadas para el uso de la comunidad universitaria.",
+            enlace:     "../oriente/sanitariosUDB.html",
+            icono:       "fas fa-toilet",
+            imagenes:    ["../img_mapa/sanitarios_1.jpg"]
+        },
+        {
+            id:         "mesasudb",
+            nombre:     "Mesas UDB",
+            categoria:  "servicio",
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace:     "../oriente/mesasUDB.html",
+            icono:       "fas fa-table",
+            imagenes:    ["../img_mapa/mesas_1.jpg"]
         }
     ]; // Fin edificiosOccidente
 
@@ -189,7 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { valor: "auditorio",     etiqueta: "Auditorios"    },
         { valor: "servicio",      etiqueta: "Servicios"     },
         { valor: "institucional", etiqueta: "Institucional" },
-        { valor: "investigacion", etiqueta: "Investigación" }
+        { valor: "investigacion", etiqueta: "Investigación" },
+        { valor: "Sanitarios",    etiqueta: "Sanitarios"    },
     ];
 
     // =============================================

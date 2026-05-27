@@ -174,6 +174,24 @@ document.addEventListener("DOMContentLoaded", () => {
             enlace:      "../oriente/edif-gym.html",
             icono:       "fas fa-dumbbell",
             imagenes:    ["../img_mapa/multigim_1.jpg"]
+        },
+        {
+            id:         "sanitariosudb",
+            nombre:     "Sanitarios UDB",
+            categoria:  "servicio",
+            descripcion: "Instalaciones sanitarias asignadas para el uso de la comunidad universitaria.",
+            enlace:     "../oriente/sanitariosUDB.html",
+            icono:       "fas fa-toilet",
+            imagenes:    ["../img_mapa/sanitarios_1.jpg"]
+        },
+        {
+            id:         "mesasudb",
+            nombre:     "Mesas UDB",
+            categoria:  "servicio",
+            descripcion: "Espacios asignados para uso de estudio y descanso en la comunidad universitaria salesiana.",
+            enlace:     "../oriente/mesasUDB.html",
+            icono:       "fas fa-table",
+            imagenes:    ["../img_mapa/mesas_1.jpg"]
         }
     ]; // Fin edificiosOriente
 
@@ -185,14 +203,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Usado por generarBotonesFiltro() para crear los botones dinámicamente
     // =============================================
     const categoriasOriente = [
-        { valor: "todos",         etiqueta: "Todos"          },
+        { valor: "Todos",         etiqueta: "Todos"          },
         { valor: "academico",     etiqueta: "Académico"      },
         { valor: "auditorio",     etiqueta: "Auditorios"     },
         { valor: "servicio",      etiqueta: "Servicios"      },
         { valor: "institucional", etiqueta: "Institucional"  },
         { valor: "investigacion", etiqueta: "Investigación"  },
         { valor: "cultura",       etiqueta: "Cultura"        },
-        { valor: "deportivo",     etiqueta: "Deportivo"      }
+        { valor: "deportivo",     etiqueta: "Deportivo"      },
     ];
 
     // =============================================
