@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nombre:     "Sanitarios UDB",
             categoria:  "servicio",
             descripcion: "Instalaciones sanitarias asignadas para el uso de la comunidad universitaria.",
-            enlace:     "../oriente/sanitariosUDB.html",
+            enlace:     "../oriente/sanitariosudb.html",
             icono:       "fas fa-toilet",
             imagenes:    ["../img_mapa/sanitarios_1.jpg"]
         },
