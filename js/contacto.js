@@ -7,6 +7,9 @@
 //   - Uso de object constructor (Mensaje) para los datos
 // =============================================
 
+
+
+//Citerio 4: Uso de expresiones regulares para validar cada campo del formulario, con mensajes de error específicos para cada tipo de validación fallida.
 // =============================================
 // CLASE: Validador
 // Contiene métodos de validación con
@@ -46,7 +49,7 @@ class Validador {
 // para almacenarse en localStorage
 // =============================================
 function crearMensaje(nombre, email, pais, mensaje) {
-    const nuevoMensaje    = new Object();
+    const nuevoMensaje    = new Object(); //Criterio 3: Uso de object constructor para crear objetos de mensaje
     nuevoMensaje.id       = Date.now(); // ID único basado en timestamp
     nuevoMensaje.nombre   = nombre;
     nuevoMensaje.email    = email;
